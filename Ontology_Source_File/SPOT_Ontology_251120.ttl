@@ -1,0 +1,178 @@
+@prefix spot: <https://w3id.org/spot#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Ontology Declaration
+<https://w3id.org/spot#> a owl:Ontology ;
+    rdfs:label "SPOT Ontology"@en ;
+    rdfs:comment "Spatial Positioning Ontology for describing spaces, appearances, and their relationships"@en .
+
+# Classes
+
+## Space Hierarchy
+spot:Space a owl:Class ;
+    rdfs:label "Space"@en ;
+    rdfs:comment "The root class for all spatial concepts"@en .
+
+spot:PhysicalSpace a owl:Class ;
+    rdfs:subClassOf spot:Space ;
+    rdfs:label "Physical Space"@en ;
+    rdfs:comment "A space that exists in the physical world"@en .
+
+spot:VirtualSpace a owl:Class ;
+    rdfs:subClassOf spot:Space ;
+    rdfs:label "Virtual Space"@en ;
+    rdfs:comment "A space that exists in a virtual or digital environment"@en .
+
+spot:AssetSpace a owl:Class ;
+    rdfs:subClassOf spot:Space ;
+    rdfs:label "Asset Space"@en ;
+    rdfs:comment "A space associated with an asset"@en .
+
+spot:DocumentSpace a owl:Class ;
+    rdfs:subClassOf spot:Space ;
+    rdfs:label "Document Space"@en ;
+    rdfs:comment "A space associated with a document"@en .
+
+spot:EntitySpace a owl:Class ;
+    rdfs:subClassOf spot:Space ;
+    rdfs:label "Entity Space"@en ;
+    rdfs:comment "A space associated with an entity"@en .
+
+spot:PointSpace a owl:Class ;
+    rdfs:subClassOf spot:Space ;
+    rdfs:label "Point Space"@en ;
+    rdfs:comment "A zero-dimensional space representing a point"@en .
+
+spot:AreaSpace a owl:Class ;
+    rdfs:subClassOf spot:Space ;
+    rdfs:label "Area Space"@en ;
+    rdfs:comment "A two-dimensional space representing an area"@en .
+
+spot:VolumeSpace a owl:Class ;
+    rdfs:subClassOf spot:Space ;
+    rdfs:label "Volume Space"@en ;
+    rdfs:comment "A three-dimensional space representing a volume"@en .
+
+spot:VerticalAreaSpace a owl:Class ;
+    rdfs:subClassOf spot:AreaSpace ;
+    rdfs:label "Vertical Area Space"@en ;
+    rdfs:comment "An area space oriented vertically"@en .
+
+spot:HorizontalAreaSpace a owl:Class ;
+    rdfs:subClassOf spot:AreaSpace ;
+    rdfs:label "Horizontal Area Space"@en ;
+    rdfs:comment "An area space oriented horizontally"@en .
+
+## Appearance Hierarchy
+spot:Appearance a owl:Class ;
+    rdfs:label "Appearance"@en ;
+    rdfs:comment "The visual or perceptual representation of something"@en .
+
+spot:AssetAppearance a owl:Class ;
+    rdfs:subClassOf spot:Appearance ;
+    rdfs:label "Asset Appearance"@en ;
+    rdfs:comment "The appearance of an asset"@en .
+
+spot:DocumentAppearance a owl:Class ;
+    rdfs:subClassOf spot:Appearance ;
+    rdfs:label "Document Appearance"@en ;
+    rdfs:comment "The appearance of a document"@en .
+
+spot:EntityAppearance a owl:Class ;
+    rdfs:subClassOf spot:Appearance ;
+    rdfs:label "Entity Appearance"@en ;
+    rdfs:comment "The appearance of an entity"@en .
+
+## Axis
+spot:Axis a owl:Class ;
+    rdfs:label "Axis"@en ;
+    rdfs:comment "A reference line in a coordinate system"@en .
+
+## Direction
+spot:Direction a owl:Class ;
+    rdfs:label "Direction"@en ;
+    rdfs:comment "A spatial direction or orientation"@en .
+
+# Named Individuals - Directions
+
+spot:Front a owl:NamedIndividual , spot:Direction ;
+    rdfs:label "Front"@en ;
+    rdfs:comment "The front direction"@en .
+
+spot:Rear a owl:NamedIndividual , spot:Direction ;
+    rdfs:label "Rear"@en ;
+    rdfs:comment "The rear direction"@en .
+
+spot:Right a owl:NamedIndividual , spot:Direction ;
+    rdfs:label "Right"@en ;
+    rdfs:comment "The right direction"@en .
+
+spot:Left a owl:NamedIndividual , spot:Direction ;
+    rdfs:label "Left"@en ;
+    rdfs:comment "The left direction"@en .
+
+spot:Top a owl:NamedIndividual , spot:Direction ;
+    rdfs:label "Top"@en ;
+    rdfs:comment "The top direction"@en .
+
+spot:Bottom a owl:NamedIndividual , spot:Direction ;
+    rdfs:label "Bottom"@en ;
+    rdfs:comment "The bottom direction"@en .
+
+# Object Properties
+
+spot:hasSuperSpace a owl:ObjectProperty ;
+    rdfs:label "has super space"@en ;
+    rdfs:comment "Relates a space to its containing or parent space"@en ;
+    rdfs:domain spot:Space ;
+    rdfs:range spot:Space ;
+    owl:propertyChainAxiom ( spot:hasAppearance spot:appearsIn ) .
+
+spot:hasSubspace a owl:ObjectProperty ;
+    rdfs:label "has subspace"@en ;
+    rdfs:comment "Relates a space to a space it contains"@en ;
+    rdfs:domain spot:Space ;
+    rdfs:range spot:Space ;
+    owl:inverseOf spot:hasSuperSpace .
+
+spot:hasAppearance a owl:ObjectProperty ;
+    rdfs:label "has appearance"@en ;
+    rdfs:comment "Relates something to its appearance"@en ;
+    rdfs:range spot:Appearance .
+
+spot:appearsIn a owl:ObjectProperty ;
+    rdfs:label "appears in"@en ;
+    rdfs:comment "Relates an appearance to the space in which it appears"@en ;
+    rdfs:domain spot:Appearance ;
+    rdfs:range spot:Space .
+
+spot:hasAxis a owl:ObjectProperty ;
+    rdfs:label "has axis"@en ;
+    rdfs:comment "Relates a space to an axis"@en ;
+    rdfs:domain spot:Space ;
+    rdfs:range spot:Axis .
+
+spot:hasXAxis a owl:ObjectProperty ;
+    rdfs:subPropertyOf spot:hasAxis ;
+    rdfs:label "has X axis"@en ;
+    rdfs:comment "Relates a space to its X axis"@en .
+
+spot:hasYAxis a owl:ObjectProperty ;
+    rdfs:subPropertyOf spot:hasAxis ;
+    rdfs:label "has Y axis"@en ;
+    rdfs:comment "Relates a space to its Y axis"@en .
+
+spot:hasZAxis a owl:ObjectProperty ;
+    rdfs:subPropertyOf spot:hasAxis ;
+    rdfs:label "has Z axis"@en ;
+    rdfs:comment "Relates a space to its Z axis"@en .
+
+spot:hasDirection a owl:ObjectProperty ;
+    rdfs:label "has direction"@en ;
+    rdfs:comment "Relates a space or axis to a direction"@en ;
+    rdfs:range spot:Direction .
+
+

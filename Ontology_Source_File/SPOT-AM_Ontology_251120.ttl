@@ -1,0 +1,123 @@
+@prefix spot-am: <https://w3id.org/spot/am#> .
+@prefix spot: <https://w3id.org/spot#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix reloc: <https://w3id.org/reloc#> .
+
+# Ontology Declaration
+<https://w3id.org/spot/am#> a owl:Ontology ;
+    rdfs:label "SPOT-AxisMapping Ontology"@en ;
+    rdfs:comment "An extension to the SPOT Ontology for mapping axes to directions and boundary points in spatial contexts"@en ;
+    owl:imports <https://w3id.org/spot#> .
+
+# Classes
+
+spot-am:AxisMapping a owl:Class ;
+    rdfs:label "Axis Mapping"@en ;
+    rdfs:comment "A mapping configuration that relates a source axis to a target axis with optional angle and accuracy information"@en .
+
+spot-am:BoundaryPoint a owl:Class ;
+    rdfs:label "Boundary Point"@en ;
+    rdfs:comment "A point that defines a boundary in a coordinate system"@en .
+
+spot-am:MinBoundaryPoint a owl:Class ;
+    rdfs:subClassOf spot-am:BoundaryPoint ;
+    rdfs:label "Minimum Boundary Point"@en ;
+    rdfs:comment "A boundary point that represents the minimum extent"@en .
+
+spot-am:MaxBoundaryPoint a owl:Class ;
+    rdfs:subClassOf spot-am:BoundaryPoint ;
+    rdfs:label "Maximum Boundary Point"@en ;
+    rdfs:comment "A boundary point that represents the maximum extent"@en .
+
+spot-am:BoundaryPointMapping a owl:Class ;
+    rdfs:label "Boundary Point Mapping"@en ;
+    rdfs:comment "A mapping between boundary points in different coordinate systems"@en .
+
+# Accuracy Individuals
+spot-am:Accuracy a owl:Class ;
+    rdfs:label "Accuracy"@en ;
+    rdfs:comment "The level of accuracy for an axis mapping"@en .
+
+spot-am:Exact a owl:NamedIndividual , spot-am:Accuracy ;
+    rdfs:label "Exact"@en ;
+    rdfs:comment "Exact accuracy level for axis mapping"@en .
+
+spot-am:Approximate a owl:NamedIndividual , spot-am:Accuracy ;
+    rdfs:label "Approximate"@en ;
+    rdfs:comment "Approximate accuracy level for axis mapping"@en .
+
+spot-am:Broad a owl:NamedIndividual , spot-am:Accuracy ;
+    rdfs:label "Broad"@en ;
+    rdfs:comment "Broad accuracy level for axis mapping"@en .
+
+# Object Properties
+
+spot-am:hasAxisMapping a owl:ObjectProperty ;
+    rdfs:label "has axis mapping"@en ;
+    rdfs:comment "Relates an appearance to an axis mapping configuration"@en ;
+    rdfs:domain spot:Appearance ;
+    rdfs:range spot-am:AxisMapping .
+
+spot-am:hasSourceAxis a owl:ObjectProperty ;
+    rdfs:label "has source axis"@en ;
+    rdfs:comment "Specifies the source axis in an axis mapping"@en ;
+    rdfs:domain spot-am:AxisMapping ;
+    rdfs:range spot:Axis .
+
+spot-am:hasTargetAxis a owl:ObjectProperty ;
+    rdfs:label "has target axis"@en ;
+    rdfs:comment "Specifies the target axis in an axis mapping"@en ;
+    rdfs:domain spot-am:AxisMapping ;
+    rdfs:range spot:Axis .
+
+spot-am:hasAccuracy a owl:ObjectProperty ;
+    rdfs:label "has accuracy"@en ;
+    rdfs:comment "Specifies the accuracy level of an axis mapping"@en ;
+    rdfs:domain spot-am:AxisMapping ;
+    rdfs:range spot-am:Accuracy .
+
+spot-am:hasBoundaryPoint a owl:ObjectProperty ;
+    rdfs:label "has boundary point"@en ;
+    rdfs:comment "Relates an axis to a boundary point"@en ;
+    rdfs:domain spot:Axis ;
+    rdfs:range spot-am:BoundaryPoint .
+
+spot-am:hasBoundaryPointMapping a owl:ObjectProperty ;
+    rdfs:label "has boundary point mapping"@en ;
+    rdfs:comment "Relates an axis mapping to a boundary point mapping"@en ;
+    rdfs:domain spot-am:AxisMapping ;
+    rdfs:range spot-am:BoundaryPointMapping .
+
+spot-am:hasSourcePoint a owl:ObjectProperty ;
+    rdfs:label "has source point"@en ;
+    rdfs:comment "Specifies the source boundary point in a boundary point mapping"@en ;
+    rdfs:domain spot-am:BoundaryPointMapping ;
+    rdfs:range spot-am:BoundaryPoint .
+
+spot-am:hasTargetPoint a owl:ObjectProperty ;
+    rdfs:label "has target point"@en ;
+    rdfs:comment "Specifies the target boundary point in a boundary point mapping"@en ;
+    rdfs:domain spot-am:BoundaryPointMapping ;
+    rdfs:range spot-am:BoundaryPoint .
+
+# Datatype Properties
+
+spot-am:hasSourceToTargetAngle a owl:DatatypeProperty ;
+    rdfs:label "has source to target angle"@en ;
+    rdfs:comment "Specifies the angle (in degrees) between the source and target axis"@en ;
+    rdfs:domain spot-am:AxisMapping ;
+    rdfs:range rdfs:Literal .
+
+spot-am:hasNormalizedCoordinateValue a owl:DatatypeProperty ;
+    rdfs:label "has normalized coordinate value"@en ;
+    rdfs:comment "Specifies the normalized coordinate value of a boundary point (typically between 0 and 1)"@en ;
+    rdfs:domain spot-am:BoundaryPoint ;
+    rdfs:range rdfs:Literal .
+
+# External Reference
+reloc:DirectionalProperty a owl:Class ;
+    rdfs:label "Directional Property"@en ;
+    rdfs:comment "Reference to external reloc ontology for directional properties"@en .
