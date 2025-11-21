@@ -7,126 +7,143 @@
 # Ontology Declaration
 <https://w3id.org/spot#> a owl:Ontology ;
     rdfs:label "SPOT Ontology"@en ;
-    rdfs:comment "Spatial Positioning Ontology for describing spaces, appearances, and their relationships"@en .
+    rdfs:comment """Space Types Ontology for describing spaces, appearances, and their relationships,
+        in the context of the AECO domain"""@en .
 
 # Classes
 
-## Space Hierarchy
+## Space Types and Hierarchy
 spot:Space a owl:Class ;
     rdfs:label "Space"@en ;
-    rdfs:comment "The root class for all spatial concepts"@en .
+    rdfs:comment "The abstract superclass for all defined space types."@en .
 
 spot:PhysicalSpace a owl:Class ;
     rdfs:subClassOf spot:Space ;
     rdfs:label "Physical Space"@en ;
-    rdfs:comment "A space that exists in the physical world"@en .
+    rdfs:comment """The Physical Space is the superclass for the global, asset and entity spaces,
+    which implies that these spaces are can be directly mapped in physical space, as opposite to virtual spaces.
+    It is an abstract class and should not be used directly."""@en .
 
 spot:VirtualSpace a owl:Class ;
     rdfs:subClassOf spot:Space ;
     rdfs:label "Virtual Space"@en ;
-    rdfs:comment "A space that exists in a virtual or digital environment"@en .
+    rdfs:comment """The Virtual Space represent resource spaces, which cannot be directly mapped to the real physical space,
+     as their spatial arrangement is artificial. For example 2D plans with a collection of drawings
+     or a file containing multiple disjointed 3D models of the same asset.  It is an abstract class and should not be used directly."""@en .
 
 spot:AssetSpace a owl:Class ;
-    rdfs:subClassOf spot:Space ;
+    rdfs:subClassOf spot:PhysicalSpace ;
     rdfs:label "Asset Space"@en ;
-    rdfs:comment "A space associated with an asset"@en .
+    rdfs:comment """"The Asset Space represents the actual, physical asset.
+        An instance of the Asset Space is the superordinate object for the spatial superimposition of Entity Space instances."""@en .
 
 spot:DocumentSpace a owl:Class ;
-    rdfs:subClassOf spot:Space ;
+    rdfs:subClassOf spot:VirtualSpace ;
     rdfs:label "Document Space"@en ;
-    rdfs:comment "A space associated with a document"@en .
+    rdfs:comment """The Document Space represents the extent of a document or file that contains Entity Spaces.
+    A Document Space can represent different, disjointed Entity Spaces, such as a collection of sections and
+     details on a construction plan."""@en .
 
 spot:EntitySpace a owl:Class ;
-    rdfs:subClassOf spot:Space ;
+    rdfs:subClassOf spot:PhysicalSpace ;
     rdfs:label "Entity Space"@en ;
-    rdfs:comment "A space associated with an entity"@en .
+    rdfs:comment """The Entity Space is a coherent unit of information covered by a single resource, such as a 3D model,
+     a 2D drawing, or a picture, representing its actual dimensions referring to the Asset Space."""@en .
 
 spot:PointSpace a owl:Class ;
-    rdfs:subClassOf spot:Space ;
+    rdfs:subClassOf spot:EntitySpace ;
     rdfs:label "Point Space"@en ;
-    rdfs:comment "A zero-dimensional space representing a point"@en .
+    rdfs:comment """The Point Space can represent resources that only need one point of reference,
+    such as the camera position of a picture or the position of a sensor."""@en .
 
 spot:AreaSpace a owl:Class ;
-    rdfs:subClassOf spot:Space ;
+    rdfs:subClassOf spot:EntitySpace ;
     rdfs:label "Area Space"@en ;
-    rdfs:comment "A two-dimensional space representing an area"@en .
+    rdfs:comment "A two-dimensional space that can be used to represent resources like 2D drawings or maps "@en .
 
 spot:VolumeSpace a owl:Class ;
-    rdfs:subClassOf spot:Space ;
+    rdfs:subClassOf spot:EntitySpace ;
     rdfs:label "Volume Space"@en ;
-    rdfs:comment "A three-dimensional space representing a volume"@en .
+    rdfs:comment "The Volume Space can represent three-dimensional resources, such as 3D models or point clouds."@en .
 
 spot:VerticalAreaSpace a owl:Class ;
     rdfs:subClassOf spot:AreaSpace ;
     rdfs:label "Vertical Area Space"@en ;
-    rdfs:comment "An area space oriented vertically"@en .
+    rdfs:comment """The Vertical Area Space is a subtype of Area Space, that implies that the plane of the resource is
+     parallel to the vertical axis of the asset space. Section drawings are typical vertical area spaces."""@en .
 
 spot:HorizontalAreaSpace a owl:Class ;
     rdfs:subClassOf spot:AreaSpace ;
     rdfs:label "Horizontal Area Space"@en ;
-    rdfs:comment "An area space oriented horizontally"@en .
+    rdfs:comment """The Horizontal Area Space is a subtype of Area Space, that implies that the plane of the resource
+     is parallel to the horizontal plane of the asset space. Floorplans or maps are typical horizontal area spaces."""@en .
 
-## Appearance Hierarchy
+## Appearance Types
 spot:Appearance a owl:Class ;
     rdfs:label "Appearance"@en ;
-    rdfs:comment "The visual or perceptual representation of something"@en .
+    rdfs:comment """The appearance of an entity space in a reference space (Asset, Document or another Entity Space).
+    The appearance object serves as a container/reference to assign spatial relation definitions for the relationship
+    between the Entity Space instance and the space where it appears in."""@en .
 
 spot:AssetAppearance a owl:Class ;
     rdfs:subClassOf spot:Appearance ;
     rdfs:label "Asset Appearance"@en ;
-    rdfs:comment "The appearance of an asset"@en .
+    rdfs:comment "The appearance of entity space in an asset space"@en .
 
 spot:DocumentAppearance a owl:Class ;
     rdfs:subClassOf spot:Appearance ;
     rdfs:label "Document Appearance"@en ;
-    rdfs:comment "The appearance of a document"@en .
+    rdfs:comment "The appearance of an entity space in a document space"@en .
 
 spot:EntityAppearance a owl:Class ;
     rdfs:subClassOf spot:Appearance ;
     rdfs:label "Entity Appearance"@en ;
-    rdfs:comment "The appearance of an entity"@en .
+    rdfs:comment "The appearance of an entity space in another (parent/super) entity space"@en .
 
 ## Axis
 spot:Axis a owl:Class ;
     rdfs:label "Axis"@en ;
-    rdfs:comment "A reference line in a coordinate system"@en .
+    rdfs:comment "An axis of the local coordinate system of a space instance"@en .
 
 ## Direction
 spot:Direction a owl:Class ;
     rdfs:label "Direction"@en ;
-    rdfs:comment "A spatial direction or orientation"@en .
+    rdfs:comment """The defined direction of an axis (e.g., an X-Axis is pointing to the 'Front' of the asset,
+     or an Y-Axis is pointing to the 'Bottom' of a document / plan ).
+     Only Asset Space or Document Space Axis should get an Direction Definition."""@en .
 
 # Named Individuals - Directions
 
 spot:Front a owl:NamedIndividual , spot:Direction ;
     rdfs:label "Front"@en ;
-    rdfs:comment "The front direction"@en .
+    rdfs:comment "The front of an asset or document space."@en .
 
 spot:Rear a owl:NamedIndividual , spot:Direction ;
     rdfs:label "Rear"@en ;
-    rdfs:comment "The rear direction"@en .
+    rdfs:comment "The rear of an asset or document space"@en .
 
 spot:Right a owl:NamedIndividual , spot:Direction ;
     rdfs:label "Right"@en ;
-    rdfs:comment "The right direction"@en .
+    rdfs:comment "The right of an asset or document space"@en .
 
 spot:Left a owl:NamedIndividual , spot:Direction ;
     rdfs:label "Left"@en ;
-    rdfs:comment "The left direction"@en .
+    rdfs:comment "The left of an asset or document space"@en .
 
 spot:Top a owl:NamedIndividual , spot:Direction ;
     rdfs:label "Top"@en ;
-    rdfs:comment "The top direction"@en .
+    rdfs:comment "The top of an asset or document space"@en .
 
 spot:Bottom a owl:NamedIndividual , spot:Direction ;
     rdfs:label "Bottom"@en ;
-    rdfs:comment "The bottom direction"@en .
+    rdfs:comment "The bottom of an asset or document space"@en .
 
 # Object Properties
 
 spot:hasSuperSpace a owl:ObjectProperty ;
     rdfs:label "has super space"@en ;
-    rdfs:comment "Relates a space to its containing or parent space"@en ;
+    rdfs:comment """"Relates a space to its containing/parent/super space.
+    This property can be derived by the propert chain: spaceA <hasAppearance> AppearanceX <appearsIn> spaceB """@en ;
     rdfs:domain spot:Space ;
     rdfs:range spot:Space ;
     owl:propertyChainAxiom ( spot:hasAppearance spot:appearsIn ) .
@@ -140,8 +157,9 @@ spot:hasSubspace a owl:ObjectProperty ;
 
 spot:hasAppearance a owl:ObjectProperty ;
     rdfs:label "has appearance"@en ;
-    rdfs:comment "Relates something to its appearance"@en ;
-    rdfs:range spot:Appearance .
+    rdfs:comment "Relates an Entity space to an appearance object"@en ;
+    rdfs:range spot:Appearance ;
+    rdfs:domain spot:EntitySpace .
 
 spot:appearsIn a owl:ObjectProperty ;
     rdfs:label "appears in"@en ;
@@ -172,7 +190,21 @@ spot:hasZAxis a owl:ObjectProperty ;
 
 spot:hasDirection a owl:ObjectProperty ;
     rdfs:label "has direction"@en ;
-    rdfs:comment "Relates a space or axis to a direction"@en ;
-    rdfs:range spot:Direction .
+    rdfs:comment "Defines the direction of an axis. Should only be used for axes of Asset or Document Spaces."@en ;
+    rdfs:range spot:Direction;
+    rdfs:domain [
+    a owl:Class ;
+    owl:intersectionOf (
+        spot:Axis
+        [ a owl:Restriction ;
+          owl:onProperty [ owl:inverseOf spot:hasAxis ] ;
+          owl:someValuesFrom [
+              a owl:Class ;
+              owl:unionOf ( spot:AssetSpace spot:DocumentSpace )
+            ]
+        ]
+    )
+    ] ;
+    .
 
 
