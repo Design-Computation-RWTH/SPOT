@@ -175,16 +175,22 @@ spot:hasAxis a owl:ObjectProperty ;
 
 spot:hasXAxis a owl:ObjectProperty ;
     rdfs:subPropertyOf spot:hasAxis ;
+    rdfs:domain spot:Space ;
+    rdfs:range spot:Axis ;
     rdfs:label "has X axis"@en ;
     rdfs:comment "Relates a space to its X axis"@en .
 
 spot:hasYAxis a owl:ObjectProperty ;
     rdfs:subPropertyOf spot:hasAxis ;
+    rdfs:domain spot:Space ;
+    rdfs:range spot:Axis ;
     rdfs:label "has Y axis"@en ;
     rdfs:comment "Relates a space to its Y axis"@en .
 
 spot:hasZAxis a owl:ObjectProperty ;
     rdfs:subPropertyOf spot:hasAxis ;
+    rdfs:domain spot:Space ;
+    rdfs:range spot:Axis ;
     rdfs:label "has Z axis"@en ;
     rdfs:comment "Relates a space to its Z axis"@en .
 
