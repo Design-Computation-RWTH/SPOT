@@ -149,3 +149,10 @@ spot-am:hasNormalizedCoordinateValue a owl:DatatypeProperty ;
          --> Point '0.5' describes the center of the right area of the Reference Space"""@en ;
     rdfs:domain spot-am:BoundaryPoint ;
     rdfs:range rdfs:Literal .
+
+#Exetensions of SPOT Properties with Property Chain Axioms
+spot:AppearsIn
+    owl:propertyChainAxiom ( spot-am:hasBoundaryPointMapping reloc:directionalRelation );
+    owl:propertyChainAxiom ( spot-am:hasAxisMapping spot-am:hasTargetAxis );
+    .
+
