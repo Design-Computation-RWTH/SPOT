@@ -1,0 +1,446 @@
+{
+  "_comment" : "Created with OWL2VOWL (version 0.3.5), http://vowl.visualdataweb.org",
+  "header" : {
+    "languages" : [ "en" ],
+    "baseIris" : [ "https://w3id.org/spot/am", "http://www.w3.org/1999/02/22-rdf-syntax-ns", "http://www.w3.org/2000/01/rdf-schema", "https://w3id.org/reloc", "https://w3id.org/spot" ],
+    "iri" : "https://w3id.org/spot/am#",
+    "labels" : {
+      "en" : "SPOT-AxisMapping Ontology"
+    },
+    "comments" : {
+      "en" : "An extension to the SPOT Ontology for the explicit definition of axes and boundary point mappings between Entity Spaces and their reference spaces (Entity, Document or Asset Space)."
+    }
+  },
+  "namespace" : [ ],
+  "class" : [ {
+    "id" : "0",
+    "type" : "owl:Class"
+  }, {
+    "id" : "1",
+    "type" : "owl:Class"
+  }, {
+    "id" : "3",
+    "type" : "owl:Thing"
+  }, {
+    "id" : "4",
+    "type" : "owl:Thing"
+  }, {
+    "id" : "10",
+    "type" : "owl:Class"
+  }, {
+    "id" : "14",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "16",
+    "type" : "rdfs:Literal"
+  }, {
+    "id" : "7",
+    "type" : "owl:Class"
+  }, {
+    "id" : "20",
+    "type" : "owl:Class"
+  }, {
+    "id" : "27",
+    "type" : "owl:Class"
+  }, {
+    "id" : "12",
+    "type" : "owl:Class"
+  }, {
+    "id" : "6",
+    "type" : "owl:Class"
+  }, {
+    "id" : "2",
+    "type" : "owl:Class"
+  } ],
+  "classAttribute" : [ {
+    "iri" : "https://w3id.org/spot/am#BoundaryPointMapping",
+    "baseIri" : "https://w3id.org/spot/am",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "BoundaryPointMapping",
+      "en" : "Boundary Point Mapping"
+    },
+    "comment" : {
+      "en" : "The Boundary Point Mapping describes the relation of an Entity Axis Boundary Point (Source Point)\r\n        to the reference space. The relation can be expressed by Directional Properties of the RELOC Ontology\r\n        (e.g., containedInFront/Right/Bottom etc.) and/or as a Normalized Coordinate in relation to the reference space.\r\n        If both properties are given the the normalized coordinate is to be interpreted in the context of the area\r\n        defined by the RELOC Property (e.g., Point <reloc:containedInRight> RefSpace.\r\n        --> '0.5' describes the center of the Right Area of the Reference Space)"
+    },
+    "id" : "0"
+  }, {
+    "iri" : "https://w3id.org/spot/am#MaxBoundaryPoint",
+    "baseIri" : "https://w3id.org/spot/am",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "MaxBoundaryPoint",
+      "en" : "Maximum Boundary Point"
+    },
+    "comment" : {
+      "en" : "A point that represents the maximum/upper boundary of an Entity Space on a specific Axis"
+    },
+    "id" : "1",
+    "superClasses" : [ "2" ]
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#Thing",
+    "baseIri" : "http://owl2vowl.de",
+    "id" : "3",
+    "label" : {
+      "undefined" : "Thing"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2002/07/owl#Thing",
+    "baseIri" : "http://owl2vowl.de",
+    "id" : "4",
+    "label" : {
+      "undefined" : "Thing"
+    }
+  }, {
+    "iri" : "https://w3id.org/spot/am#Accuracy",
+    "baseIri" : "https://w3id.org/spot/am",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Accuracy",
+      "en" : "Accuracy"
+    },
+    "individuals" : [ {
+      "iri" : "https://w3id.org/spot/am#Broad",
+      "baseIri" : "https://w3id.org/spot/am",
+      "comment" : {
+        "en" : "\"Broad accuracy level for axis mapping. The reference axis is the closest match possible,\r\n        but not really parallel."
+      },
+      "labels" : {
+        "IRI-based" : "Broad",
+        "en" : "Broad"
+      }
+    }, {
+      "iri" : "https://w3id.org/spot/am#Exact",
+      "baseIri" : "https://w3id.org/spot/am",
+      "comment" : {
+        "en" : "Exact accuracy level for axis mapping. The axes are parallel to each other. "
+      },
+      "labels" : {
+        "IRI-based" : "Exact",
+        "en" : "Exact"
+      }
+    }, {
+      "iri" : "https://w3id.org/spot/am#Approximate",
+      "baseIri" : "https://w3id.org/spot/am",
+      "comment" : {
+        "en" : "Approximate accuracy level for axis mapping. The axes are almost parallel to each other."
+      },
+      "labels" : {
+        "IRI-based" : "Approximate",
+        "en" : "Approximate"
+      }
+    } ],
+    "comment" : {
+      "en" : "The level of accuracy for an axis mapping. Can be derived from angles if provided."
+    },
+    "id" : "10"
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "baseIri" : "http://www.w3.org/2000/01/rdf-schema",
+    "id" : "14",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
+    "baseIri" : "http://www.w3.org/2000/01/rdf-schema",
+    "id" : "16",
+    "label" : {
+      "IRI-based" : "Literal",
+      "undefined" : "Literal"
+    }
+  }, {
+    "iri" : "https://w3id.org/spot/am#AxisMapping",
+    "baseIri" : "https://w3id.org/spot/am",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "AxisMapping",
+      "en" : "Axis Mapping"
+    },
+    "comment" : {
+      "en" : "The Axis Mapping is related to an Appearance of an Entity Space\r\n    and defines which Axis of the Entity Space (Source Axis) can be mapped to which Axis of the Reference Space\r\n     (another Entity, Document or Asset Space). This relation can be further specified with an angle and accuracy.\r\n     An AxisMapping object can only relate on Source Axis to one Reference Axis.\r\n     Thus, typically, each Entity Space Appearance links to three Axis Mapping objects."
+    },
+    "id" : "7"
+  }, {
+    "iri" : "https://w3id.org/spot#Axis",
+    "baseIri" : "https://w3id.org/spot",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Axis"
+    },
+    "attributes" : [ "external" ],
+    "id" : "20"
+  }, {
+    "iri" : "https://w3id.org/spot#EntitySpace",
+    "baseIri" : "https://w3id.org/spot",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "EntitySpace"
+    },
+    "attributes" : [ "external" ],
+    "id" : "27"
+  }, {
+    "iri" : "https://w3id.org/spot/am#MinBoundaryPoint",
+    "baseIri" : "https://w3id.org/spot/am",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "MinBoundaryPoint",
+      "en" : "Minimum Boundary Point"
+    },
+    "comment" : {
+      "en" : "A point that represents the minimum/lower boundary of an Entity Space on a specific Axis "
+    },
+    "id" : "12",
+    "superClasses" : [ "2" ]
+  }, {
+    "iri" : "https://w3id.org/spot#Appearance",
+    "baseIri" : "https://w3id.org/spot",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Appearance"
+    },
+    "attributes" : [ "external" ],
+    "id" : "6"
+  }, {
+    "iri" : "https://w3id.org/spot/am#BoundaryPoint",
+    "baseIri" : "https://w3id.org/spot/am",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "BoundaryPoint",
+      "en" : "Boundary Point"
+    },
+    "subClasses" : [ "1", "12" ],
+    "comment" : {
+      "en" : "A point that defines a boundary of an Entity Space on a specific Axis. "
+    },
+    "id" : "2"
+  } ],
+  "property" : [ {
+    "id" : "5",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "8",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "9",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "11",
+    "type" : "rdfs:SubClassOf"
+  }, {
+    "id" : "13",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "15",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "17",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "18",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "19",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "21",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "22",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "23",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "24",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "25",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "26",
+    "type" : "owl:objectProperty"
+  } ],
+  "propertyAttribute" : [ {
+    "iri" : "https://w3id.org/spot/am#hasAxisMapping",
+    "baseIri" : "https://w3id.org/spot/am",
+    "range" : "7",
+    "label" : {
+      "IRI-based" : "hasAxisMapping",
+      "en" : "has axis mapping"
+    },
+    "domain" : "6",
+    "comment" : {
+      "en" : "Relates an appearance to an axis mapping object. One appearance can have multiple Axis Mappings. Typically three: For each Entity Axis one."
+    },
+    "attributes" : [ "object" ],
+    "id" : "5"
+  }, {
+    "iri" : "https://w3id.org/reloc#directionalRelation",
+    "baseIri" : "https://w3id.org/reloc",
+    "range" : "3",
+    "label" : {
+      "IRI-based" : "directionalRelation"
+    },
+    "domain" : "3",
+    "attributes" : [ "object", "external" ],
+    "id" : "8"
+  }, {
+    "range" : "2",
+    "domain" : "1",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "9"
+  }, {
+    "range" : "2",
+    "domain" : "12",
+    "attributes" : [ "anonymous", "object" ],
+    "id" : "11"
+  }, {
+    "iri" : "https://w3id.org/spot/am#hasNormalizedCoordinateValue",
+    "baseIri" : "https://w3id.org/spot/am",
+    "range" : "14",
+    "label" : {
+      "IRI-based" : "hasNormalizedCoordinateValue",
+      "en" : "has normalized coordinate value"
+    },
+    "domain" : "2",
+    "comment" : {
+      "en" : "Specifies the position of a boundary point in relation to the reference space as a\r\n        normalized coordinate value (typically between 0 and 1). If the boundary point mapping is additionally\r\n        related by a RELOC property, the normalized value is interpreted in reference to the area described by\r\n        the RELOC property.\r\n        E.g.: Point(Mapping) <reloc:containedInRight> RefSpace. +\r\n        Point(Mapping) <spot-am:hasNormalizedCoordinateValue> '0.5'.\r\n         --> Point '0.5' describes the center of the right area of the Reference Space"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "13"
+  }, {
+    "iri" : "https://w3id.org/spot/am#hasBoundaryPointMapping",
+    "baseIri" : "https://w3id.org/spot/am",
+    "range" : "0",
+    "label" : {
+      "IRI-based" : "hasBoundaryPointMapping",
+      "en" : "has boundary point mapping"
+    },
+    "domain" : "6",
+    "comment" : {
+      "en" : "Relates an appearance to a boundary point mapping. Each appearance can have multiple boundary point mappings.\r\n     For mappings of volume spaces, up to 6 boundary points mappings are usually needed (min and max point of each axis)."
+    },
+    "attributes" : [ "object" ],
+    "id" : "15"
+  }, {
+    "iri" : "https://w3id.org/spot/am#hasSourcePoint",
+    "baseIri" : "https://w3id.org/spot/am",
+    "range" : "2",
+    "label" : {
+      "IRI-based" : "hasSourcePoint",
+      "en" : "has source point"
+    },
+    "domain" : "0",
+    "comment" : {
+      "en" : "Specifies which EntityAxis/ Source boundary point is being mapping"
+    },
+    "attributes" : [ "object" ],
+    "id" : "17"
+  }, {
+    "iri" : "https://w3id.org/spot/am#hasAccuracy",
+    "baseIri" : "https://w3id.org/spot/am",
+    "range" : "10",
+    "label" : {
+      "IRI-based" : "hasAccuracy",
+      "en" : "has accuracy"
+    },
+    "domain" : "7",
+    "comment" : {
+      "en" : "Specifies the accuracy level of an axis mapping."
+    },
+    "attributes" : [ "object" ],
+    "id" : "18"
+  }, {
+    "iri" : "https://w3id.org/spot/am#hasTargetAxis",
+    "baseIri" : "https://w3id.org/spot/am",
+    "range" : "20",
+    "label" : {
+      "IRI-based" : "hasTargetAxis",
+      "en" : "has target axis"
+    },
+    "domain" : "7",
+    "comment" : {
+      "en" : "Specifies to which target axis the source axis is mapped.\r\n    In addition to ( exact to broad) parallelism, this property also expresses that\r\n    both axes are oriented in the same direction. The target axis must be from another space instance\r\n    as the source axis."
+    },
+    "attributes" : [ "object" ],
+    "id" : "19"
+  }, {
+    "iri" : "https://w3id.org/spot#hasAxis",
+    "baseIri" : "https://w3id.org/spot",
+    "range" : "3",
+    "label" : {
+      "IRI-based" : "hasAxis"
+    },
+    "domain" : "3",
+    "attributes" : [ "object", "external" ],
+    "id" : "21"
+  }, {
+    "iri" : "https://w3id.org/spot/am#hasSourceToTargetAngle",
+    "baseIri" : "https://w3id.org/spot/am",
+    "range" : "16",
+    "label" : {
+      "IRI-based" : "hasSourceToTargetAngle",
+      "en" : "has source to target angle"
+    },
+    "domain" : "7",
+    "comment" : {
+      "en" : "Specifies the angle (in degrees) between the source and target axis"
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "22"
+  }, {
+    "iri" : "https://w3id.org/spot/am#hasBoundaryPoint",
+    "baseIri" : "https://w3id.org/spot/am",
+    "range" : "2",
+    "label" : {
+      "IRI-based" : "hasBoundaryPoint",
+      "en" : "has boundary point"
+    },
+    "domain" : "20",
+    "comment" : {
+      "en" : "Relates an axis to a boundary point. These points can than be mapped/related to a reference space.\r\n        Usually, only Axes of Entity Spaces get Boundary Point Definitions."
+    },
+    "attributes" : [ "object" ],
+    "id" : "23"
+  }, {
+    "iri" : "https://w3id.org/spot/am#hasInverseTargetAxis",
+    "baseIri" : "https://w3id.org/spot/am",
+    "range" : "20",
+    "label" : {
+      "IRI-based" : "hasInverseTargetAxis",
+      "en" : "has inverse target axis"
+    },
+    "domain" : "7",
+    "comment" : {
+      "en" : "Specifies that the source axis is mapped to the inverse of the target axis, i.e.\r\n    the source axis points in the opposite/inverse direction of the target axis."
+    },
+    "attributes" : [ "object" ],
+    "id" : "24"
+  }, {
+    "iri" : "https://w3id.org/spot/am#hasSourceAxis",
+    "baseIri" : "https://w3id.org/spot/am",
+    "range" : "4",
+    "label" : {
+      "IRI-based" : "hasSourceAxis",
+      "en" : "has source axis"
+    },
+    "domain" : "7",
+    "comment" : {
+      "en" : "Specifies which Entity Axis/Source axis is being mapped. Only Axes from Entity Spaces should be in the range of this property."
+    },
+    "attributes" : [ "object" ],
+    "id" : "25"
+  }, {
+    "iri" : "https://w3id.org/spot#AppearsIn",
+    "baseIri" : "https://w3id.org/spot",
+    "range" : "3",
+    "label" : {
+      "IRI-based" : "AppearsIn"
+    },
+    "domain" : "3",
+    "attributes" : [ "object", "external" ],
+    "id" : "26"
+  } ]
+}

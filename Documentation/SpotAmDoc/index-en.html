@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+ <link rel="stylesheet" href="resources/primer.css" media="screen" />    <link rel="stylesheet" href="resources/rec.css" media="screen" />    <link rel="stylesheet" href="resources/extra.css" media="screen" />    <link rel="stylesheet" href="resources/owl.css" media="screen" />    <title>SPOTAxisMapping Ontology</title>
+
+
+<!-- SCHEMA.ORG METADATA -->
+<script type="application/ld+json">{"@context":"http://schema.org","@type":"TechArticle","url":"https://w3id.org/spot/am#","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://w3id.org/spot/am#","name":"SPOTAxisMapping Ontology", "headline":"An extension to the SPOT Ontology for the explicit definition of axes and boundary point mappings between Entity Spaces and their reference spaces (Entity, Document or Asset Space).", "datePublished":"01.12.2025", "license":"https://creativecommons.org/licenses/by/4.0/", "author":[{"@type":"Person","name":"Anne Göbels","url":"https://dc.rwth-aachen.de/anne-gobels/"},{"@type":"Person","name":"Oliver Schulz","url":"https://dc.rwth-aachen.de/oliver-schulz/"}]}</script>
+
+<script src="resources/jquery.js"></script> 
+<script src="resources/marked.min.js"></script> 
+    <script> 
+function loadHash() {
+  jQuery(".markdown").each(function(el){jQuery(this).after(marked(jQuery(this).text())).remove()});
+	var hash = location.hash;
+	if($(hash).offset()!=null){
+	  $('html, body').animate({scrollTop: $(hash).offset().top}, 0);
+}
+	loadTOC();
+}
+function loadTOC(){
+	//process toc dynamically
+	  var t='<h2>Table of contents</h2><ul>';i = 1;j=0;
+	  jQuery(".list").each(function(){
+		if(jQuery(this).is('h2')){
+			if(j>0){
+				t+='</ul>';
+				j=0;
+			}
+			t+= '<li>'+i+'. <a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+			i++;
+		}
+		if(jQuery(this).is('h3')){
+			if(j==0){
+				t+='<ul>';
+			}
+			j++;
+			t+= '<li>'+(i-1)+'.'+j+'. '+'<a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+		}
+	  });
+	  t+='</ul>';
+	  $("#toc").html(t); 
+}
+ $.fn.ignore = function(sel){
+        return this.clone().find(sel||">*").remove().end();
+ }; 
+   </script> 
+  </head> 
+
+<body>
+<div class="container">
+<div class="head">
+<div style="float:right">language <a href="index-en.html"><b>en</b></a> </div>
+<h1>SPOTAxisMapping Ontology</h1>
+<h2>Release  01.12.2025</h2>
+
+
+<dl>
+<dt>Latest version:</dt>
+<dd><a href="https://w3id.org/spot/am#">https://w3id.org/spot/am#</a></dd>
+<dt>Authors:</dt>
+<dd><a href="https://dc.rwth-aachen.de/anne-gobels/">Anne Göbels</a>, (<a href="https://dc.rwth-aachen.de/">Design Computation, RWTH Aachen</a>)</dd><dd><a href="https://dc.rwth-aachen.de/oliver-schulz/">Oliver Schulz</a>, (<a href="https://dc.rwth-aachen.de/">Design Computation, RWTH Aachen</a>)</dd>
+
+<dt>Extended Ontologies:</dt>
+<dd><a href="https://w3id.org/spot#">Space Types Ontology </a></dd>
+
+<dt>Download serialization:</dt><dd><span><a href="ontology.json" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span><span><a href="ontology.xml" target="_blank"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span><span><a href="ontology.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" /></a> </span><span><a href="ontology.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span></dd><dt>License: </dt><dd><a href="https://creativecommons.org/licenses/by/4.0/" target="_blank"><img src="https://img.shields.io/badge/License-CC%20BY%204.0-blue.svg" alt="https://creativecommons.org/licenses/by/4.0/" /></a>
+<a href="https://creativecommons.org/licenses/by/4.0/" rel="license" target="_blank">
+<img src="https://mirrors.creativecommons.org/presskit/buttons/88x31/png/by.png" style="border-width:0 ; height:20px; vertical-align:center;" alt="License" />
+</a>
+<br/></dd><dt>Visualization:</dt><dd><a href="webvowl/index.html#" target="_blank"><img src="https://img.shields.io/badge/Visualize_with-WebVowl-blue.svg" alt="Visualize with WebVowl" /></a></dd>
+<!-- <dt>Evaluation:</dt><dd><a href="OOPSEvaluation/OOPSeval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd> --></dl>
+
+<hr/>
+</div>
+<div class="status">
+<div>
+<span>Ontology Specification Draft</span>
+</div>
+</div>     <div id="abstract"><h2>Abstract</h2><span class="markdown">
+An extension to the Space Types Ontology (SPOT) for the explicit definition of axes and boundary point mappings between Entity Spaces and their reference spaces (Entity, Document or Asset Space).</span>
+</div>
+<div id="toc"></div> 
+
+<!--INTRODUCTION SECTION-->
+    <div id="introduction"><h2 id="intro" class="list">Introduction <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+This is a place holder text for the introduction. The introduction should briefly describe the ontology, its motivation, state of the art and goals.</span>
+<div id="namespacedeclarations">
+<h3 id="ns" class="list">Namespace declarations</h3>
+<div id="ns" align="center">
+<table>
+<caption> <a href="#ns"> Table 1</a>: Namespaces used in the document </caption>
+<tbody>
+<tr><td><b>spot-am</b></td><td>&lt;https://w3id.org/spot/am#&gt;</td></tr>
+<tr><td><b>owl</b></td><td>&lt;http://www.w3.org/2002/07/owl&gt;</td></tr>
+<tr><td><b>rdf</b></td><td>&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns&gt;</td></tr>
+<tr><td><b>spot</b></td><td>&lt;https://w3id.org/spot&gt;</td></tr>
+<tr><td><b>xsd</b></td><td>&lt;http://www.w3.org/2001/XMLSchema&gt;</td></tr>
+<tr><td><b>rdfs</b></td><td>&lt;http://www.w3.org/2000/01/rdf-schema&gt;</td></tr>
+<tr><td><b>reloc</b></td><td>&lt;https://w3id.org/reloc&gt;</td></tr>
+<tr><td><b>default namespace</b></td><td>&lt;https://w3id.org/spot/am&gt;</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+  
+
+<!--OVERVIEW SECTION-->
+    <div id="overview"><h2 id="overv" class="list">SPOT-AM Ontology: Overview <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+This ontology has the following classes and properties.</span>
+<h4>Classes</h4>
+<ul class="hlist">
+   <li>
+      <a href="#Accuracy" title="https://w3id.org/spot/am#Accuracy">Accuracy</a>
+   </li>
+   <li>
+      <a href="#AxisMapping" title="https://w3id.org/spot/am#AxisMapping">Axis Mapping</a>
+   </li>
+   <li>
+      <a href="#BoundaryPoint" title="https://w3id.org/spot/am#BoundaryPoint">Boundary Point</a>
+   </li>
+   <li>
+      <a href="#BoundaryPointMapping" title="https://w3id.org/spot/am#BoundaryPointMapping">Boundary Point Mapping</a>
+   </li>
+   <li>
+      <a href="#MaxBoundaryPoint" title="https://w3id.org/spot/am#MaxBoundaryPoint">Maximum Boundary Point</a>
+   </li>
+   <li>
+      <a href="#MinBoundaryPoint" title="https://w3id.org/spot/am#MinBoundaryPoint">Minimum Boundary Point</a>
+   </li>
+</ul><h4>Object Properties</h4><ul class="hlist">
+   <li>
+      <a href="#https://w3id.org/spot#AppearsIn" title="https://w3id.org/spot#AppearsIn">
+         <span>appears in</span>
+      </a>
+   </li>
+   <li>
+      <a href="#hasAccuracy" title="https://w3id.org/spot/am#hasAccuracy">has accuracy</a>
+   </li>
+   <li>
+      <a href="#hasAxisMapping" title="https://w3id.org/spot/am#hasAxisMapping">has axis mapping</a>
+   </li>
+   <li>
+      <a href="#hasBoundaryPoint" title="https://w3id.org/spot/am#hasBoundaryPoint">has boundary point</a>
+   </li>
+   <li>
+      <a href="#hasBoundaryPointMapping" title="https://w3id.org/spot/am#hasBoundaryPointMapping">has boundary point mapping</a>
+   </li>
+   <li>
+      <a href="#hasInverseTargetAxis" title="https://w3id.org/spot/am#hasInverseTargetAxis">has inverse target axis</a>
+   </li>
+   <li>
+      <a href="#hasSourceAxis" title="https://w3id.org/spot/am#hasSourceAxis">has source axis</a>
+   </li>
+   <li>
+      <a href="#hasSourcePoint" title="https://w3id.org/spot/am#hasSourcePoint">has source point</a>
+   </li>
+   <li>
+      <a href="#hasTargetAxis" title="https://w3id.org/spot/am#hasTargetAxis">has target axis</a>
+   </li>
+</ul><h4>Data Properties</h4><ul class="hlist">
+   <li>
+      <a href="#hasNormalizedCoordinateValue"
+         title="https://w3id.org/spot/am#hasNormalizedCoordinateValue">has normalized coordinate value</a>
+   </li>
+   <li>
+      <a href="#hasSourceToTargetAngle" title="https://w3id.org/spot/am#hasSourceToTargetAngle">has source to target angle</a>
+   </li>
+</ul><h4>Named Individuals</h4><ul class="hlist">
+   <li>
+      <a href="#Approximate" title="https://w3id.org/spot/am#Approximate">Approximate</a>
+   </li>
+   <li>
+      <a href="#Broad" title="https://w3id.org/spot/am#Broad">Broad</a>
+   </li>
+   <li>
+      <a href="#Exact" title="https://w3id.org/spot/am#Exact">Exact</a>
+   </li>
+</ul><iframe align="center" width="100%" height ="500px" src="webvowl/index.html"></iframe> 
+</div>
+  
+
+<!--DESCRIPTION SECTION-->
+    <div id="description"><h2 id="desc" class="list">SPOT-AM Ontology: Description <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+This is a placeholder text for the description of your ontology. The description should include an explanation and a diagram explaining how the classes are related, examples of usage, etc.</span>
+
+</div>
+   
+
+<!--CROSSREF SECTION-->
+   <div id="crossref"><h2 id="crossreference" class="list">Cross reference for SPOT-AM Ontology classes, properties and dataproperties <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+This section provides details for each class and property defined by SPOT-AM Ontology.
+<div id="classes">
+   <h3 id="classes-headline" class="list">Classes</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#Accuracy" title="https://w3id.org/spot/am#Accuracy">Accuracy</a>
+      </li>
+      <li>
+         <a href="#AxisMapping" title="https://w3id.org/spot/am#AxisMapping">Axis Mapping</a>
+      </li>
+      <li>
+         <a href="#BoundaryPoint" title="https://w3id.org/spot/am#BoundaryPoint">Boundary Point</a>
+      </li>
+      <li>
+         <a href="#BoundaryPointMapping" title="https://w3id.org/spot/am#BoundaryPointMapping">Boundary Point Mapping</a>
+      </li>
+      <li>
+         <a href="#MaxBoundaryPoint" title="https://w3id.org/spot/am#MaxBoundaryPoint">Maximum Boundary Point</a>
+      </li>
+      <li>
+         <a href="#MinBoundaryPoint" title="https://w3id.org/spot/am#MinBoundaryPoint">Minimum Boundary Point</a>
+      </li>
+   </ul>
+   <div class="entity" id="Accuracy">
+      <h3>Accuracy<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/spot/am#Accuracy</p>
+      <div class="comment">
+         <span class="markdown">The level of accuracy for an axis mapping. Can be derived from angles if provided.</span>
+      </div>
+      <dl class="description">
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#hasAccuracy" title="https://w3id.org/spot/am#hasAccuracy">has accuracy</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>has members</dt>
+         <dd>
+            <a href="#Approximate" title="https://w3id.org/spot/am#Approximate">Approximate</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#Broad" title="https://w3id.org/spot/am#Broad">Broad</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#Exact" title="https://w3id.org/spot/am#Exact">Exact</a>
+            <sup class="type-ni" title="named individual">ni</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="AxisMapping">
+      <h3>Axis Mapping<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/spot/am#AxisMapping</p>
+      <div class="comment">
+         <span class="markdown">The Axis Mapping is related to an Appearance of an Entity Space
+    and defines which Axis of the Entity Space (Source Axis) can be mapped to which Axis of the Reference Space
+     (another Entity, Document or Asset Space). This relation can be further specified with an angle and accuracy.
+     An AxisMapping object can only relate on Source Axis to one Reference Axis.
+     Thus, typically, each Entity Space Appearance links to three Axis Mapping objects.</span>
+      </div>
+      <dl class="description">
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#hasAccuracy" title="https://w3id.org/spot/am#hasAccuracy">has accuracy</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasInverseTargetAxis" title="https://w3id.org/spot/am#hasInverseTargetAxis">has inverse target axis</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasSourceAxis" title="https://w3id.org/spot/am#hasSourceAxis">has source axis</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasSourceToTargetAngle" title="https://w3id.org/spot/am#hasSourceToTargetAngle">has source to target angle</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#hasTargetAxis" title="https://w3id.org/spot/am#hasTargetAxis">has target axis</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#hasAxisMapping" title="https://w3id.org/spot/am#hasAxisMapping">has axis mapping</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="BoundaryPoint">
+      <h3>Boundary Point<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/spot/am#BoundaryPoint</p>
+      <div class="comment">
+         <span class="markdown">A point that defines a boundary of an Entity Space on a specific Axis. </span>
+      </div>
+      <dl class="description">
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#MaxBoundaryPoint" title="https://w3id.org/spot/am#MaxBoundaryPoint">Maximum Boundary Point</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#MinBoundaryPoint" title="https://w3id.org/spot/am#MinBoundaryPoint">Minimum Boundary Point</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#hasNormalizedCoordinateValue"
+               title="https://w3id.org/spot/am#hasNormalizedCoordinateValue">has normalized coordinate value</a>
+            <sup class="type-dp" title="data property">dp</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#hasBoundaryPoint" title="https://w3id.org/spot/am#hasBoundaryPoint">has boundary point</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasSourcePoint" title="https://w3id.org/spot/am#hasSourcePoint">has source point</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="BoundaryPointMapping">
+      <h3>Boundary Point Mapping<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/spot/am#BoundaryPointMapping</p>
+      <div class="comment">
+         <span class="markdown">The Boundary Point Mapping describes the relation of an Entity Axis Boundary Point (Source Point)
+        to the reference space. The relation can be expressed by Directional Properties of the RELOC Ontology
+        (e.g., containedInFront/Right/Bottom etc.) and/or as a Normalized Coordinate in relation to the reference space.
+        If both properties are given the the normalized coordinate is to be interpreted in the context of the area
+        defined by the RELOC Property (e.g., Point &lt;reloc:containedInRight&gt; RefSpace.
+        --&gt; '0.5' describes the center of the Right Area of the Reference Space)</span>
+      </div>
+      <dl class="description">
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#hasSourcePoint" title="https://w3id.org/spot/am#hasSourcePoint">has source point</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#hasBoundaryPointMapping" title="https://w3id.org/spot/am#hasBoundaryPointMapping">has boundary point mapping</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="MaxBoundaryPoint">
+      <h3>Maximum Boundary Point<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/spot/am#MaxBoundaryPoint</p>
+      <div class="comment">
+         <span class="markdown">A point that represents the maximum/upper boundary of an Entity Space on a specific Axis</span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#BoundaryPoint" title="https://w3id.org/spot/am#BoundaryPoint">Boundary Point</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="MinBoundaryPoint">
+      <h3>Minimum Boundary Point<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/spot/am#MinBoundaryPoint</p>
+      <div class="comment">
+         <span class="markdown">A point that represents the minimum/lower boundary of an Entity Space on a specific Axis </span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#BoundaryPoint" title="https://w3id.org/spot/am#BoundaryPoint">Boundary Point</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+</div><div id="objectproperties">
+   <h3 id="properties" class="list">Object Properties</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#https://w3id.org/spot#AppearsIn" title="https://w3id.org/spot#AppearsIn">
+            <span>appears in</span>
+         </a>
+      </li>
+      <li>
+         <a href="#hasAccuracy" title="https://w3id.org/spot/am#hasAccuracy">has accuracy</a>
+      </li>
+      <li>
+         <a href="#hasAxisMapping" title="https://w3id.org/spot/am#hasAxisMapping">has axis mapping</a>
+      </li>
+      <li>
+         <a href="#hasBoundaryPoint" title="https://w3id.org/spot/am#hasBoundaryPoint">has boundary point</a>
+      </li>
+      <li>
+         <a href="#hasBoundaryPointMapping" title="https://w3id.org/spot/am#hasBoundaryPointMapping">has boundary point mapping</a>
+      </li>
+      <li>
+         <a href="#hasInverseTargetAxis" title="https://w3id.org/spot/am#hasInverseTargetAxis">has inverse target axis</a>
+      </li>
+      <li>
+         <a href="#hasSourceAxis" title="https://w3id.org/spot/am#hasSourceAxis">has source axis</a>
+      </li>
+      <li>
+         <a href="#hasSourcePoint" title="https://w3id.org/spot/am#hasSourcePoint">has source point</a>
+      </li>
+      <li>
+         <a href="#hasTargetAxis" title="https://w3id.org/spot/am#hasTargetAxis">has target axis</a>
+      </li>
+   </ul>
+   <div class="entity" id="https://w3id.org/spot#AppearsIn">
+      <h3>appears in<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/spot#AppearsIn</p>
+      <div class="description">
+         <dl>
+            <dt>has sub-property chains</dt>
+            <dd>
+               <a href="#hasAxisMapping" title="https://w3id.org/spot/am#hasAxisMapping">has axis mapping</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">o</span> 
+               <a href="#hasTargetAxis" title="https://w3id.org/spot/am#hasTargetAxis">has target axis</a>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+            <dd>
+               <a href="#hasBoundaryPointMapping" title="https://w3id.org/spot/am#hasBoundaryPointMapping">has boundary point mapping</a>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">o</span>
+
+               <span class="dotted"><a target="_blank" href="https://w3id.org/reloc#directionalRelation"  title="https://w3id.org/reloc#directionalRelation">directional relation</a></span>
+               <sup class="type-op" title="object property">op</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasAccuracy">
+      <h3>has accuracy<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/spot/am#hasAccuracy</p>
+      <div class="comment">
+         <span class="markdown">Specifies the accuracy level of an axis mapping.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#AxisMapping" title="https://w3id.org/spot/am#AxisMapping">Axis Mapping</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Accuracy" title="https://w3id.org/spot/am#Accuracy">Accuracy</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasAxisMapping">
+      <h3>has axis mapping<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/spot/am#hasAxisMapping</p>
+      <div class="comment">
+         <span class="markdown">Relates an appearance to an axis mapping object. One appearance can have multiple Axis Mappings. Typically three: For each Entity Axis one.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <span class="dotted"><a href="https://w3id.org/spot#Appearance" target="_blank">Appearance</a></span>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#AxisMapping" title="https://w3id.org/spot/am#AxisMapping">Axis Mapping</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasBoundaryPoint">
+      <h3>has boundary point<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/spot/am#hasBoundaryPoint</p>
+      <div class="comment">
+         <span class="markdown">Relates an axis to a boundary point. These points can than be mapped/related to a reference space.
+        Usually, only Axes of Entity Spaces get Boundary Point Definitions.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <span class="dotted"><a href="https://w3id.org/spot#Axis" target="_blank">Axis</a></span>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#BoundaryPoint" title="https://w3id.org/spot/am#BoundaryPoint">Boundary Point</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasBoundaryPointMapping">
+      <h3>has boundary point mapping<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/spot/am#hasBoundaryPointMapping</p>
+      <div class="comment">
+         <span class="markdown">Relates an appearance to a boundary point mapping. Each appearance can have multiple boundary point mappings.
+     For mappings of volume spaces, up to 6 boundary points mappings are usually needed (min and max point of each axis).</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <span class="dotted"><a href="https://w3id.org/spot#Appearance" target="_blank">Appearance</a></span>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#BoundaryPointMapping" title="https://w3id.org/spot/am#BoundaryPointMapping">Boundary Point Mapping</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasInverseTargetAxis">
+      <h3>has inverse target axis<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/spot/am#hasInverseTargetAxis</p>
+      <div class="comment">
+         <span class="markdown">Specifies that the source axis is mapped to the inverse of the target axis, i.e.
+    the source axis points in the opposite/inverse direction of the target axis.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#AxisMapping" title="https://w3id.org/spot/am#AxisMapping">Axis Mapping</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted"><a href="https://w3id.org/spot#Axis" target="_blank">Axis</a></span>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasSourceAxis">
+      <h3>has source axis<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/spot/am#hasSourceAxis</p>
+      <div class="comment">
+         <span class="markdown">Specifies which Entity Axis/Source axis is being mapped. Only Axes from Entity Spaces should be in the range of this property.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#AxisMapping" title="https://w3id.org/spot/am#AxisMapping">Axis Mapping</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted"><a href="https://w3id.org/spot#Axis" target="_blank">Axis</a></span>
+               <sup class="type-c" title="class">c</sup> 
+               <span class="logic">and</span> (<span class="logic">inverse</span>
+               <span class="dotted"><a href="https://w3id.org/spot#hasAxis" target="_blank">has axis</a></span>
+               <sup class="type-op" title="object property">op</sup> 
+               <span class="logic">some</span>
+               <span class="dotted"><a href="https://w3id.org/spot#EntitySpace" target="_blank">Entity Space</a></span>
+               <sup class="type-c" title="class">c</sup>)</dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasSourcePoint">
+      <h3>has source point<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/spot/am#hasSourcePoint</p>
+      <div class="comment">
+         <span class="markdown">Specifies which EntityAxis/ Source boundary point is being mapping</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#BoundaryPointMapping" title="https://w3id.org/spot/am#BoundaryPointMapping">Boundary Point Mapping</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#BoundaryPoint" title="https://w3id.org/spot/am#BoundaryPoint">Boundary Point</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasTargetAxis">
+      <h3>has target axis<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/spot/am#hasTargetAxis</p>
+      <div class="comment">
+         <span class="markdown">Specifies to which target axis the source axis is mapped.
+    In addition to ( exact to broad) parallelism, this property also expresses that
+    both axes are oriented in the same direction. The target axis must be from another space instance
+    as the source axis.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#AxisMapping" title="https://w3id.org/spot/am#AxisMapping">Axis Mapping</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted"><a href="https://w3id.org/spot#Axis" target="_blank">Axis</a></span>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+</div><div id="dataproperties">
+   <h3 id="dataproperties-headline" class="list">Data Properties</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#hasNormalizedCoordinateValue"
+            title="https://w3id.org/spot/am#hasNormalizedCoordinateValue">has normalized coordinate value</a>
+      </li>
+      <li>
+         <a href="#hasSourceToTargetAngle" title="https://w3id.org/spot/am#hasSourceToTargetAngle">has source to target angle</a>
+      </li>
+   </ul>
+   <div class="entity" id="hasNormalizedCoordinateValue">
+      <h3>has normalized coordinate value<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/spot/am#hasNormalizedCoordinateValue</p>
+      <div class="comment">
+         <span class="markdown">Specifies the position of a boundary point in relation to the reference space as a
+        normalized coordinate value (typically between 0 and 1). If the boundary point mapping is additionally
+        related by a RELOC property, the normalized value is interpreted in reference to the area described by
+        the RELOC property.
+        E.g.: Point(Mapping) &lt;reloc:containedInRight&gt; RefSpace. +
+        Point(Mapping) &lt;spot-am:hasNormalizedCoordinateValue&gt; '0.5'.
+         --&gt; Point '0.5' describes the center of the right area of the Reference Space</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#BoundaryPoint" title="https://w3id.org/spot/am#BoundaryPoint">Boundary Point</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2000/01/rdf-schema#Literal">literal</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="hasSourceToTargetAngle">
+      <h3>has source to target angle<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/spot/am#hasSourceToTargetAngle</p>
+      <div class="comment">
+         <span class="markdown">Specifies the angle (in degrees) between the source and target axis</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#AxisMapping" title="https://w3id.org/spot/am#AxisMapping">Axis Mapping</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2000/01/rdf-schema#Literal">literal</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
+</div><div id="namedindividuals">
+   <h3 id="namedindividuals" class="list">Named Individuals</h3>
+   <ul class="hlist">
+      <li>
+         <a href="#Approximate" title="https://w3id.org/spot/am#Approximate">Approximate</a>
+      </li>
+      <li>
+         <a href="#Broad" title="https://w3id.org/spot/am#Broad">Broad</a>
+      </li>
+      <li>
+         <a href="#Exact" title="https://w3id.org/spot/am#Exact">Exact</a>
+      </li>
+   </ul>
+   <div class="entity" id="Approximate">
+      <h3>Approximate<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/spot/am#Approximate</p>
+      <div class="comment">
+         <span class="markdown">Approximate accuracy level for axis mapping. The axes are almost parallel to each other.</span>
+      </div>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#Accuracy" title="https://w3id.org/spot/am#Accuracy">Accuracy</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Broad">
+      <h3>Broad<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/spot/am#Broad</p>
+      <div class="comment">
+         <span class="markdown">"Broad accuracy level for axis mapping. The reference axis is the closest match possible,
+        but not really parallel.</span>
+      </div>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#Accuracy" title="https://w3id.org/spot/am#Accuracy">Accuracy</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Exact">
+      <h3>Exact<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/spot/am#Exact</p>
+      <div class="comment">
+         <span class="markdown">Exact accuracy level for axis mapping. The axes are parallel to each other. </span>
+      </div>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#Accuracy" title="https://w3id.org/spot/am#Accuracy">Accuracy</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+</div><div id="legend">
+<h2>Legend <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<div   class="entity">
+<sup class="type-c" title="Classes">c</sup>: Classes <br/>
+<sup class="type-op" title="Object Properties">op</sup>: Object Properties <br/>
+<sup class="type-dp" title="Data Properties">dp</sup>: Data Properties <br/>
+<sup class="type-ni" title="Named Individuals">ni</sup>: Named Individuals
+</div>
+</div>
+</div>
+    
+
+<!--REFERENCES SECTION-->
+  <div id="references">
+<h2 id="ref" class="list">References <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+Add your references here. It is recommended to have them as a list.</span>
+
+</div>
+<div id="acknowledgements">
+<h2 id="ack" class="list">Acknowledgements <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<p>
+The authors would like to thank <a href="http://www.essepuntato.it/">Silvio Peroni</a> for developing <a href="http://www.essepuntato.it/lode">LODE</a>, a Live OWL Documentation Environment, which is used for representing the Cross Referencing Section of this document and <a href="https://w3id.org/people/dgarijo">Daniel Garijo</a> for developing <a href="https://github.com/dgarijo/Widoco">Widoco</a>, the program used to create the template used in this documentation.</p>
+</div>
+
+
+</div>
+</body>
+</html>
