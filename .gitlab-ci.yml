@@ -11,7 +11,7 @@ pages:
   stage: deploy
   environment: production
   script:
-    - echo "The site will be deployed to $CI_PAGES_URL"
+    - mkdir -p public
     - cp Documentation/SpaceTypeOntologyDoc/index-en.html public/index.html
     - echo "The site will be deployed to $CI_PAGES_URL"
   artifacts:
