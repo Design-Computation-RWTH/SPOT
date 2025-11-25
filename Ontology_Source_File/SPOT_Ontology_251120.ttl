@@ -3,12 +3,42 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix schema: <http://schema.org/> .
 
 # Ontology Declaration
-<https://w3id.org/spot#> a owl:Ontology ;
+<https://w3id.org/spot/> a owl:Ontology ;
     rdfs:label "SPOT Ontology"@en ;
-    rdfs:comment """Space Types Ontology for describing spaces, appearances, and their relationships,
-        in the context of the AECO domain"""@en .
+    rdfs:comment """Space Types Ontology (SPOT) for describing spaces, appearances, and their relationships,
+        in the context of the AECO domain"""@en ;
+       dcterms:created "2025-12-01" ;
+        dcterms:creator [
+            a schema:Person;
+            schema:name "Anne Göbels";
+            schema:url "https://dc.rwth-aachen.de/anne-gobels/";
+            schema:affiliation [
+                a schema:Organization;
+                schema:name "Design Computation, RWTH Aachen University";
+                schema:url "https://dc.rwth-aachen.de/"
+                        ]
+               ]
+         ,[
+            a schema:Person;
+            schema:name "Oliver Schulz";
+            schema:url "https://dc.rwth-aachen.de/oliver-schulz/";
+            schema:affiliation [
+                a schema:Organization;
+                schema:name "Design Computation, RWTH Aachen University";
+                schema:url "https://dc.rwth-aachen.de/"
+                        ]
+        ] ;
+       dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+       dcterms:title "Space Types Ontology"@en ;
+       vann:preferredNamespacePrefix "spot" ;
+       vann:preferredNamespaceUri <https://w3id.org/spot#> ;
+       owl:versionInfo "1.0.0" .
+
 
 # Classes
 

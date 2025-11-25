@@ -5,12 +5,43 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix reloc: <https://w3id.org/reloc#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix voaf:  <http://purl.org/vocommons/voaf#> .
+@prefix schema: <http://schema.org/> .
 
 # Ontology Declaration
-<https://w3id.org/spot/am#> a owl:Ontology ;
-    rdfs:label "SPOT-AxisMapping Ontology"@en ;
-    rdfs:comment "An extension to the SPOT Ontology for the explicit definition of axes and boundary point mappings between Entity Spaces and their reference spaces (Entity, Document or Asset Space)."@en ;
-    owl:imports <https://w3id.org/spot#> .
+<https://w3id.org/spot/am> a owl:Ontology ;
+    rdfs:label "SPOT Axis Mapping Ontology"@en ;
+    rdfs:comment "An extension to the Space Types Ontology (SPOT) for the explicit definition of axes and boundary point mappings between Entity Spaces and their reference spaces (Entity, Document or Asset Space)."@en ;
+    owl:imports <https://w3id.org/spot/> ;
+    voaf:extends <https://w3id.org/spot/> ;
+    dcterms:created "2025-12-01" ;
+    dcterms:creator [
+            a schema:Person;
+            schema:name "Anne Göbels";
+            schema:url "https://dc.rwth-aachen.de/anne-gobels/";
+            schema:affiliation [
+                a schema:Organization;
+                schema:name "Design Computation, RWTH Aachen University";
+                schema:url "https://dc.rwth-aachen.de/"
+                        ]
+               ]
+         ,[
+            a schema:Person;
+            schema:name "Oliver Schulz";
+            schema:url "https://dc.rwth-aachen.de/oliver-schulz/";
+            schema:affiliation [
+                a schema:Organization;
+                schema:name "Design Computation, RWTH Aachen University";
+                schema:url "https://dc.rwth-aachen.de/"
+                        ]
+        ] ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:title "Space Types Axis Mapping Ontology"@en ;
+    vann:preferredNamespacePrefix "spot-am" ;
+    vann:preferredNamespaceUri <https://w3id.org/spot/am#> ;
+    owl:versionInfo "1.0.0" .
 
 # Classes
 spot-am:AxisMapping a owl:Class ;

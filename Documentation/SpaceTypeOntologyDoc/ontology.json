@@ -1,29 +1,71 @@
 [ {
   "@id" : "_:genid1",
+  "@type" : [ "http://schema.org/Person" ],
+  "http://schema.org/affiliation" : [ {
+    "@id" : "_:genid2"
+  } ],
+  "http://schema.org/name" : [ {
+    "@value" : "Anne Göbels"
+  } ],
+  "http://schema.org/url" : [ {
+    "@value" : "https://dc.rwth-aachen.de/anne-gobels/"
+  } ]
+}, {
+  "@id" : "_:genid2",
+  "@type" : [ "http://schema.org/Organization" ],
+  "http://schema.org/name" : [ {
+    "@value" : "Design Computation, RWTH Aachen University"
+  } ],
+  "http://schema.org/url" : [ {
+    "@value" : "https://dc.rwth-aachen.de/"
+  } ]
+}, {
+  "@id" : "_:genid3",
+  "@type" : [ "http://schema.org/Person" ],
+  "http://schema.org/affiliation" : [ {
+    "@id" : "_:genid4"
+  } ],
+  "http://schema.org/name" : [ {
+    "@value" : "Oliver Schulz"
+  } ],
+  "http://schema.org/url" : [ {
+    "@value" : "https://dc.rwth-aachen.de/oliver-schulz/"
+  } ]
+}, {
+  "@id" : "_:genid4",
+  "@type" : [ "http://schema.org/Organization" ],
+  "http://schema.org/name" : [ {
+    "@value" : "Design Computation, RWTH Aachen University"
+  } ],
+  "http://schema.org/url" : [ {
+    "@value" : "https://dc.rwth-aachen.de/"
+  } ]
+}, {
+  "@id" : "_:genid5",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
     "@list" : [ {
       "@id" : "https://w3id.org/spot#Axis"
     }, {
-      "@id" : "_:genid3"
+      "@id" : "_:genid7"
     } ]
   } ]
 }, {
-  "@id" : "_:genid3",
+  "@id" : "_:genid7",
   "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
   "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "_:genid4"
+    "@id" : "_:genid8"
   } ],
   "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "_:genid5"
+    "@id" : "_:genid9"
   } ]
 }, {
-  "@id" : "_:genid4",
+  "@id" : "_:genid8",
   "http://www.w3.org/2002/07/owl#inverseOf" : [ {
     "@id" : "https://w3id.org/spot#hasAxis"
   } ]
 }, {
-  "@id" : "_:genid5",
+  "@id" : "_:genid9",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#unionOf" : [ {
     "@list" : [ {
@@ -33,16 +75,38 @@
     } ]
   } ]
 }, {
-  "@id" : "https://w3id.org/spot#",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "Space Types Ontology for describing spaces, appearances, and their relationships,\r\n        in the context of the AECO domain"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "SPOT Ontology"
-  } ]
+  "@id" : "http://purl.org/dc/terms/created",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/creator",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/license",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/title",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/vocab/vann/preferredNamespacePrefix",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/vocab/vann/preferredNamespaceUri",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://schema.org/Organization",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://schema.org/Person",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://schema.org/affiliation",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://schema.org/name",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://schema.org/url",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
   "@id" : "https://w3id.org/spot#Appearance",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
@@ -394,7 +458,7 @@
     "@value" : "Defines the direction of an axis. Should only be used for axes of Asset or Document Spaces."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid1"
+    "@id" : "_:genid5"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -506,5 +570,40 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
     "@id" : "https://w3id.org/spot#hasAxis"
+  } ]
+}, {
+  "@id" : "https://w3id.org/spot/",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@value" : "2025-12-01"
+  } ],
+  "http://purl.org/dc/terms/creator" : [ {
+    "@id" : "_:genid1"
+  }, {
+    "@id" : "_:genid3"
+  } ],
+  "http://purl.org/dc/terms/license" : [ {
+    "@id" : "https://creativecommons.org/licenses/by/4.0/"
+  } ],
+  "http://purl.org/dc/terms/title" : [ {
+    "@language" : "en",
+    "@value" : "Space Types Ontology"
+  } ],
+  "http://purl.org/vocab/vann/preferredNamespacePrefix" : [ {
+    "@value" : "spot"
+  } ],
+  "http://purl.org/vocab/vann/preferredNamespaceUri" : [ {
+    "@id" : "https://w3id.org/spot#"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Space Types Ontology (SPOT) for describing spaces, appearances, and their relationships,\r\n        in the context of the AECO domain"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "SPOT Ontology"
+  } ],
+  "http://www.w3.org/2002/07/owl#versionInfo" : [ {
+    "@value" : "1.0.0"
   } ]
 } ]

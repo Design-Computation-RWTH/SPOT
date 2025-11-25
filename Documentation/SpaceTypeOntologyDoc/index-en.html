@@ -6,7 +6,7 @@
 
 
 <!-- SCHEMA.ORG METADATA -->
-<script type="application/ld+json">{"@context":"http://schema.org","@type":"TechArticle","url":"https://w3id.org/spot#","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://w3id.org/spot#","name":"Space Types Ontology", "headline":"Space Types Ontology for describing spaces, appearances, and their relationships,", "datePublished":"01.12.2025", "license":"https://creativecommons.org/licenses/by/4.0/", "author":[{"@type":"Person","name":"Anne Göbels","url":"https://dc.rwth-aachen.de/anne-gobels/"},{"@type":"Person","name":"Oliver Schulz","url":"https://dc.rwth-aachen.de/oliver-schulz/"}]}</script>
+<script type="application/ld+json">{"@context":"http://schema.org","@type":"TechArticle","url":"https://w3id.org/spot#","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://w3id.org/spot#","name":"Space Types Ontology", "headline":"Space Types Ontology for describing spaces, appearances, and their relationships,", "datePublished":"01.12.2025", "version":"1.0.0", "license":"https://creativecommons.org/licenses/by/4.0", "author":[{"@type":"Person","name":"Anne Göbels","url":"https://dc.rwth-aachen.de/anne-gobels/"},{"@type":"Person","name":"Oliver Schulz","url":"https://dc.rwth-aachen.de/oliver-schulz/"}]}</script>
 
 <script src="resources/jquery.js"></script> 
 <script src="resources/marked.min.js"></script> 
@@ -56,18 +56,23 @@ function loadTOC(){
 <h2>Release  01.12.2025</h2>
 
 
-<dt>This Version URI</dt>
+<dl>
+<dt>Latest version:</dt>
 <dd><a href="https://w3id.org/spot#">https://w3id.org/spot#</a></dd>
+<dt>Revision:</dt>
+<dd>1.0.0</dd>
 <dt>Authors:</dt>
-<dd><a href="https://dc.rwth-aachen.de/anne-gobels/">Anne Göbels</a>, (<a href="https://dc.rwth-aachen.de/">Design Computation, RWTH Aachen</a>)</dd><dd><a href="https://dc.rwth-aachen.de/oliver-schulz/">Oliver Schulz</a>,(<a href="https://dc.rwth-aachen.de/">Design Computation, RWTH Aachen</a>) </dd>
+<dd><a href="https://dc.rwth-aachen.de/anne-gobels/">Anne Göbels</a>, (<a href="https://dc.rwth-aachen.de/">Design Computation, RWTH Aachen</a>)</dd><dd><a href="https://dc.rwth-aachen.de/oliver-schulz/">Oliver Schulz</a>, (<a href="https://dc.rwth-aachen.de/">Design Computation, RWTH Aachen</a>)</dd>
 
-<dt>Download serialization:</dt><dd><span><a href="ontology.json" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span><span><a href="ontology.xml" target="_blank"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span><span><a href="ontology.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" /></a> </span><span><a href="ontology.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span></dd><dt>License: </dt><dd><a href="https://creativecommons.org/licenses/by/4.0/" target="_blank"><img src="https://img.shields.io/badge/License-CC%20BY%204.0-blue.svg" alt="https://creativecommons.org/licenses/by/4.0/" /></a>
-<a href="https://creativecommons.org/licenses/by/4.0/" rel="license" target="_blank">
-<img src="https://mirrors.creativecommons.org/presskit/buttons/88x31/png/by.png" style="border-width:0 ; height:20px; vertical-align:center;" alt="License" />
+<dt>Download serialization:</dt><dd><span><a href="ontology.json" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span><span><a href="ontology.xml" target="_blank"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span><span><a href="ontology.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" /></a> </span><span><a href="ontology.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span></dd><dt>License: </dt><dd><a href="https://creativecommons.org/licenses/by/4.0" target="_blank"><img src="https://img.shields.io/badge/License-CC%20BY%204.0-blue.svg" alt="https://creativecommons.org/licenses/by/4.0" /></a>
+<a href="https://creativecommons.org/licenses/by/4.0" rel="license" target="_blank">
+<img src="https://mirrors.creativecommons.org/presskit/buttons/88x31/png/by.png" style="border-width:0 ; height:20px; vertical-align:center;"
+ alt="License" />
 </a>
 <br/></dd><dt>Visualization:</dt><dd><a href="webvowl/index.html#" target="_blank"><img src="https://img.shields.io/badge/Visualize_with-WebVowl-blue.svg" alt="Visualize with WebVowl" /></a></dd>
 <!-- <dt>Evaluation:</dt><dd><a href="OOPSEvaluation/OOPSeval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd> --></dl>
 
+<hr/>
 </div>
 <div class="status">
 <div>
@@ -89,10 +94,14 @@ This is a place holder text for the introduction. The introduction should briefl
 <caption> <a href="#ns"> Table 1</a>: Namespaces used in the document </caption>
 <tbody>
 <tr><td><b>spot</b></td><td>&lt;https://w3id.org/spot#&gt;</td></tr>
+<tr><td><b>schema</b></td><td>&lt;http://schema.org&gt;</td></tr>
 <tr><td><b>owl</b></td><td>&lt;http://www.w3.org/2002/07/owl&gt;</td></tr>
 <tr><td><b>rdf</b></td><td>&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns&gt;</td></tr>
+<tr><td><b>terms</b></td><td>&lt;http://purl.org/dc/terms&gt;</td></tr>
+<tr><td><b>spot</b></td><td>&lt;https://w3id.org/spot&gt;</td></tr>
 <tr><td><b>xsd</b></td><td>&lt;http://www.w3.org/2001/XMLSchema&gt;</td></tr>
 <tr><td><b>rdfs</b></td><td>&lt;http://www.w3.org/2000/01/rdf-schema&gt;</td></tr>
+<tr><td><b>vann</b></td><td>&lt;http://purl.org/vocab/vann&gt;</td></tr>
 <tr><td><b>default namespace</b></td><td>&lt;https://w3id.org/spot&gt;</td></tr>
 </tbody>
 </table>

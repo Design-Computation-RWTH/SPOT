@@ -4,12 +4,83 @@
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <https://w3id.org/spot/am#> .
+@base <https://w3id.org/spot/am> .
 
-<https://w3id.org/spot/am#> rdf:type owl:Ontology ;
-                             owl:imports <https://w3id.org/spot#> ;
-                             rdfs:comment "An extension to the SPOT Ontology for the explicit definition of axes and boundary point mappings between Entity Spaces and their reference spaces (Entity, Document or Asset Space)."@en ;
-                             rdfs:label "SPOT-AxisMapping Ontology"@en .
+<https://w3id.org/spot/am> rdf:type owl:Ontology ;
+                            owl:imports <https://w3id.org/spot/> ;
+                            <http://purl.org/dc/terms/created> "2025-12-01" ;
+                            <http://purl.org/dc/terms/creator> _:genid1 ,
+                                                               _:genid3 ;
+                            <http://purl.org/dc/terms/license> <https://creativecommons.org/licenses/by/4.0/> ;
+                            <http://purl.org/dc/terms/title> "Space Types Axis Mapping Ontology"@en ;
+                            <http://purl.org/vocab/vann/preferredNamespacePrefix> "spot-am" ;
+                            <http://purl.org/vocab/vann/preferredNamespaceUri> : ;
+                            <http://purl.org/vocommons/voaf#extends> <https://w3id.org/spot/> ;
+                            rdfs:comment "An extension to the Space Types Ontology (SPOT) for the explicit definition of axes and boundary point mappings between Entity Spaces and their reference spaces (Entity, Document or Asset Space)."@en ;
+                            rdfs:label "SPOT Axis Mapping Ontology"@en ;
+                            owl:versionInfo "1.0.0" .
+
+_:genid1 rdf:type <http://schema.org/Person> ;
+          <http://schema.org/affiliation> _:genid2 ;
+          <http://schema.org/name> "Anne Göbels" ;
+          <http://schema.org/url> "https://dc.rwth-aachen.de/anne-gobels/" .
+
+_:genid3 rdf:type <http://schema.org/Person> ;
+          <http://schema.org/affiliation> _:genid4 ;
+          <http://schema.org/name> "Oliver Schulz" ;
+          <http://schema.org/url> "https://dc.rwth-aachen.de/oliver-schulz/" .
+
+_:genid2 rdf:type <http://schema.org/Organization> ;
+          <http://schema.org/name> "Design Computation, RWTH Aachen University" ;
+          <http://schema.org/url> "https://dc.rwth-aachen.de/" .
+
+_:genid4 rdf:type <http://schema.org/Organization> ;
+          <http://schema.org/name> "Design Computation, RWTH Aachen University" ;
+          <http://schema.org/url> "https://dc.rwth-aachen.de/" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/created
+<http://purl.org/dc/terms/created> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/license
+<http://purl.org/dc/terms/license> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespacePrefix
+<http://purl.org/vocab/vann/preferredNamespacePrefix> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespaceUri
+<http://purl.org/vocab/vann/preferredNamespaceUri> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocommons/voaf#extends
+<http://purl.org/vocommons/voaf#extends> rdf:type owl:AnnotationProperty .
+
+
+###  http://schema.org/affiliation
+<http://schema.org/affiliation> rdf:type owl:AnnotationProperty .
+
+
+###  http://schema.org/name
+<http://schema.org/name> rdf:type owl:AnnotationProperty .
+
+
+###  http://schema.org/url
+<http://schema.org/url> rdf:type owl:AnnotationProperty .
+
 
 #################################################################
 #    Object Properties
@@ -140,6 +211,14 @@
 #################################################################
 #    Classes
 #################################################################
+
+###  http://schema.org/Organization
+<http://schema.org/Organization> rdf:type owl:Class .
+
+
+###  http://schema.org/Person
+<http://schema.org/Person> rdf:type owl:Class .
+
 
 ###  https://w3id.org/spot#Appearance
 <https://w3id.org/spot#Appearance> rdf:type owl:Class .
