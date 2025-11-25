@@ -11,9 +11,11 @@ pages:
   stage: deploy
   environment: production
   script:
-    - mkdir -p public
+    - mkdir -p public public/am
     - cp -r Documentation/SpaceTypeOntologyDoc/* public/
+    - cp -r Documentation/SpotAmDoc/* public/am/
     - mv public/index-en.html public/index.html
+    - mv public/am/index-en.html public/am/index.html
     - echo "The site will be deployed to $CI_PAGES_URL"
   artifacts:
     paths:
