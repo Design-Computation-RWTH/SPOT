@@ -12,7 +12,7 @@ pages:
   environment: production
   script:
     - mkdir -p public
-    - cp Documentation/SpaceTypeOntologyDoc/index-en.html public/index.html
+    - cp -r Documentation/SpaceTypeOntologyDoc/* public/
     - echo "The site will be deployed to $CI_PAGES_URL"
   artifacts:
     paths:
