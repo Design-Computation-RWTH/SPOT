@@ -36,6 +36,16 @@
                 schema:name "Design Computation, RWTH Aachen University";
                 schema:url "https://dc.rwth-aachen.de/"
                         ]
+        ],
+        [
+            a schema:Person;
+            schema:name "Fabian Rolke";
+            schema:url "https://dc.rwth-aachen.de/fabian-rolke/";
+            schema:affiliation [
+                a schema:Organization;
+                schema:name "Design Computation, RWTH Aachen University";
+                schema:url "https://dc.rwth-aachen.de/"
+                        ]
         ] ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     dcterms:title "Space Types Axis Mapping Ontology"@en ;

@@ -11,6 +11,21 @@
     "@value" : "https://dc.rwth-aachen.de/anne-gobels/"
   } ]
 }, {
+  "@id" : "_:genid10",
+  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
+    "@id" : "https://w3id.org/spot#hasAxis"
+  } ]
+}, {
+  "@id" : "_:genid11",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "https://w3id.org/spot#AssetSpace"
+    }, {
+      "@id" : "https://w3id.org/spot#DocumentSpace"
+    } ]
+  } ]
+}, {
   "@id" : "_:genid2",
   "@type" : [ "http://schema.org/Organization" ],
   "http://schema.org/name" : [ {
@@ -42,37 +57,43 @@
   } ]
 }, {
   "@id" : "_:genid5",
+  "@type" : [ "http://schema.org/Person" ],
+  "http://schema.org/affiliation" : [ {
+    "@id" : "_:genid6"
+  } ],
+  "http://schema.org/name" : [ {
+    "@value" : "Fabian Rolke"
+  } ],
+  "http://schema.org/url" : [ {
+    "@value" : "https://dc.rwth-aachen.de/fabian-rolke/"
+  } ]
+}, {
+  "@id" : "_:genid6",
+  "@type" : [ "http://schema.org/Organization" ],
+  "http://schema.org/name" : [ {
+    "@value" : "Design Computation, RWTH Aachen University"
+  } ],
+  "http://schema.org/url" : [ {
+    "@value" : "https://dc.rwth-aachen.de/"
+  } ]
+}, {
+  "@id" : "_:genid7",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2002/07/owl#intersectionOf" : [ {
     "@list" : [ {
       "@id" : "https://w3id.org/spot#Axis"
     }, {
-      "@id" : "_:genid7"
+      "@id" : "_:genid9"
     } ]
-  } ]
-}, {
-  "@id" : "_:genid7",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
-  "http://www.w3.org/2002/07/owl#onProperty" : [ {
-    "@id" : "_:genid8"
-  } ],
-  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
-    "@id" : "_:genid9"
-  } ]
-}, {
-  "@id" : "_:genid8",
-  "http://www.w3.org/2002/07/owl#inverseOf" : [ {
-    "@id" : "https://w3id.org/spot#hasAxis"
   } ]
 }, {
   "@id" : "_:genid9",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2002/07/owl#unionOf" : [ {
-    "@list" : [ {
-      "@id" : "https://w3id.org/spot#AssetSpace"
-    }, {
-      "@id" : "https://w3id.org/spot#DocumentSpace"
-    } ]
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "_:genid10"
+  } ],
+  "http://www.w3.org/2002/07/owl#someValuesFrom" : [ {
+    "@id" : "_:genid11"
   } ]
 }, {
   "@id" : "http://purl.org/dc/terms/created",
@@ -458,7 +479,7 @@
     "@value" : "Defines the direction of an axis. Should only be used for axes of Asset or Document Spaces."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "_:genid5"
+    "@id" : "_:genid7"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -581,6 +602,8 @@
     "@id" : "_:genid1"
   }, {
     "@id" : "_:genid3"
+  }, {
+    "@id" : "_:genid5"
   } ],
   "http://purl.org/dc/terms/license" : [ {
     "@id" : "https://creativecommons.org/licenses/by/4.0/"

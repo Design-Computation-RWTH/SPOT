@@ -9,7 +9,8 @@
 <https://w3id.org/spot/> rdf:type owl:Ontology ;
                           <http://purl.org/dc/terms/created> "2025-12-01" ;
                           <http://purl.org/dc/terms/creator> _:genid1 ,
-                                                             _:genid3 ;
+                                                             _:genid3 ,
+                                                             _:genid5 ;
                           <http://purl.org/dc/terms/license> <https://creativecommons.org/licenses/by/4.0/> ;
                           <http://purl.org/dc/terms/title> "Space Types Ontology"@en ;
                           <http://purl.org/vocab/vann/preferredNamespacePrefix> "spot" ;
@@ -29,11 +30,20 @@ _:genid3 rdf:type <http://schema.org/Person> ;
           <http://schema.org/name> "Oliver Schulz" ;
           <http://schema.org/url> "https://dc.rwth-aachen.de/oliver-schulz/" .
 
+_:genid5 rdf:type <http://schema.org/Person> ;
+          <http://schema.org/affiliation> _:genid6 ;
+          <http://schema.org/name> "Fabian Rolke" ;
+          <http://schema.org/url> "https://dc.rwth-aachen.de/fabian-rolke/" .
+
 _:genid2 rdf:type <http://schema.org/Organization> ;
           <http://schema.org/name> "Design Computation, RWTH Aachen University" ;
           <http://schema.org/url> "https://dc.rwth-aachen.de/" .
 
 _:genid4 rdf:type <http://schema.org/Organization> ;
+          <http://schema.org/name> "Design Computation, RWTH Aachen University" ;
+          <http://schema.org/url> "https://dc.rwth-aachen.de/" .
+
+_:genid6 rdf:type <http://schema.org/Organization> ;
           <http://schema.org/name> "Design Computation, RWTH Aachen University" ;
           <http://schema.org/url> "https://dc.rwth-aachen.de/" .
 

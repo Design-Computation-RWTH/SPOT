@@ -10,7 +10,8 @@
                             owl:imports <https://w3id.org/spot/> ;
                             <http://purl.org/dc/terms/created> "2025-12-01" ;
                             <http://purl.org/dc/terms/creator> _:genid1 ,
-                                                               _:genid3 ;
+                                                               _:genid3 ,
+                                                               _:genid5 ;
                             <http://purl.org/dc/terms/license> <https://creativecommons.org/licenses/by/4.0/> ;
                             <http://purl.org/dc/terms/title> "Space Types Axis Mapping Ontology"@en ;
                             <http://purl.org/vocab/vann/preferredNamespacePrefix> "spot-am" ;
@@ -30,6 +31,11 @@ _:genid3 rdf:type <http://schema.org/Person> ;
           <http://schema.org/name> "Oliver Schulz" ;
           <http://schema.org/url> "https://dc.rwth-aachen.de/oliver-schulz/" .
 
+_:genid5 rdf:type <http://schema.org/Person> ;
+          <http://schema.org/affiliation> _:genid6 ;
+          <http://schema.org/name> "Fabian Rolke" ;
+          <http://schema.org/url> "https://dc.rwth-aachen.de/fabian-rolke/" .
+
 _:genid2 rdf:type <http://schema.org/Organization> ;
           <http://schema.org/name> "Design Computation, RWTH Aachen University" ;
           <http://schema.org/url> "https://dc.rwth-aachen.de/" .
@@ -38,48 +44,16 @@ _:genid4 rdf:type <http://schema.org/Organization> ;
           <http://schema.org/name> "Design Computation, RWTH Aachen University" ;
           <http://schema.org/url> "https://dc.rwth-aachen.de/" .
 
+_:genid6 rdf:type <http://schema.org/Organization> ;
+          <http://schema.org/name> "Design Computation, RWTH Aachen University" ;
+          <http://schema.org/url> "https://dc.rwth-aachen.de/" .
+
 #################################################################
 #    Annotation properties
 #################################################################
 
-###  http://purl.org/dc/terms/created
-<http://purl.org/dc/terms/created> rdf:type owl:AnnotationProperty .
-
-
-###  http://purl.org/dc/terms/creator
-<http://purl.org/dc/terms/creator> rdf:type owl:AnnotationProperty .
-
-
-###  http://purl.org/dc/terms/license
-<http://purl.org/dc/terms/license> rdf:type owl:AnnotationProperty .
-
-
-###  http://purl.org/dc/terms/title
-<http://purl.org/dc/terms/title> rdf:type owl:AnnotationProperty .
-
-
-###  http://purl.org/vocab/vann/preferredNamespacePrefix
-<http://purl.org/vocab/vann/preferredNamespacePrefix> rdf:type owl:AnnotationProperty .
-
-
-###  http://purl.org/vocab/vann/preferredNamespaceUri
-<http://purl.org/vocab/vann/preferredNamespaceUri> rdf:type owl:AnnotationProperty .
-
-
 ###  http://purl.org/vocommons/voaf#extends
 <http://purl.org/vocommons/voaf#extends> rdf:type owl:AnnotationProperty .
-
-
-###  http://schema.org/affiliation
-<http://schema.org/affiliation> rdf:type owl:AnnotationProperty .
-
-
-###  http://schema.org/name
-<http://schema.org/name> rdf:type owl:AnnotationProperty .
-
-
-###  http://schema.org/url
-<http://schema.org/url> rdf:type owl:AnnotationProperty .
 
 
 #################################################################
@@ -98,10 +72,6 @@ _:genid4 rdf:type <http://schema.org/Organization> ;
                                                          ( :hasBoundaryPointMapping
                                                            <https://w3id.org/reloc#directionalRelation>
                                                          ) .
-
-
-###  https://w3id.org/spot#hasAxis
-<https://w3id.org/spot#hasAxis> rdf:type owl:ObjectProperty .
 
 
 ###  https://w3id.org/spot/am#hasAccuracy
@@ -211,26 +181,6 @@ _:genid4 rdf:type <http://schema.org/Organization> ;
 #################################################################
 #    Classes
 #################################################################
-
-###  http://schema.org/Organization
-<http://schema.org/Organization> rdf:type owl:Class .
-
-
-###  http://schema.org/Person
-<http://schema.org/Person> rdf:type owl:Class .
-
-
-###  https://w3id.org/spot#Appearance
-<https://w3id.org/spot#Appearance> rdf:type owl:Class .
-
-
-###  https://w3id.org/spot#Axis
-<https://w3id.org/spot#Axis> rdf:type owl:Class .
-
-
-###  https://w3id.org/spot#EntitySpace
-<https://w3id.org/spot#EntitySpace> rdf:type owl:Class .
-
 
 ###  https://w3id.org/spot/am#Accuracy
 :Accuracy rdf:type owl:Class ;

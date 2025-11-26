@@ -15,6 +15,7 @@
         <terms:created>2025-12-01</terms:created>
         <terms:creator rdf:nodeID="genid1"/>
         <terms:creator rdf:nodeID="genid3"/>
+        <terms:creator rdf:nodeID="genid5"/>
         <terms:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
         <terms:title xml:lang="en">Space Types Axis Mapping Ontology</terms:title>
         <vann:preferredNamespacePrefix>spot-am</vann:preferredNamespacePrefix>
@@ -36,12 +37,23 @@
         <schema:name>Oliver Schulz</schema:name>
         <schema:url>https://dc.rwth-aachen.de/oliver-schulz/</schema:url>
     </rdf:Description>
+    <rdf:Description rdf:nodeID="genid5">
+        <rdf:type rdf:resource="http://schema.org/Person"/>
+        <schema:affiliation rdf:nodeID="genid6"/>
+        <schema:name>Fabian Rolke</schema:name>
+        <schema:url>https://dc.rwth-aachen.de/fabian-rolke/</schema:url>
+    </rdf:Description>
     <rdf:Description rdf:nodeID="genid2">
         <rdf:type rdf:resource="http://schema.org/Organization"/>
         <schema:name>Design Computation, RWTH Aachen University</schema:name>
         <schema:url>https://dc.rwth-aachen.de/</schema:url>
     </rdf:Description>
     <rdf:Description rdf:nodeID="genid4">
+        <rdf:type rdf:resource="http://schema.org/Organization"/>
+        <schema:name>Design Computation, RWTH Aachen University</schema:name>
+        <schema:url>https://dc.rwth-aachen.de/</schema:url>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="genid6">
         <rdf:type rdf:resource="http://schema.org/Organization"/>
         <schema:name>Design Computation, RWTH Aachen University</schema:name>
         <schema:url>https://dc.rwth-aachen.de/</schema:url>
@@ -61,73 +73,10 @@
     
 
 
-    <!-- http://purl.org/dc/terms/created -->
-
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/created"/>
-    
-
-
-    <!-- http://purl.org/dc/terms/creator -->
-
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/creator"/>
-    
-
-
-    <!-- http://purl.org/dc/terms/license -->
-
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/license"/>
-    
-
-
-    <!-- http://purl.org/dc/terms/title -->
-
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/title"/>
-    
-
-
-    <!-- http://purl.org/vocab/vann/preferredNamespacePrefix -->
-
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespacePrefix"/>
-    
-
-
-    <!-- http://purl.org/vocab/vann/preferredNamespaceUri -->
-
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespaceUri"/>
-    
-
-
     <!-- http://purl.org/vocommons/voaf#extends -->
 
 
     <owl:AnnotationProperty rdf:about="http://purl.org/vocommons/voaf#extends"/>
-    
-
-
-    <!-- http://schema.org/affiliation -->
-
-
-    <owl:AnnotationProperty rdf:about="http://schema.org/affiliation"/>
-    
-
-
-    <!-- http://schema.org/name -->
-
-
-    <owl:AnnotationProperty rdf:about="http://schema.org/name"/>
-    
-
-
-    <!-- http://schema.org/url -->
-
-
-    <owl:AnnotationProperty rdf:about="http://schema.org/url"/>
     
 
 
@@ -163,13 +112,6 @@
             <rdf:Description rdf:about="https://w3id.org/reloc#directionalRelation"/>
         </owl:propertyChainAxiom>
     </owl:ObjectProperty>
-    
-
-
-    <!-- https://w3id.org/spot#hasAxis -->
-
-
-    <owl:ObjectProperty rdf:about="https://w3id.org/spot#hasAxis"/>
     
 
 
@@ -340,41 +282,6 @@
      -->
 
 
-    
-
-
-    <!-- http://schema.org/Organization -->
-
-
-    <owl:Class rdf:about="http://schema.org/Organization"/>
-    
-
-
-    <!-- http://schema.org/Person -->
-
-
-    <owl:Class rdf:about="http://schema.org/Person"/>
-    
-
-
-    <!-- https://w3id.org/spot#Appearance -->
-
-
-    <owl:Class rdf:about="https://w3id.org/spot#Appearance"/>
-    
-
-
-    <!-- https://w3id.org/spot#Axis -->
-
-
-    <owl:Class rdf:about="https://w3id.org/spot#Axis"/>
-    
-
-
-    <!-- https://w3id.org/spot#EntitySpace -->
-
-
-    <owl:Class rdf:about="https://w3id.org/spot#EntitySpace"/>
     
 
 
