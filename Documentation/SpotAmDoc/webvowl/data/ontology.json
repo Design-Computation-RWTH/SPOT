@@ -8,7 +8,7 @@
     },
     "iri" : "https://w3id.org/spot/am",
     "version" : "1.0.0",
-    "author" : [ "_:genid2147483648", "_:genid2147483650" ],
+    "author" : [ "_:genid2147483648", "_:genid2147483652", "_:genid2147483650" ],
     "labels" : {
       "en" : "SPOT Axis Mapping Ontology"
     },
@@ -26,6 +26,11 @@
         "identifier" : "creator",
         "language" : "undefined",
         "value" : "_:genid2147483648",
+        "type" : "label"
+      }, {
+        "identifier" : "creator",
+        "language" : "undefined",
+        "value" : "_:genid2147483652",
         "type" : "label"
       }, {
         "identifier" : "creator",
@@ -88,31 +93,34 @@
     "id" : "10",
     "type" : "owl:Class"
   }, {
-    "id" : "15",
+    "id" : "13",
     "type" : "owl:Class"
   }, {
-    "id" : "14",
+    "id" : "15",
     "type" : "rdfs:Literal"
   }, {
     "id" : "17",
     "type" : "rdfs:Literal"
   }, {
-    "id" : "19",
+    "id" : "18",
+    "type" : "owl:Class"
+  }, {
+    "id" : "20",
     "type" : "owl:Class"
   }, {
     "id" : "7",
     "type" : "owl:Class"
   }, {
-    "id" : "22",
+    "id" : "23",
     "type" : "owl:Class"
   }, {
-    "id" : "28",
-    "type" : "owl:Class"
-  }, {
-    "id" : "12",
+    "id" : "29",
     "type" : "owl:Class"
   }, {
     "id" : "6",
+    "type" : "owl:Class"
+  }, {
+    "id" : "12",
     "type" : "owl:Class"
   }, {
     "id" : "2",
@@ -169,7 +177,7 @@
       "iri" : "https://w3id.org/spot/am#Broad",
       "baseIri" : "https://w3id.org/spot/am",
       "comment" : {
-        "en" : "\"Broad accuracy level for axis mapping. The reference axis is the closest match possible,\r\n        but not really parallel."
+        "en" : "The source axis is assigned to the closest matching target axis in the context of the defined relationship, despite significant discrepancies."
       },
       "labels" : {
         "IRI-based" : "Broad",
@@ -179,7 +187,7 @@
       "iri" : "https://w3id.org/spot/am#Exact",
       "baseIri" : "https://w3id.org/spot/am",
       "comment" : {
-        "en" : "Exact accuracy level for axis mapping. The axes are parallel to each other. "
+        "en" : "The relationship between the axes defined in the axis mapping corresponds exactly to reality."
       },
       "labels" : {
         "IRI-based" : "Exact",
@@ -189,7 +197,7 @@
       "iri" : "https://w3id.org/spot/am#Approximate",
       "baseIri" : "https://w3id.org/spot/am",
       "comment" : {
-        "en" : "Approximate accuracy level for axis mapping. The axes are almost parallel to each other."
+        "en" : "The relationship between the axes defined in the axis mapping corresponds closely to reality, with minor deviations (e.g., nearly parallel axes)."
       },
       "labels" : {
         "IRI-based" : "Approximate",
@@ -208,11 +216,11 @@
       "IRI-based" : "Person"
     },
     "attributes" : [ "external" ],
-    "id" : "15"
+    "id" : "13"
   }, {
     "iri" : "http://www.w3.org/2000/01/rdf-schema#Literal",
     "baseIri" : "http://www.w3.org/2000/01/rdf-schema",
-    "id" : "14",
+    "id" : "15",
     "label" : {
       "IRI-based" : "Literal",
       "undefined" : "Literal"
@@ -226,6 +234,55 @@
       "undefined" : "Literal"
     }
   }, {
+    "iri" : "https://w3id.org/spot/am#AxisRelationType",
+    "baseIri" : "https://w3id.org/spot/am",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "AxisRelationType",
+      "en" : "Axis Relation Type"
+    },
+    "individuals" : [ {
+      "iri" : "https://w3id.org/spot/am#Codirectional",
+      "baseIri" : "https://w3id.org/spot/am",
+      "annotations" : {
+        "seeAlso" : [ {
+          "identifier" : "seeAlso",
+          "language" : "undefined",
+          "value" : "https://www.oed.com/dictionary/codirectional_adj",
+          "type" : "iri"
+        } ]
+      },
+      "comment" : {
+        "en" : "The source axis is parallel to the target axis and having the same direction."
+      },
+      "labels" : {
+        "IRI-based" : "Codirectional",
+        "en" : "Codirectional"
+      }
+    }, {
+      "iri" : "https://w3id.org/spot/am#Antiparallel",
+      "baseIri" : "https://w3id.org/spot/am",
+      "annotations" : {
+        "seeAlso" : [ {
+          "identifier" : "seeAlso",
+          "language" : "undefined",
+          "value" : "https://www.oed.com/dictionary/antiparallel_adj",
+          "type" : "iri"
+        } ]
+      },
+      "comment" : {
+        "en" : "The source axis is antiparallel (parallel but directed in opposite direction) to the target axis."
+      },
+      "labels" : {
+        "IRI-based" : "Antiparallel",
+        "en" : "Antiparallel"
+      }
+    } ],
+    "comment" : {
+      "en" : "Defines the geometrical relation between two mapped axes."
+    },
+    "id" : "18"
+  }, {
     "iri" : "http://schema.org/Organization",
     "baseIri" : "http://schema.org",
     "instances" : 0,
@@ -233,7 +290,7 @@
       "IRI-based" : "Organization"
     },
     "attributes" : [ "external" ],
-    "id" : "19"
+    "id" : "20"
   }, {
     "iri" : "https://w3id.org/spot/am#AxisMapping",
     "baseIri" : "https://w3id.org/spot/am",
@@ -254,7 +311,7 @@
       "IRI-based" : "Axis"
     },
     "attributes" : [ "external" ],
-    "id" : "22"
+    "id" : "23"
   }, {
     "iri" : "https://w3id.org/spot#EntitySpace",
     "baseIri" : "https://w3id.org/spot",
@@ -263,7 +320,16 @@
       "IRI-based" : "EntitySpace"
     },
     "attributes" : [ "external" ],
-    "id" : "28"
+    "id" : "29"
+  }, {
+    "iri" : "https://w3id.org/spot#Appearance",
+    "baseIri" : "https://w3id.org/spot",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Appearance"
+    },
+    "attributes" : [ "external" ],
+    "id" : "6"
   }, {
     "iri" : "https://w3id.org/spot/am#MinBoundaryPoint",
     "baseIri" : "https://w3id.org/spot/am",
@@ -277,15 +343,6 @@
     },
     "id" : "12",
     "superClasses" : [ "2" ]
-  }, {
-    "iri" : "https://w3id.org/spot#Appearance",
-    "baseIri" : "https://w3id.org/spot",
-    "instances" : 0,
-    "label" : {
-      "IRI-based" : "Appearance"
-    },
-    "attributes" : [ "external" ],
-    "id" : "6"
   }, {
     "iri" : "https://w3id.org/spot/am#BoundaryPoint",
     "baseIri" : "https://w3id.org/spot/am",
@@ -313,29 +370,26 @@
     "id" : "11",
     "type" : "rdfs:SubClassOf"
   }, {
-    "id" : "13",
+    "id" : "14",
     "type" : "owl:datatypeProperty"
   }, {
     "id" : "16",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "18",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "20",
+    "id" : "19",
     "type" : "owl:objectProperty"
   }, {
     "id" : "21",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "23",
+    "id" : "22",
     "type" : "owl:objectProperty"
   }, {
     "id" : "24",
-    "type" : "owl:datatypeProperty"
+    "type" : "owl:objectProperty"
   }, {
     "id" : "25",
-    "type" : "owl:objectProperty"
+    "type" : "owl:datatypeProperty"
   }, {
     "id" : "26",
     "type" : "owl:objectProperty"
@@ -343,7 +397,10 @@
     "id" : "27",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "29",
+    "id" : "28",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "30",
     "type" : "owl:objectProperty"
   } ],
   "propertyAttribute" : [ {
@@ -373,17 +430,17 @@
   }, {
     "range" : "2",
     "domain" : "1",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "9"
   }, {
     "range" : "2",
     "domain" : "12",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "11"
   }, {
     "iri" : "https://w3id.org/spot/am#hasNormalizedCoordinateValue",
     "baseIri" : "https://w3id.org/spot/am",
-    "range" : "14",
+    "range" : "15",
     "label" : {
       "IRI-based" : "hasNormalizedCoordinateValue",
       "en" : "has normalized coordinate value"
@@ -393,7 +450,7 @@
       "en" : "Specifies the position of a boundary point in relation to the reference space as a\r\n        normalized coordinate value (typically between 0 and 1). If the boundary point mapping is additionally\r\n        related by a RELOC property, the normalized value is interpreted in reference to the area described by\r\n        the RELOC property.\r\n        E.g.: Point(Mapping) <reloc:containedInRight> RefSpace. +\r\n        Point(Mapping) <spot-am:hasNormalizedCoordinateValue> '0.5'.\r\n         --> Point '0.5' describes the center of the right area of the Reference Space"
     },
     "attributes" : [ "datatype" ],
-    "id" : "13"
+    "id" : "14"
   }, {
     "iri" : "https://w3id.org/spot/am#hasBoundaryPointMapping",
     "baseIri" : "https://w3id.org/spot/am",
@@ -421,7 +478,7 @@
       "en" : "Specifies which EntityAxis/ Source boundary point is being mapping"
     },
     "attributes" : [ "object" ],
-    "id" : "18"
+    "id" : "19"
   }, {
     "iri" : "https://w3id.org/spot/am#hasAccuracy",
     "baseIri" : "https://w3id.org/spot/am",
@@ -435,21 +492,21 @@
       "en" : "Specifies the accuracy level of an axis mapping."
     },
     "attributes" : [ "object" ],
-    "id" : "20"
+    "id" : "21"
   }, {
     "iri" : "https://w3id.org/spot/am#hasTargetAxis",
     "baseIri" : "https://w3id.org/spot/am",
-    "range" : "22",
+    "range" : "23",
     "label" : {
       "IRI-based" : "hasTargetAxis",
       "en" : "has target axis"
     },
     "domain" : "7",
     "comment" : {
-      "en" : "Specifies to which target axis the source axis is mapped.\r\n    In addition to ( exact to broad) parallelism, this property also expresses that\r\n    both axes are oriented in the same direction. The target axis must be from another space instance\r\n    as the source axis."
+      "en" : "Specifies to which target axis the source axis is mapped. The target axis must be from another space instance\r\n    as the source axis."
     },
     "attributes" : [ "object" ],
-    "id" : "21"
+    "id" : "22"
   }, {
     "iri" : "https://w3id.org/spot#hasAxis",
     "baseIri" : "https://w3id.org/spot",
@@ -459,7 +516,7 @@
     },
     "domain" : "3",
     "attributes" : [ "external", "object" ],
-    "id" : "23"
+    "id" : "24"
   }, {
     "iri" : "https://w3id.org/spot/am#hasSourceToTargetAngle",
     "baseIri" : "https://w3id.org/spot/am",
@@ -473,7 +530,7 @@
       "en" : "Specifies the angle (in degrees) between the source and target axis"
     },
     "attributes" : [ "datatype" ],
-    "id" : "24"
+    "id" : "25"
   }, {
     "iri" : "https://w3id.org/spot/am#hasBoundaryPoint",
     "baseIri" : "https://w3id.org/spot/am",
@@ -482,23 +539,9 @@
       "IRI-based" : "hasBoundaryPoint",
       "en" : "has boundary point"
     },
-    "domain" : "22",
+    "domain" : "23",
     "comment" : {
       "en" : "Relates an axis to a boundary point. These points can than be mapped/related to a reference space.\r\n        Usually, only Axes of Entity Spaces get Boundary Point Definitions."
-    },
-    "attributes" : [ "object" ],
-    "id" : "25"
-  }, {
-    "iri" : "https://w3id.org/spot/am#hasInverseTargetAxis",
-    "baseIri" : "https://w3id.org/spot/am",
-    "range" : "22",
-    "label" : {
-      "IRI-based" : "hasInverseTargetAxis",
-      "en" : "has inverse target axis"
-    },
-    "domain" : "7",
-    "comment" : {
-      "en" : "Specifies that the source axis is mapped to the inverse of the target axis, i.e.\r\n    the source axis points in the opposite/inverse direction of the target axis."
     },
     "attributes" : [ "object" ],
     "id" : "26"
@@ -525,6 +568,20 @@
     },
     "domain" : "3",
     "attributes" : [ "external", "object" ],
-    "id" : "29"
+    "id" : "28"
+  }, {
+    "iri" : "https://w3id.org/spot/am#hasAxisRelationType",
+    "baseIri" : "https://w3id.org/spot/am",
+    "range" : "18",
+    "label" : {
+      "IRI-based" : "hasAxisRelationType",
+      "en" : "has axis relation type"
+    },
+    "domain" : "7",
+    "comment" : {
+      "en" : "Specifies which kind of geometrical relation the two mapped axes have to each other."
+    },
+    "attributes" : [ "object" ],
+    "id" : "30"
   } ]
 }

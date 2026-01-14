@@ -156,13 +156,13 @@ This ontology has the following classes and properties.</span>
       <a href="#hasAxisMapping" title="https://w3id.org/spot/am#hasAxisMapping">has axis mapping</a>
    </li>
    <li>
+      <a href="#hasAxisRelationType" title="https://w3id.org/spot/am#hasAxisRelationType">has axis relation type</a>
+   </li>
+   <li>
       <a href="#hasBoundaryPoint" title="https://w3id.org/spot/am#hasBoundaryPoint">has boundary point</a>
    </li>
    <li>
       <a href="#hasBoundaryPointMapping" title="https://w3id.org/spot/am#hasBoundaryPointMapping">has boundary point mapping</a>
-   </li>
-   <li>
-      <a href="#hasInverseTargetAxis" title="https://w3id.org/spot/am#hasInverseTargetAxis">has inverse target axis</a>
    </li>
    <li>
       <a href="#hasSourceAxis" title="https://w3id.org/spot/am#hasSourceAxis">has source axis</a>
@@ -191,6 +191,13 @@ This ontology has the following classes and properties.</span>
    <li>
       <a href="#Exact" title="https://w3id.org/spot/am#Exact">Exact</a>
    </li>
+    <li>
+      <a href="#Codirectional" title="https://w3id.org/spot/am#Codirectional">Codirectional</a>
+   </li>
+   <li>
+      <a href="#Antiparallel" title="https://w3id.org/spot/am#Antiparallel">Antiparallel</a>
+   </li>
+
 </ul><iframe align="center" width="100%" height ="500px" src="webvowl/index.html"></iframe> 
 </div>
   
@@ -215,6 +222,9 @@ This section provides details for each class and property defined by SPOT-AM Ont
       <li>
          <a href="#AxisMapping" title="https://w3id.org/spot/am#AxisMapping">Axis Mapping</a>
       </li>
+       <li>
+      <a href="#AxisRelationType" title="https://w3id.org/spot/am#AxisRelationType">Axis Relation Type</a>
+      </li>
       <li>
          <a href="#BoundaryPoint" title="https://w3id.org/spot/am#BoundaryPoint">Boundary Point</a>
       </li>
@@ -228,6 +238,7 @@ This section provides details for each class and property defined by SPOT-AM Ont
          <a href="#MinBoundaryPoint" title="https://w3id.org/spot/am#MinBoundaryPoint">Minimum Boundary Point</a>
       </li>
    </ul>
+
    <div class="entity" id="Accuracy">
       <h3>Accuracy<sup class="type-c" title="class">c</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
@@ -271,7 +282,7 @@ This section provides details for each class and property defined by SPOT-AM Ont
          <dt>is in domain of</dt>
          <dd>
             <a href="#hasAccuracy" title="https://w3id.org/spot/am#hasAccuracy">has accuracy</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#hasInverseTargetAxis" title="https://w3id.org/spot/am#hasInverseTargetAxis">has inverse target axis</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasAxisRelationType" title="https://w3id.org/spot/am#hasAxisRelationType">has axis relation type</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#hasSourceAxis" title="https://w3id.org/spot/am#hasSourceAxis">has source axis</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#hasSourceToTargetAngle" title="https://w3id.org/spot/am#hasSourceToTargetAngle">has source to target angle</a>
             <sup class="type-dp" title="data property">dp</sup>, <a href="#hasTargetAxis" title="https://w3id.org/spot/am#hasTargetAxis">has target axis</a>
@@ -281,6 +292,30 @@ This section provides details for each class and property defined by SPOT-AM Ont
          <dd>
             <a href="#hasAxisMapping" title="https://w3id.org/spot/am#hasAxisMapping">has axis mapping</a>
             <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="AxisRelationType">
+      <h3>Axis Relation Type<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/spot/am#AxisRelationType</p>
+      <div class="comment">
+         <span class="markdown">Defines the geometrical relation between two mapped axes.</span>
+      </div>
+      <dl class="description">
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#hasAxisRelationType" title="https://w3id.org/spot/am#hasAxisRelationType">has axis relation type</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+         <dt>has members</dt>
+         <dd>
+            <a href="#Antiparallel" title="https://w3id.org/spot/am#Antiparallel">Antiparallel</a>
+            <sup class="type-ni" title="named individual">ni</sup>, <a href="#Codirectional" title="https://w3id.org/spot/am#Codirectional">Codirectional</a>
+            <sup class="type-ni" title="named individual">ni</sup>
          </dd>
       </dl>
    </div>
@@ -394,13 +429,13 @@ This section provides details for each class and property defined by SPOT-AM Ont
          <a href="#hasAxisMapping" title="https://w3id.org/spot/am#hasAxisMapping">has axis mapping</a>
       </li>
       <li>
+         <a href="#hasAxisRelationType" title="https://w3id.org/spot/am#hasAxisRelationType">has axis relation type</a>
+      </li>
+      <li>
          <a href="#hasBoundaryPoint" title="https://w3id.org/spot/am#hasBoundaryPoint">has boundary point</a>
       </li>
       <li>
          <a href="#hasBoundaryPointMapping" title="https://w3id.org/spot/am#hasBoundaryPointMapping">has boundary point mapping</a>
-      </li>
-      <li>
-         <a href="#hasInverseTargetAxis" title="https://w3id.org/spot/am#hasInverseTargetAxis">has inverse target axis</a>
       </li>
       <li>
          <a href="#hasSourceAxis" title="https://w3id.org/spot/am#hasSourceAxis">has source axis</a>
@@ -490,6 +525,31 @@ This section provides details for each class and property defined by SPOT-AM Ont
          </dl>
       </div>
    </div>
+   <div class="entity" id="hasAxisRelationType">
+      <h3>has axis relation type<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/spot/am#hasAxisRelationType</p>
+      <div class="comment">
+         <span class="markdown">Specifies which kind of geometrical relation the two mapped axes have to each other.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#AxisMapping" title="https://w3id.org/spot/am#AxisMapping">Axis Mapping</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#AxisRelationType" title="https://w3id.org/spot/am#AxisRelationType">Axis Relation Type</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
    <div class="entity" id="hasBoundaryPoint">
       <h3>has boundary point<sup class="type-op" title="object property">op</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
@@ -537,32 +597,6 @@ This section provides details for each class and property defined by SPOT-AM Ont
             <dt>has range</dt>
             <dd>
                <a href="#BoundaryPointMapping" title="https://w3id.org/spot/am#BoundaryPointMapping">Boundary Point Mapping</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="hasInverseTargetAxis">
-      <h3>has inverse target axis<sup class="type-op" title="object property">op</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/spot/am#hasInverseTargetAxis</p>
-      <div class="comment">
-         <span class="markdown">Specifies that the source axis is mapped to the inverse of the target axis, i.e.
-    the source axis points in the opposite/inverse direction of the target axis.</span>
-      </div>
-      <div class="description">
-         <dl>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#AxisMapping" title="https://w3id.org/spot/am#AxisMapping">Axis Mapping</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <span class="dotted"><a href="https://w3id.org/spot#Axis" target="_blank">Axis</a></span>
                <sup class="type-c" title="class">c</sup>
             </dd>
          </dl>
@@ -728,6 +762,12 @@ This section provides details for each class and property defined by SPOT-AM Ont
       <li>
          <a href="#Exact" title="https://w3id.org/spot/am#Exact">Exact</a>
       </li>
+      <li>
+         <a href="#Codirectional" title="https://w3id.org/spot/am#Codirectional">Codirectional</a>
+      </li>
+      <li>
+         <a href="#Antiparallel" title="https://w3id.org/spot/am#Antiparallel">Antiparallel</a>
+      </li>
    </ul>
    <div class="entity" id="Approximate">
       <h3>Approximate<sup class="type-ni" title="named individual">ni</sup>
@@ -780,6 +820,42 @@ This section provides details for each class and property defined by SPOT-AM Ont
          <dt>belongs to</dt>
          <dd>
             <a href="#Accuracy" title="https://w3id.org/spot/am#Accuracy">Accuracy</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Codirectional">
+      <h3>Codirectional<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/spot/am#Codirectional</p>
+      <div class="comment">
+         <span class="markdown">The source axis is parallel to the target axis and having the same direction.</span>
+      </div>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#AxisRelationType" title="https://w3id.org/spot/am#AxisRelationType">Axis Relation Type</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="Antiparallel">
+      <h3>Antiparallel<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/spot/am#Antiparallel</p>
+      <div class="comment">
+         <span class="markdown">The source axis is antiparallel (parallel but directed in opposite direction) to the target axis.</span>
+      </div>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#AxisRelationType" title="https://w3id.org/spot/am#AxisRelationType">Axis Relation Type</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
