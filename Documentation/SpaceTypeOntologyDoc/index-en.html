@@ -74,6 +74,12 @@ function loadTOC(){
 <br/></dd><dt>Visualization:</dt><dd><a href="webvowl/index.html#" target="_blank"><img src="https://img.shields.io/badge/Visualize_with-WebVowl-blue.svg" alt="Visualize with WebVowl" /></a></dd>
 <!-- <dt>Evaluation:</dt><dd><a href="OOPSEvaluation/OOPSeval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd> --></dl>
 
+<dt>Cite as:</dt>
+<dd style="max-width:80%; font-size:0.9rem;  text-overflow:ellipsis; white-space:normal; display:block;" title="Göbels, A., Schulz, O., &amp; Rolke, F. (2025). Space Types Ontology (Version 1.0.0). https://w3id.org/spot">
+Göbels, A., Schulz, O., &amp; Rolke, F. (2025). Space Types Ontology (Version 1.0.0). https://w3id.org/spot <a href= "spot.bib" target="_blank">(see BibTeX entry)</a>
+</dd>
+</dl>
+
 <hr/>
 </div>
 <div class="status">
@@ -81,26 +87,26 @@ function loadTOC(){
 <span>Ontology Specification Draft</span>
 </div>
 </div>     <div id="abstract"><h2>Abstract</h2><span class="markdown">
-Space Types Ontology for describing spaces, appearances, and their relationships,</span>
+The Space Types Ontology (SPOT) is an OWL-based ontology for spatially representing and managing resources and data related to assets in the built environment. Built on the principle that all asset data carries an inherent spatial dimension, SPOT provides machine-readable expressions of spatial metadata and relationships, enabling querying and integration of heterogeneous data sources across an asset. Its modular design focuses on basic spatial types and simple relationships, allowing domain-specific extensions for more precise use cases. The SPOT Ontology is extended with the <a href="https://w3id.org/spot/am#" target="_blank" rel="noopener noreferrer">SPOT Axis Mapping Ontology </a>. </span>
 </div>
 <div id="toc"></div> 
 
 <!--INTRODUCTION SECTION-->
     <div id="introduction"><h2 id="intro" class="list">Introduction <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
 <span class="markdown">
-This is a place holder text for the introduction. The introduction should briefly describe the ontology, its motivation, state of the art and goals.</span>
-<div id="namespacedeclarations">
+  <p>TheSpace Types Ontology (SPOT)  provides a machine-readable, OWL-based representation of spatial metadata and relationships across an asset. It is built on the principle that all asset-related data carries an inherent spatial dimension. Even non-geometric data such as textual reports can be spatially contextualized through their references to specific components, zones, or areas. By establishing a common digital space for all asset data, SPOT enables the discovery of relationships between previously disconnected resources, supporting spatial querying and data integration.</p>
+  <p>SPOT follows a modular design, focusing on a minimal set of basic spatial types and relationships to enable broad applicability. It can be extended or combined with existing ontologies to support more precise, domain-specific use cases.</p>
+</span><div id="namespacedeclarations">
 <h3 id="ns" class="list">Namespace declarations</h3>
 <div id="ns" align="center">
 <table>
 <caption> <a href="#ns"> Table 1</a>: Namespaces used in the document </caption>
 <tbody>
-<tr><td><b>spot</b></td><td>&lt;https://w3id.org/spot#&gt;</td></tr>
+<tr><td><b>spot</b></td><td>&lt;https://w3id.org/spot></td></tr>
 <tr><td><b>schema</b></td><td>&lt;http://schema.org&gt;</td></tr>
 <tr><td><b>owl</b></td><td>&lt;http://www.w3.org/2002/07/owl&gt;</td></tr>
 <tr><td><b>rdf</b></td><td>&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns&gt;</td></tr>
 <tr><td><b>terms</b></td><td>&lt;http://purl.org/dc/terms&gt;</td></tr>
-<tr><td><b>spot</b></td><td>&lt;https://w3id.org/spot&gt;</td></tr>
 <tr><td><b>xsd</b></td><td>&lt;http://www.w3.org/2001/XMLSchema&gt;</td></tr>
 <tr><td><b>rdfs</b></td><td>&lt;http://www.w3.org/2000/01/rdf-schema&gt;</td></tr>
 <tr><td><b>vann</b></td><td>&lt;http://purl.org/vocab/vann&gt;</td></tr>
@@ -219,14 +225,13 @@ This ontology has the following classes and properties.</span>
 </ul><iframe align="center" width="100%" height ="500px" src="webvowl/index.html"></iframe> 
 </div>
   
-
-<!--DESCRIPTION SECTION-->
+<!--To fill when content is ready-->
+<!--DESCRIPTION SECTION
     <div id="description"><h2 id="desc" class="list">SPOT Ontology: Description <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
 <span class="markdown">
 This is a placeholder text for the description of your ontology. The description should include an explanation and a diagram explaining how the classes are related, examples of usage, etc.</span>
-
 </div>
-   
+-->
 
 <!--CROSSREF SECTION-->
    <div id="crossref"><h2 id="crossreference" class="list">Cross reference for SPOT Ontology classes, properties and dataproperties <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
@@ -410,7 +415,7 @@ This section provides details for each class and property defined by SPOT Ontolo
       <div class="comment">
          <span class="markdown">The defined direction of an axis (e.g., an X-Axis is pointing to the 'Front' of the asset,
      or an Y-Axis is pointing to the 'Bottom' of a document / plan ).
-     Only Asset Space or Document Space Axis should get an Direction Definition.</span>
+     Only Asset Space or Document Space Axis should get a Direction Definition.</span>
       </div>
       <dl class="description">
          <dt>is in range of</dt>
