@@ -196,12 +196,7 @@ spot-am:hasSourceToTargetAngle a owl:DatatypeProperty ;
 spot-am:hasNormalizedCoordinateValue a owl:DatatypeProperty ;
     rdfs:label "has normalized coordinate value"@en ;
     rdfs:comment """Specifies the position of a boundary point in relation to the reference space as a
-        normalized coordinate value (typically between 0 and 1). If the boundary point mapping is additionally
-        related by a RELOC property, the normalized value is interpreted in reference to the area described by
-        the RELOC property.
-        E.g.: Point(Mapping) <reloc:containedInRight> RefSpace. +
-        Point(Mapping) <spot-am:hasNormalizedCoordinateValue> '0.5'.
-         --> Point '0.5' describes the center of the right area of the Reference Space"""@en ;
+        normalized coordinate value (typically between 0 and 1)."""@en ;
     rdfs:domain spot-am:BoundaryPoint ;
     rdfs:range rdfs:Literal .
 
