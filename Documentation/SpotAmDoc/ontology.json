@@ -413,7 +413,7 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
-    "@value" : "Specifies to which target axis the source axis is mapped.\r\n    In addition to ( exact to broad) parallelism, this property also expresses that\r\n    both axes are oriented in the same direction. The target axis must be from another space instance\r\n    as the source axis."
+    "@value" : "Specifies to which target axis the source axis is mapped. The target axis must be from another space instance\n    as the source axis."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
     "@id" : "https://w3id.org/spot/am#AxisMapping"

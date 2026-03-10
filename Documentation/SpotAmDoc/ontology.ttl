@@ -145,10 +145,7 @@ _:genid6 rdf:type <http://schema.org/Organization> ;
 :hasTargetAxis rdf:type owl:ObjectProperty ;
                rdfs:domain :AxisMapping ;
                rdfs:range <https://w3id.org/spot#Axis> ;
-               rdfs:comment """Specifies to which target axis the source axis is mapped.
-    In addition to ( exact to broad) parallelism, this property also expresses that
-    both axes are oriented in the same direction. The target axis must be from another space instance
-    as the source axis."""@en ;
+               rdfs:comment """Specifies to which target axis the source axis is mapped. The target axis must be from another space instance as the source axis."""@en ;
                rdfs:label "has target axis"@en .
 
 

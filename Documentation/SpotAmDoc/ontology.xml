@@ -222,10 +222,7 @@
     <owl:ObjectProperty rdf:about="https://w3id.org/spot/am#hasTargetAxis">
         <rdfs:domain rdf:resource="https://w3id.org/spot/am#AxisMapping"/>
         <rdfs:range rdf:resource="https://w3id.org/spot#Axis"/>
-        <rdfs:comment xml:lang="en">Specifies to which target axis the source axis is mapped.
-    In addition to ( exact to broad) parallelism, this property also expresses that
-    both axes are oriented in the same direction. The target axis must be from another space instance
-    as the source axis.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Specifies to which target axis the source axis is mapped. The target axis must be from another space instance as the source axis.</rdfs:comment>
         <rdfs:label xml:lang="en">has target axis</rdfs:label>
     </owl:ObjectProperty>
     

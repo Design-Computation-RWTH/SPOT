@@ -665,9 +665,7 @@ This section provides details for each class and property defined by SPOT-AM Ont
       <p>
          <strong>IRI:</strong> https://w3id.org/spot/am#hasTargetAxis</p>
       <div class="comment">
-         <span class="markdown">Specifies to which target axis the source axis is mapped.
-    In addition to ( exact to broad) parallelism, this property also expresses that
-    both axes are oriented in the same direction. The target axis must be from another space instance
+         <span class="markdown">Specifies to which target axis the source axis is mapped. The target axis must be from another space instance
     as the source axis.</span>
       </div>
       <div class="description">
@@ -705,12 +703,7 @@ This section provides details for each class and property defined by SPOT-AM Ont
          <strong>IRI:</strong> https://w3id.org/spot/am#hasNormalizedCoordinateValue</p>
       <div class="comment">
          <span class="markdown">Specifies the position of a boundary point in relation to the reference space as a
-        normalized coordinate value (typically between 0 and 1). If the boundary point mapping is additionally
-        related by a RELOC property, the normalized value is interpreted in reference to the area described by
-        the RELOC property.
-        E.g.: Point(Mapping) &lt;reloc:containedInRight&gt; RefSpace. +
-        Point(Mapping) &lt;spot-am:hasNormalizedCoordinateValue&gt; '0.5'.
-         --&gt; Point '0.5' describes the center of the right area of the Reference Space</span>
+        normalized coordinate value (typically between 0 and 1).</span>
       </div>
       <div class="description">
          <dl>

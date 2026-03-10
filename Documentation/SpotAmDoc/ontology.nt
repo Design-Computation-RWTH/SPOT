@@ -139,7 +139,7 @@ _:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 <https://w3id.org/spot/am#hasTargetAxis> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://w3id.org/spot/am#hasTargetAxis> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/spot/am#AxisMapping> .
 <https://w3id.org/spot/am#hasTargetAxis> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/spot#Axis> .
-<https://w3id.org/spot/am#hasTargetAxis> <http://www.w3.org/2000/01/rdf-schema#comment> "Specifies to which target axis the source axis is mapped.\r\n    In addition to ( exact to broad) parallelism, this property also expresses that\r\n    both axes are oriented in the same direction. The target axis must be from another space instance\r\n    as the source axis."@en .
+<https://w3id.org/spot/am#hasTargetAxis> <http://www.w3.org/2000/01/rdf-schema#comment> "Specifies to which target axis the source axis is mapped. The target axis must be from another space instance as the source axis."@en .
 <https://w3id.org/spot/am#hasTargetAxis> <http://www.w3.org/2000/01/rdf-schema#label> "has target axis"@en .
 # 
 # 
