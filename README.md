@@ -8,8 +8,11 @@ This repository hosts the ontology source files, documentation, and a use case d
 
 - **Ontology Source** – OWL source files (Turtle format) for the SPOT core ontology and the SPOT Axis Mapping (SPOT-AM) extension
 - **Documentation** – Supporting documentation for both ontologies (source for the documentation websites)
-- **Graph Creation Scripts** – Python scripts for creating instance graphs based on the ontologies
-- **Use Case Dataset** – A real-world bridge dataset, including an instance graph applying both SPOT and SPOT-AM
+- **SPOT Paper Repository** 
+    - Python scripts for creating instance graphs based on the ontologies
+    - Use Case Dataset – A real-world bridge dataset, including an instance graph applying both SPOT and SPOT-AM
+    - Use Case Data - Resulting instance graph in Turtle format
+    - SPARQL queries (Competency Questions of ontology) and their results based on the use case dataset
 
 ---
 
