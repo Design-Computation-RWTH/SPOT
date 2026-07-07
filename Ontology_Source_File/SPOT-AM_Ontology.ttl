@@ -185,20 +185,6 @@ spot-am:hasSourcePoint a owl:ObjectProperty ;
     rdfs:range spot-am:BoundaryPoint .
 
 
-# Datatype Properties
-
-spot-am:hasSourceToTargetAngle a owl:DatatypeProperty ;
-    rdfs:label "has source to target angle"@en ;
-    rdfs:comment "Specifies the angle (in degrees) between the source and target axis"@en ;
-    rdfs:domain spot-am:AxisMapping ;
-    rdfs:range rdfs:Literal .
-
-spot-am:hasNormalizedCoordinateValue a owl:DatatypeProperty ;
-    rdfs:label "has normalized coordinate value"@en ;
-    rdfs:comment """Specifies the position of a boundary point in relation to the reference space as a
-        normalized coordinate value (typically between 0 and 1)."""@en ;
-    rdfs:domain spot-am:BoundaryPoint ;
-    rdfs:range rdfs:Literal .
 
 #Exetensions of SPOT Properties with Property Chain Axioms
 spot:AppearsIn

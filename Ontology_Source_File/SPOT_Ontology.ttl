@@ -96,6 +96,11 @@ spot:PointSpace a owl:Class ;
     rdfs:comment """The Point Space can represent resources that only need one point of reference,
     such as the camera position of a picture or the position of a sensor."""@en .
 
+spot:LineSpace a owl:Class ;
+    rdfs:subClassOf spot:EntitySpace ;
+    rdfs:label "Line Space"@en ;
+    rdfs:comment "A one-dimensional space that can be used to represent e.g., vertical height references such as water levels "@en .
+
 spot:AreaSpace a owl:Class ;
     rdfs:subClassOf spot:EntitySpace ;
     rdfs:label "Area Space"@en ;
