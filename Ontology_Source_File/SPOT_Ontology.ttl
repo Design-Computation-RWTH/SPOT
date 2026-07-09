@@ -161,28 +161,33 @@ spot:Direction a owl:Class ;
 
 spot:Front a owl:NamedIndividual , spot:Direction ;
     rdfs:label "Front"@en ;
-    rdfs:comment "The front of an asset or document space."@en .
+    rdfs:comment "The front of an asset or document space."@en;
+    spot:isInverseDirectionOf spot:Rear .
 
 spot:Rear a owl:NamedIndividual , spot:Direction ;
     rdfs:label "Rear"@en ;
-    rdfs:comment "The rear of an asset or document space"@en .
+    rdfs:comment "The rear of an asset or document space"@en ;
+    spot:isInverseDirectionOf spot:Front .
 
 spot:Right a owl:NamedIndividual , spot:Direction ;
     rdfs:label "Right"@en ;
-    rdfs:comment "The right of an asset or document space"@en .
+    rdfs:comment "The right of an asset or document space"@en ;
+    spot:isInverseDirectionOf spot:Left .
 
 spot:Left a owl:NamedIndividual , spot:Direction ;
     rdfs:label "Left"@en ;
-    rdfs:comment "The left of an asset or document space"@en .
+    rdfs:comment "The left of an asset or document space"@en ;
+    spot:isInverseDirectionOf spot:Right .
 
 spot:Top a owl:NamedIndividual , spot:Direction ;
     rdfs:label "Top"@en ;
-    rdfs:comment "The top of an asset or document space"@en .
+    rdfs:comment "The top of an asset or document space"@en ;
+    spot:isInverseDirectionOf spot:Bottom .
 
 spot:Bottom a owl:NamedIndividual , spot:Direction ;
     rdfs:label "Bottom"@en ;
-    rdfs:comment "The bottom of an asset or document space"@en .
-
+    rdfs:comment "The bottom of an asset or document space"@en ;
+    spot:isInverseDirectionOf spot:Top .
 # Object Properties
 
 spot:hasSuperSpace a owl:ObjectProperty ;
@@ -257,5 +262,8 @@ spot:hasDirection a owl:ObjectProperty ;
     )
     ] ;
     .
-
+spot:isInverseDirectionOf a owl:ObjectProperty;
+    rdfs:domain spot:Direction;
+    rdfs:range spot:Direction;
+    rdfs:comment "Links to inverse directions to each other, eg. Front - Rear.".
 
