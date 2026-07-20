@@ -117,7 +117,6 @@ The Space Types Ontology (SPOT) is an OWL-based ontology for spatially represent
 </div>
 </div>
   
-
 <!--OVERVIEW SECTION-->
     <div id="overview"><h2 id="overv" class="list">SPOT Ontology: Overview <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
 <span class="markdown">
@@ -156,6 +155,9 @@ This ontology has the following classes and properties.</span>
    </li>
    <li>
       <a href="#HorizontalAreaSpace" title="https://w3id.org/spot#HorizontalAreaSpace">Horizontal Area Space</a>
+   </li>
+   <li>
+      <a href="#LineSpace" title="https://w3id.org/spot#LineSpace">Line Space</a>
    </li>
    <li>
       <a href="#PhysicalSpace" title="https://w3id.org/spot#PhysicalSpace">Physical Space</a>
@@ -203,6 +205,11 @@ This ontology has the following classes and properties.</span>
    <li>
       <a href="#hasZAxis" title="https://w3id.org/spot#hasZAxis">has Z axis</a>
    </li>
+   <li>
+      <a href="#isInverseDirectionOf" title="https://w3id.org/spot#isInverseDirectionOf">
+         <span>is inverse direction of</span>
+      </a>
+   </li>
 </ul><h4>Named Individuals</h4><ul class="hlist">
    <li>
       <a href="#Bottom" title="https://w3id.org/spot#Bottom">Bottom</a>
@@ -222,14 +229,15 @@ This ontology has the following classes and properties.</span>
    <li>
       <a href="#Top" title="https://w3id.org/spot#Top">Top</a>
    </li>
-</ul><iframe align="center" width="100%" height ="500px" src="webvowl/index.html"></iframe> 
+</ul><iframe align="center" width="100%" height ="500px" src="webvowl/index.html"></iframe>
 </div>
-  
-<!--To fill when content is ready-->
+
+
 <!--DESCRIPTION SECTION
     <div id="description"><h2 id="desc" class="list">SPOT Ontology: Description <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
 <span class="markdown">
 This is a placeholder text for the description of your ontology. The description should include an explanation and a diagram explaining how the classes are related, examples of usage, etc.</span>
+
 </div>
 -->
 
@@ -271,6 +279,9 @@ This section provides details for each class and property defined by SPOT Ontolo
       </li>
       <li>
          <a href="#HorizontalAreaSpace" title="https://w3id.org/spot#HorizontalAreaSpace">Horizontal Area Space</a>
+      </li>
+      <li>
+         <a href="#LineSpace" title="https://w3id.org/spot#LineSpace">Line Space</a>
       </li>
       <li>
          <a href="#PhysicalSpace" title="https://w3id.org/spot#PhysicalSpace">Physical Space</a>
@@ -415,12 +426,18 @@ This section provides details for each class and property defined by SPOT Ontolo
       <div class="comment">
          <span class="markdown">The defined direction of an axis (e.g., an X-Axis is pointing to the 'Front' of the asset,
      or an Y-Axis is pointing to the 'Bottom' of a document / plan ).
-     Only Asset Space or Document Space Axis should get a Direction Definition.</span>
+     Only Asset Space or Document Space Axis should get an Direction Definition.</span>
       </div>
       <dl class="description">
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#isInverseDirectionOf" title="https://w3id.org/spot#isInverseDirectionOf">is inverse direction of</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
          <dt>is in range of</dt>
          <dd>
             <a href="#hasDirection" title="https://w3id.org/spot#hasDirection">has direction</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#isInverseDirectionOf" title="https://w3id.org/spot#isInverseDirectionOf">is inverse direction of</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
          <dt>has members</dt>
@@ -511,6 +528,7 @@ This section provides details for each class and property defined by SPOT Ontolo
          <dt>has sub-classes</dt>
          <dd>
             <a href="#AreaSpace" title="https://w3id.org/spot#AreaSpace">Area Space</a>
+            <sup class="type-c" title="class">c</sup>, <a href="#LineSpace" title="https://w3id.org/spot#LineSpace">Line Space</a>
             <sup class="type-c" title="class">c</sup>, <a href="#PointSpace" title="https://w3id.org/spot#PointSpace">Point Space</a>
             <sup class="type-c" title="class">c</sup>, <a href="#VolumeSpace" title="https://w3id.org/spot#VolumeSpace">Volume Space</a>
             <sup class="type-c" title="class">c</sup>
@@ -537,6 +555,24 @@ This section provides details for each class and property defined by SPOT Ontolo
          <dt>has super-classes</dt>
          <dd>
             <a href="#AreaSpace" title="https://w3id.org/spot#AreaSpace">Area Space</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="LineSpace">
+      <h3>Line Space<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/spot#LineSpace</p>
+      <div class="comment">
+         <span class="markdown">A one-dimensional space that can be used to represent e.g., vertical height references such as water levels </span>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#EntitySpace" title="https://w3id.org/spot#EntitySpace">Entity Space</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -714,6 +750,11 @@ This section provides details for each class and property defined by SPOT Ontolo
       <li>
          <a href="#hasZAxis" title="https://w3id.org/spot#hasZAxis">has Z axis</a>
       </li>
+      <li>
+         <a href="#isInverseDirectionOf" title="https://w3id.org/spot#isInverseDirectionOf">
+            <span>is inverse direction of</span>
+         </a>
+      </li>
    </ul>
    <div class="entity" id="appearsIn">
       <h3>appears in<sup class="type-op" title="object property">op</sup>
@@ -812,14 +853,14 @@ This section provides details for each class and property defined by SPOT Ontolo
             <dt>has domain</dt>
             <dd>
                <a href="#Axis" title="https://w3id.org/spot#Axis">Axis</a>
-               <sup class="type-c" title="class">c</sup> 
-               <span class="logic">and</span> (<span class="logic">inverse</span> 
+               <sup class="type-c" title="class">c</sup>
+               <span class="logic">and</span> (<span class="logic">inverse</span>
                <a href="#hasAxis" title="https://w3id.org/spot#hasAxis">has axis</a>
-               <sup class="type-op" title="object property">op</sup> 
-               <span class="logic">some</span> 
+               <sup class="type-op" title="object property">op</sup>
+               <span class="logic">some</span>
                <a href="#AssetSpace" title="https://w3id.org/spot#AssetSpace">Asset Space</a>
-               <sup class="type-c" title="class">c</sup> 
-               <span class="logic">or</span> 
+               <sup class="type-c" title="class">c</sup>
+               <span class="logic">or</span>
                <a href="#DocumentSpace" title="https://w3id.org/spot#DocumentSpace">Document Space</a>
                <sup class="type-c" title="class">c</sup>)</dd>
             <dt>has range</dt>
@@ -891,8 +932,8 @@ This section provides details for each class and property defined by SPOT Ontolo
             <dt>has sub-property chains</dt>
             <dd>
                <a href="#hasAppearance" title="https://w3id.org/spot#hasAppearance">has appearance</a>
-               <sup class="type-op" title="object property">op</sup> 
-               <span class="logic">o</span> 
+               <sup class="type-op" title="object property">op</sup>
+               <span class="logic">o</span>
                <a href="#appearsIn" title="https://w3id.org/spot#appearsIn">appears in</a>
                <sup class="type-op" title="object property">op</sup>
             </dd>
@@ -989,6 +1030,31 @@ This section provides details for each class and property defined by SPOT Ontolo
          </dl>
       </div>
    </div>
+   <div class="entity" id="isInverseDirectionOf">
+      <h3>is inverse direction of<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/spot#isInverseDirectionOf</p>
+      <div class="comment">
+         <span class="markdown">Links to inverse directions to each other, eg. Front - Rear.</span>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#Direction" title="https://w3id.org/spot#Direction">Direction</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#Direction" title="https://w3id.org/spot#Direction">Direction</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
 </div><div id="namedindividuals">
    <h3 id="namedindividuals" class="list">Named Individuals</h3>
    <ul class="hlist">
@@ -1027,6 +1093,12 @@ This section provides details for each class and property defined by SPOT Ontolo
             <a href="#Direction" title="https://w3id.org/spot#Direction">Direction</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
+         <dt>has facts</dt>
+         <dd>
+            <a href="#isInverseDirectionOf" title="https://w3id.org/spot#isInverseDirectionOf">is inverse direction of</a>
+            <sup class="type-op" title="object property">op</sup>
+            <a href="#Top" title="https://w3id.org/spot#Top">Top</a>
+         </dd>
       </dl>
    </div>
    <div class="entity" id="Front">
@@ -1044,6 +1116,12 @@ This section provides details for each class and property defined by SPOT Ontolo
          <dd>
             <a href="#Direction" title="https://w3id.org/spot#Direction">Direction</a>
             <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has facts</dt>
+         <dd>
+            <a href="#isInverseDirectionOf" title="https://w3id.org/spot#isInverseDirectionOf">is inverse direction of</a>
+            <sup class="type-op" title="object property">op</sup>
+            <a href="#Rear" title="https://w3id.org/spot#Rear">Rear</a>
          </dd>
       </dl>
    </div>
@@ -1063,6 +1141,12 @@ This section provides details for each class and property defined by SPOT Ontolo
             <a href="#Direction" title="https://w3id.org/spot#Direction">Direction</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
+         <dt>has facts</dt>
+         <dd>
+            <a href="#isInverseDirectionOf" title="https://w3id.org/spot#isInverseDirectionOf">is inverse direction of</a>
+            <sup class="type-op" title="object property">op</sup>
+            <a href="#Right" title="https://w3id.org/spot#Right">Right</a>
+         </dd>
       </dl>
    </div>
    <div class="entity" id="Rear">
@@ -1080,6 +1164,12 @@ This section provides details for each class and property defined by SPOT Ontolo
          <dd>
             <a href="#Direction" title="https://w3id.org/spot#Direction">Direction</a>
             <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>has facts</dt>
+         <dd>
+            <a href="#isInverseDirectionOf" title="https://w3id.org/spot#isInverseDirectionOf">is inverse direction of</a>
+            <sup class="type-op" title="object property">op</sup>
+            <a href="#Front" title="https://w3id.org/spot#Front">Front</a>
          </dd>
       </dl>
    </div>
@@ -1099,6 +1189,12 @@ This section provides details for each class and property defined by SPOT Ontolo
             <a href="#Direction" title="https://w3id.org/spot#Direction">Direction</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
+         <dt>has facts</dt>
+         <dd>
+            <a href="#isInverseDirectionOf" title="https://w3id.org/spot#isInverseDirectionOf">is inverse direction of</a>
+            <sup class="type-op" title="object property">op</sup>
+            <a href="#Left" title="https://w3id.org/spot#Left">Left</a>
+         </dd>
       </dl>
    </div>
    <div class="entity" id="Top">
@@ -1117,6 +1213,12 @@ This section provides details for each class and property defined by SPOT Ontolo
             <a href="#Direction" title="https://w3id.org/spot#Direction">Direction</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
+         <dt>has facts</dt>
+         <dd>
+            <a href="#isInverseDirectionOf" title="https://w3id.org/spot#isInverseDirectionOf">is inverse direction of</a>
+            <sup class="type-op" title="object property">op</sup>
+            <a href="#Bottom" title="https://w3id.org/spot#Bottom">Bottom</a>
+         </dd>
       </dl>
    </div>
 </div><div id="legend">
@@ -1129,7 +1231,7 @@ This section provides details for each class and property defined by SPOT Ontolo
 </div>
 </div>
 </div>
-    
+
 
 <!--REFERENCES SECTION-->
   <div id="references">

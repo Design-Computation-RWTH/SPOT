@@ -183,6 +183,13 @@ _:genid6 rdf:type <http://schema.org/Organization> ;
                                  rdfs:label "has Z axis"@en .
 
 
+###  https://w3id.org/spot#isInverseDirectionOf
+<https://w3id.org/spot#isInverseDirectionOf> rdf:type owl:ObjectProperty ;
+                                             rdfs:domain <https://w3id.org/spot#Direction> ;
+                                             rdfs:range <https://w3id.org/spot#Direction> ;
+                                             rdfs:comment "Links to inverse directions to each other, eg. Front - Rear." .
+
+
 #################################################################
 #    Classes
 #################################################################
@@ -278,6 +285,13 @@ _:genid6 rdf:type <http://schema.org/Organization> ;
                                             rdfs:label "Horizontal Area Space"@en .
 
 
+###  https://w3id.org/spot#LineSpace
+<https://w3id.org/spot#LineSpace> rdf:type owl:Class ;
+                                  rdfs:subClassOf <https://w3id.org/spot#EntitySpace> ;
+                                  rdfs:comment "A one-dimensional space that can be used to represent e.g., vertical height references such as water levels "@en ;
+                                  rdfs:label "Line Space"@en .
+
+
 ###  https://w3id.org/spot#PhysicalSpace
 <https://w3id.org/spot#PhysicalSpace> rdf:type owl:Class ;
                                       rdfs:subClassOf <https://w3id.org/spot#Space> ;
@@ -332,6 +346,7 @@ _:genid6 rdf:type <http://schema.org/Organization> ;
 ###  https://w3id.org/spot#Bottom
 <https://w3id.org/spot#Bottom> rdf:type owl:NamedIndividual ,
                                         <https://w3id.org/spot#Direction> ;
+                               <https://w3id.org/spot#isInverseDirectionOf> <https://w3id.org/spot#Top> ;
                                rdfs:comment "The bottom of an asset or document space"@en ;
                                rdfs:label "Bottom"@en .
 
@@ -339,6 +354,7 @@ _:genid6 rdf:type <http://schema.org/Organization> ;
 ###  https://w3id.org/spot#Front
 <https://w3id.org/spot#Front> rdf:type owl:NamedIndividual ,
                                        <https://w3id.org/spot#Direction> ;
+                              <https://w3id.org/spot#isInverseDirectionOf> <https://w3id.org/spot#Rear> ;
                               rdfs:comment "The front of an asset or document space."@en ;
                               rdfs:label "Front"@en .
 
@@ -346,6 +362,7 @@ _:genid6 rdf:type <http://schema.org/Organization> ;
 ###  https://w3id.org/spot#Left
 <https://w3id.org/spot#Left> rdf:type owl:NamedIndividual ,
                                       <https://w3id.org/spot#Direction> ;
+                             <https://w3id.org/spot#isInverseDirectionOf> <https://w3id.org/spot#Right> ;
                              rdfs:comment "The left of an asset or document space"@en ;
                              rdfs:label "Left"@en .
 
@@ -353,6 +370,7 @@ _:genid6 rdf:type <http://schema.org/Organization> ;
 ###  https://w3id.org/spot#Rear
 <https://w3id.org/spot#Rear> rdf:type owl:NamedIndividual ,
                                       <https://w3id.org/spot#Direction> ;
+                             <https://w3id.org/spot#isInverseDirectionOf> <https://w3id.org/spot#Front> ;
                              rdfs:comment "The rear of an asset or document space"@en ;
                              rdfs:label "Rear"@en .
 
@@ -360,6 +378,7 @@ _:genid6 rdf:type <http://schema.org/Organization> ;
 ###  https://w3id.org/spot#Right
 <https://w3id.org/spot#Right> rdf:type owl:NamedIndividual ,
                                        <https://w3id.org/spot#Direction> ;
+                              <https://w3id.org/spot#isInverseDirectionOf> <https://w3id.org/spot#Left> ;
                               rdfs:comment "The right of an asset or document space"@en ;
                               rdfs:label "Right"@en .
 
@@ -367,6 +386,7 @@ _:genid6 rdf:type <http://schema.org/Organization> ;
 ###  https://w3id.org/spot#Top
 <https://w3id.org/spot#Top> rdf:type owl:NamedIndividual ,
                                      <https://w3id.org/spot#Direction> ;
+                            <https://w3id.org/spot#isInverseDirectionOf> <https://w3id.org/spot#Bottom> ;
                             rdfs:comment "The top of an asset or document space"@en ;
                             rdfs:label "Top"@en .
 

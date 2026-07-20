@@ -88,6 +88,13 @@ _:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/19
 <https://w3id.org/spot/am#hasAxisMapping> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates an appearance to an axis mapping object. One appearance can have multiple Axis Mappings. Typically three: For each Entity Axis one."@en .
 <https://w3id.org/spot/am#hasAxisMapping> <http://www.w3.org/2000/01/rdf-schema#label> "has axis mapping"@en .
 # 
+# https://w3id.org/spot/am#hasAxisRelationType
+<https://w3id.org/spot/am#hasAxisRelationType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/spot/am#hasAxisRelationType> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/spot/am#AxisMapping> .
+<https://w3id.org/spot/am#hasAxisRelationType> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/spot/am#AxisRelationType> .
+<https://w3id.org/spot/am#hasAxisRelationType> <http://www.w3.org/2000/01/rdf-schema#comment> "Specifies which kind of geometrical relation the two mapped axes have to each other."@en .
+<https://w3id.org/spot/am#hasAxisRelationType> <http://www.w3.org/2000/01/rdf-schema#label> "has axis relation type"@en .
+# 
 # https://w3id.org/spot/am#hasBoundaryPoint
 <https://w3id.org/spot/am#hasBoundaryPoint> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://w3id.org/spot/am#hasBoundaryPoint> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/spot#Axis> .
@@ -101,13 +108,6 @@ _:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/19
 <https://w3id.org/spot/am#hasBoundaryPointMapping> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/spot/am#BoundaryPointMapping> .
 <https://w3id.org/spot/am#hasBoundaryPointMapping> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates an appearance to a boundary point mapping. Each appearance can have multiple boundary point mappings.\r\n     For mappings of volume spaces, up to 6 boundary points mappings are usually needed (min and max point of each axis)."@en .
 <https://w3id.org/spot/am#hasBoundaryPointMapping> <http://www.w3.org/2000/01/rdf-schema#label> "has boundary point mapping"@en .
-# 
-# https://w3id.org/spot/am#hasInverseTargetAxis
-<https://w3id.org/spot/am#hasInverseTargetAxis> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/spot/am#hasInverseTargetAxis> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/spot/am#AxisMapping> .
-<https://w3id.org/spot/am#hasInverseTargetAxis> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/spot#Axis> .
-<https://w3id.org/spot/am#hasInverseTargetAxis> <http://www.w3.org/2000/01/rdf-schema#comment> "Specifies that the source axis is mapped to the inverse of the target axis, i.e.\r\n    the source axis points in the opposite/inverse direction of the target axis."@en .
-<https://w3id.org/spot/am#hasInverseTargetAxis> <http://www.w3.org/2000/01/rdf-schema#label> "has inverse target axis"@en .
 # 
 # https://w3id.org/spot/am#hasSourceAxis
 <https://w3id.org/spot/am#hasSourceAxis> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
@@ -139,31 +139,8 @@ _:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 <https://w3id.org/spot/am#hasTargetAxis> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
 <https://w3id.org/spot/am#hasTargetAxis> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/spot/am#AxisMapping> .
 <https://w3id.org/spot/am#hasTargetAxis> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/spot#Axis> .
-<https://w3id.org/spot/am#hasTargetAxis> <http://www.w3.org/2000/01/rdf-schema#comment> "Specifies to which target axis the source axis is mapped. The target axis must be from another space instance as the source axis."@en .
+<https://w3id.org/spot/am#hasTargetAxis> <http://www.w3.org/2000/01/rdf-schema#comment> "Specifies to which target axis the source axis is mapped. The target axis must be from another space instance\r\n    as the source axis."@en .
 <https://w3id.org/spot/am#hasTargetAxis> <http://www.w3.org/2000/01/rdf-schema#label> "has target axis"@en .
-# 
-# 
-# 
-# #################################################################
-# #
-# #    Data properties
-# #
-# #################################################################
-# 
-# 
-# https://w3id.org/spot/am#hasNormalizedCoordinateValue
-<https://w3id.org/spot/am#hasNormalizedCoordinateValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://w3id.org/spot/am#hasNormalizedCoordinateValue> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/spot/am#BoundaryPoint> .
-<https://w3id.org/spot/am#hasNormalizedCoordinateValue> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
-<https://w3id.org/spot/am#hasNormalizedCoordinateValue> <http://www.w3.org/2000/01/rdf-schema#comment> "Specifies the position of a boundary point in relation to the reference space as a\r\n        normalized coordinate value (typically between 0 and 1). If the boundary point mapping is additionally\r\n        related by a RELOC property, the normalized value is interpreted in reference to the area described by\r\n        the RELOC property.\r\n        E.g.: Point(Mapping) <reloc:containedInRight> RefSpace. +\r\n        Point(Mapping) <spot-am:hasNormalizedCoordinateValue> '0.5'.\r\n         --> Point '0.5' describes the center of the right area of the Reference Space"@en .
-<https://w3id.org/spot/am#hasNormalizedCoordinateValue> <http://www.w3.org/2000/01/rdf-schema#label> "has normalized coordinate value"@en .
-# 
-# https://w3id.org/spot/am#hasSourceToTargetAngle
-<https://w3id.org/spot/am#hasSourceToTargetAngle> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<https://w3id.org/spot/am#hasSourceToTargetAngle> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/spot/am#AxisMapping> .
-<https://w3id.org/spot/am#hasSourceToTargetAngle> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2000/01/rdf-schema#Literal> .
-<https://w3id.org/spot/am#hasSourceToTargetAngle> <http://www.w3.org/2000/01/rdf-schema#comment> "Specifies the angle (in degrees) between the source and target axis"@en .
-<https://w3id.org/spot/am#hasSourceToTargetAngle> <http://www.w3.org/2000/01/rdf-schema#label> "has source to target angle"@en .
 # 
 # 
 # 
@@ -176,13 +153,18 @@ _:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 # 
 # https://w3id.org/spot/am#Accuracy
 <https://w3id.org/spot/am#Accuracy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/spot/am#Accuracy> <http://www.w3.org/2000/01/rdf-schema#comment> "The level of accuracy for an axis mapping. Can be derived from angles if provided."@en .
+<https://w3id.org/spot/am#Accuracy> <http://www.w3.org/2000/01/rdf-schema#comment> "The level of accuracy for an axis mapping."@en .
 <https://w3id.org/spot/am#Accuracy> <http://www.w3.org/2000/01/rdf-schema#label> "Accuracy"@en .
 # 
 # https://w3id.org/spot/am#AxisMapping
 <https://w3id.org/spot/am#AxisMapping> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/spot/am#AxisMapping> <http://www.w3.org/2000/01/rdf-schema#comment> "The Axis Mapping is related to an Appearance of an Entity Space\r\n    and defines which Axis of the Entity Space (Source Axis) can be mapped to which Axis of the Reference Space\r\n     (another Entity, Document or Asset Space). This relation can be further specified with an angle and accuracy.\r\n     An AxisMapping object can only relate on Source Axis to one Reference Axis.\r\n     Thus, typically, each Entity Space Appearance links to three Axis Mapping objects."@en .
+<https://w3id.org/spot/am#AxisMapping> <http://www.w3.org/2000/01/rdf-schema#comment> "The Axis Mapping is related to an Appearance of an Entity Space\r\n    and defines which Axis of the Entity Space (Source Axis) can be mapped to which Axis of the Reference Space\r\n     (another Entity, Document or Asset Space). This relation can be further specified with an accuracy.\r\n     An AxisMapping object can only relate on Source Axis to one Reference Axis.\r\n     Thus, typically, each Entity Space Appearance links to three Axis Mapping objects."@en .
 <https://w3id.org/spot/am#AxisMapping> <http://www.w3.org/2000/01/rdf-schema#label> "Axis Mapping"@en .
+# 
+# https://w3id.org/spot/am#AxisRelationType
+<https://w3id.org/spot/am#AxisRelationType> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/spot/am#AxisRelationType> <http://www.w3.org/2000/01/rdf-schema#comment> "Defines the geometrical relation between two mapped axes."@en .
+<https://w3id.org/spot/am#AxisRelationType> <http://www.w3.org/2000/01/rdf-schema#label> "Axis Relation Type"@en .
 # 
 # https://w3id.org/spot/am#BoundaryPoint
 <https://w3id.org/spot/am#BoundaryPoint> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -191,7 +173,7 @@ _:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 # 
 # https://w3id.org/spot/am#BoundaryPointMapping
 <https://w3id.org/spot/am#BoundaryPointMapping> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/spot/am#BoundaryPointMapping> <http://www.w3.org/2000/01/rdf-schema#comment> "The Boundary Point Mapping describes the relation of an Entity Axis Boundary Point (Source Point)\r\n        to the reference space. The relation can be expressed by Directional Properties of the RELOC Ontology\r\n        (e.g., containedInFront/Right/Bottom etc.) and/or as a Normalized Coordinate in relation to the reference space.\r\n        If both properties are given the the normalized coordinate is to be interpreted in the context of the area\r\n        defined by the RELOC Property (e.g., Point <reloc:containedInRight> RefSpace.\r\n        --> '0.5' describes the center of the Right Area of the Reference Space)"@en .
+<https://w3id.org/spot/am#BoundaryPointMapping> <http://www.w3.org/2000/01/rdf-schema#comment> "The Boundary Point Mapping describes the relation of an Entity Axis Boundary Point (Source Point)\r\n        to the reference space. The relation can be expressed by Directional Properties of the RELOC Ontology\r\n        (e.g., containedInFront/Right/Bottom etc.)  in relation to the reference space.\r\n "@en .
 <https://w3id.org/spot/am#BoundaryPointMapping> <http://www.w3.org/2000/01/rdf-schema#label> "Boundary Point Mapping"@en .
 # 
 # https://w3id.org/spot/am#MaxBoundaryPoint
@@ -215,22 +197,36 @@ _:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 # #################################################################
 # 
 # 
+# https://w3id.org/spot/am#Antiparallel
+<https://w3id.org/spot/am#Antiparallel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/spot/am#Antiparallel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/spot/am#AxisRelationType> .
+<https://w3id.org/spot/am#Antiparallel> <http://www.w3.org/2000/01/rdf-schema#comment> "The source axis is antiparallel (parallel but directed in opposite direction) to the target axis."@en .
+<https://w3id.org/spot/am#Antiparallel> <http://www.w3.org/2000/01/rdf-schema#label> "Antiparallel"@en .
+<https://w3id.org/spot/am#Antiparallel> <http://www.w3.org/2000/01/rdf-schema#seeAlso> <https://www.oed.com/dictionary/antiparallel_adj> .
+# 
 # https://w3id.org/spot/am#Approximate
 <https://w3id.org/spot/am#Approximate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://w3id.org/spot/am#Approximate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/spot/am#Accuracy> .
-<https://w3id.org/spot/am#Approximate> <http://www.w3.org/2000/01/rdf-schema#comment> "Approximate accuracy level for axis mapping. The axes are almost parallel to each other."@en .
+<https://w3id.org/spot/am#Approximate> <http://www.w3.org/2000/01/rdf-schema#comment> "The relationship between the axes defined in the axis mapping corresponds closely to reality, with minor deviations (e.g., nearly parallel axes)."@en .
 <https://w3id.org/spot/am#Approximate> <http://www.w3.org/2000/01/rdf-schema#label> "Approximate"@en .
 # 
 # https://w3id.org/spot/am#Broad
 <https://w3id.org/spot/am#Broad> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://w3id.org/spot/am#Broad> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/spot/am#Accuracy> .
-<https://w3id.org/spot/am#Broad> <http://www.w3.org/2000/01/rdf-schema#comment> "\"Broad accuracy level for axis mapping. The reference axis is the closest match possible,\r\n        but not really parallel."@en .
+<https://w3id.org/spot/am#Broad> <http://www.w3.org/2000/01/rdf-schema#comment> "The source axis is assigned to the closest matching target axis in the context of the defined relationship, despite significant discrepancies."@en .
 <https://w3id.org/spot/am#Broad> <http://www.w3.org/2000/01/rdf-schema#label> "Broad"@en .
+# 
+# https://w3id.org/spot/am#Codirectional
+<https://w3id.org/spot/am#Codirectional> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://w3id.org/spot/am#Codirectional> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/spot/am#AxisRelationType> .
+<https://w3id.org/spot/am#Codirectional> <http://www.w3.org/2000/01/rdf-schema#comment> "The source axis is parallel to the target axis and having the same direction."@en .
+<https://w3id.org/spot/am#Codirectional> <http://www.w3.org/2000/01/rdf-schema#label> "Codirectional"@en .
+<https://w3id.org/spot/am#Codirectional> <http://www.w3.org/2000/01/rdf-schema#seeAlso> <https://www.oed.com/dictionary/codirectional_adj> .
 # 
 # https://w3id.org/spot/am#Exact
 <https://w3id.org/spot/am#Exact> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://w3id.org/spot/am#Exact> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/spot/am#Accuracy> .
-<https://w3id.org/spot/am#Exact> <http://www.w3.org/2000/01/rdf-schema#comment> "Exact accuracy level for axis mapping. The axes are parallel to each other. "@en .
+<https://w3id.org/spot/am#Exact> <http://www.w3.org/2000/01/rdf-schema#comment> "The relationship between the axes defined in the axis mapping corresponds exactly to reality."@en .
 <https://w3id.org/spot/am#Exact> <http://www.w3.org/2000/01/rdf-schema#label> "Exact"@en .
 # 
 # Generated by the OWL API (version 5.1.14) https://github.com/owlcs/owlapi/

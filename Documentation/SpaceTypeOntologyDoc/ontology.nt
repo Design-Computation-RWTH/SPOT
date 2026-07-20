@@ -172,6 +172,12 @@ _:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1
 <https://w3id.org/spot#hasZAxis> <http://www.w3.org/2000/01/rdf-schema#comment> "Relates a space to its Z axis"@en .
 <https://w3id.org/spot#hasZAxis> <http://www.w3.org/2000/01/rdf-schema#label> "has Z axis"@en .
 # 
+# https://w3id.org/spot#isInverseDirectionOf
+<https://w3id.org/spot#isInverseDirectionOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/spot#isInverseDirectionOf> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/spot#Direction> .
+<https://w3id.org/spot#isInverseDirectionOf> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/spot#Direction> .
+<https://w3id.org/spot#isInverseDirectionOf> <http://www.w3.org/2000/01/rdf-schema#comment> "Links to inverse directions to each other, eg. Front - Rear." .
+# 
 # 
 # 
 # #################################################################
@@ -248,6 +254,12 @@ _:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1
 <https://w3id.org/spot#HorizontalAreaSpace> <http://www.w3.org/2000/01/rdf-schema#comment> "The Horizontal Area Space is a subtype of Area Space, that implies that the plane of the resource\r\n     is parallel to the horizontal plane of the asset space. Floorplans or maps are typical horizontal area spaces."@en .
 <https://w3id.org/spot#HorizontalAreaSpace> <http://www.w3.org/2000/01/rdf-schema#label> "Horizontal Area Space"@en .
 # 
+# https://w3id.org/spot#LineSpace
+<https://w3id.org/spot#LineSpace> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/spot#LineSpace> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/spot#EntitySpace> .
+<https://w3id.org/spot#LineSpace> <http://www.w3.org/2000/01/rdf-schema#comment> "A one-dimensional space that can be used to represent e.g., vertical height references such as water levels "@en .
+<https://w3id.org/spot#LineSpace> <http://www.w3.org/2000/01/rdf-schema#label> "Line Space"@en .
+# 
 # https://w3id.org/spot#PhysicalSpace
 <https://w3id.org/spot#PhysicalSpace> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
 <https://w3id.org/spot#PhysicalSpace> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/spot#Space> .
@@ -295,36 +307,42 @@ _:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1
 # https://w3id.org/spot#Bottom
 <https://w3id.org/spot#Bottom> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://w3id.org/spot#Bottom> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/spot#Direction> .
+<https://w3id.org/spot#Bottom> <https://w3id.org/spot#isInverseDirectionOf> <https://w3id.org/spot#Top> .
 <https://w3id.org/spot#Bottom> <http://www.w3.org/2000/01/rdf-schema#comment> "The bottom of an asset or document space"@en .
 <https://w3id.org/spot#Bottom> <http://www.w3.org/2000/01/rdf-schema#label> "Bottom"@en .
 # 
 # https://w3id.org/spot#Front
 <https://w3id.org/spot#Front> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://w3id.org/spot#Front> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/spot#Direction> .
+<https://w3id.org/spot#Front> <https://w3id.org/spot#isInverseDirectionOf> <https://w3id.org/spot#Rear> .
 <https://w3id.org/spot#Front> <http://www.w3.org/2000/01/rdf-schema#comment> "The front of an asset or document space."@en .
 <https://w3id.org/spot#Front> <http://www.w3.org/2000/01/rdf-schema#label> "Front"@en .
 # 
 # https://w3id.org/spot#Left
 <https://w3id.org/spot#Left> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://w3id.org/spot#Left> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/spot#Direction> .
+<https://w3id.org/spot#Left> <https://w3id.org/spot#isInverseDirectionOf> <https://w3id.org/spot#Right> .
 <https://w3id.org/spot#Left> <http://www.w3.org/2000/01/rdf-schema#comment> "The left of an asset or document space"@en .
 <https://w3id.org/spot#Left> <http://www.w3.org/2000/01/rdf-schema#label> "Left"@en .
 # 
 # https://w3id.org/spot#Rear
 <https://w3id.org/spot#Rear> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://w3id.org/spot#Rear> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/spot#Direction> .
+<https://w3id.org/spot#Rear> <https://w3id.org/spot#isInverseDirectionOf> <https://w3id.org/spot#Front> .
 <https://w3id.org/spot#Rear> <http://www.w3.org/2000/01/rdf-schema#comment> "The rear of an asset or document space"@en .
 <https://w3id.org/spot#Rear> <http://www.w3.org/2000/01/rdf-schema#label> "Rear"@en .
 # 
 # https://w3id.org/spot#Right
 <https://w3id.org/spot#Right> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://w3id.org/spot#Right> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/spot#Direction> .
+<https://w3id.org/spot#Right> <https://w3id.org/spot#isInverseDirectionOf> <https://w3id.org/spot#Left> .
 <https://w3id.org/spot#Right> <http://www.w3.org/2000/01/rdf-schema#comment> "The right of an asset or document space"@en .
 <https://w3id.org/spot#Right> <http://www.w3.org/2000/01/rdf-schema#label> "Right"@en .
 # 
 # https://w3id.org/spot#Top
 <https://w3id.org/spot#Top> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
 <https://w3id.org/spot#Top> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/spot#Direction> .
+<https://w3id.org/spot#Top> <https://w3id.org/spot#isInverseDirectionOf> <https://w3id.org/spot#Bottom> .
 <https://w3id.org/spot#Top> <http://www.w3.org/2000/01/rdf-schema#comment> "The top of an asset or document space"@en .
 <https://w3id.org/spot#Top> <http://www.w3.org/2000/01/rdf-schema#label> "Top"@en .
 # 

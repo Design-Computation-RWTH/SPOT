@@ -202,6 +202,9 @@
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Bottom"
+  } ],
+  "https://w3id.org/spot#isInverseDirectionOf" : [ {
+    "@id" : "https://w3id.org/spot#Top"
   } ]
 }, {
   "@id" : "https://w3id.org/spot#Direction",
@@ -280,6 +283,9 @@
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Front"
+  } ],
+  "https://w3id.org/spot#isInverseDirectionOf" : [ {
+    "@id" : "https://w3id.org/spot#Rear"
   } ]
 }, {
   "@id" : "https://w3id.org/spot#HorizontalAreaSpace",
@@ -305,6 +311,23 @@
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Left"
+  } ],
+  "https://w3id.org/spot#isInverseDirectionOf" : [ {
+    "@id" : "https://w3id.org/spot#Right"
+  } ]
+}, {
+  "@id" : "https://w3id.org/spot#LineSpace",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "A one-dimensional space that can be used to represent e.g., vertical height references such as water levels "
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Line Space"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "https://w3id.org/spot#EntitySpace"
   } ]
 }, {
   "@id" : "https://w3id.org/spot#PhysicalSpace",
@@ -344,6 +367,9 @@
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Rear"
+  } ],
+  "https://w3id.org/spot#isInverseDirectionOf" : [ {
+    "@id" : "https://w3id.org/spot#Front"
   } ]
 }, {
   "@id" : "https://w3id.org/spot#Right",
@@ -355,6 +381,9 @@
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Right"
+  } ],
+  "https://w3id.org/spot#isInverseDirectionOf" : [ {
+    "@id" : "https://w3id.org/spot#Left"
   } ]
 }, {
   "@id" : "https://w3id.org/spot#Space",
@@ -377,6 +406,9 @@
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
     "@value" : "Top"
+  } ],
+  "https://w3id.org/spot#isInverseDirectionOf" : [ {
+    "@id" : "https://w3id.org/spot#Bottom"
   } ]
 }, {
   "@id" : "https://w3id.org/spot#VerticalAreaSpace",
@@ -591,6 +623,18 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
     "@id" : "https://w3id.org/spot#hasAxis"
+  } ]
+}, {
+  "@id" : "https://w3id.org/spot#isInverseDirectionOf",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@value" : "Links to inverse directions to each other, eg. Front - Rear."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/spot#Direction"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/spot#Direction"
   } ]
 }, {
   "@id" : "https://w3id.org/spot/",

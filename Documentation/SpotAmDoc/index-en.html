@@ -103,7 +103,7 @@ Göbels, A., Schulz, O., &amp; Rolke, F. (2025). SPOT Axis Mapping Ontology (Ver
     <div id="introduction"><h2 id="intro" class="list">Introduction <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
 <span class="markdown">
 <p>While the core <a href="https://w3id.org/spot#" target="_blank" rel="noopener noreferrer">Space Types Ontology</a> provides a framework for spatial data organization, a more detailed mechanism is needed to define the precise positioning and orientation of spatial relationships between spaces.</p>
-<p>The SPOT Axis Mapping (SPOT-AM) Ontology addresses this by enabling the definition of spatial transformations through two complementary mechanisms: Axis Mappings, which define the rotational relationship between spaces, and Boundary Point Mappings, which define their translational positioning. Both support varying levels of accuracy and can express spatial relationships either quantitatively through normalized coordinates or qualitatively through human-readable directional relations via the <a href="https://w3id.org/reloc#" target="_blank" rel="noopener noreferrer">Relative Location Ontology (RELOC)</a>.</p>
+<p>The SPOT Axis Mapping (SPOT-AM) Ontology addresses this by enabling the definition of spatial transformations through two complementary mechanisms: Axis Mappings, which define the rotational relationship between spaces, and Boundary Point Mappings, which define their translational positioning. Both support varying levels of accuracy and can express spatial relationships  qualitatively through human-readable directional relations via the <a href="https://w3id.org/reloc#" target="_blank" rel="noopener noreferrer">Relative Location Ontology (RELOC)</a>.</p>
 </span>
 <div id="namespacedeclarations">
 <h3 id="ns" class="list">Namespace declarations</h3>
@@ -129,7 +129,6 @@ Göbels, A., Schulz, O., &amp; Rolke, F. (2025). SPOT Axis Mapping Ontology (Ver
 </div>
 </div>
   
-
 <!--OVERVIEW SECTION-->
     <div id="overview"><h2 id="overv" class="list">SPOT-AM Ontology: Overview <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
 <span class="markdown">
@@ -141,6 +140,9 @@ This ontology has the following classes and properties.</span>
    </li>
    <li>
       <a href="#AxisMapping" title="https://w3id.org/spot/am#AxisMapping">Axis Mapping</a>
+   </li>
+   <li>
+      <a href="#AxisRelationType" title="https://w3id.org/spot/am#AxisRelationType">Axis Relation Type</a>
    </li>
    <li>
       <a href="#BoundaryPoint" title="https://w3id.org/spot/am#BoundaryPoint">Boundary Point</a>
@@ -184,15 +186,10 @@ This ontology has the following classes and properties.</span>
    <li>
       <a href="#hasTargetAxis" title="https://w3id.org/spot/am#hasTargetAxis">has target axis</a>
    </li>
-</ul><h4>Data Properties</h4><ul class="hlist">
-   <li>
-      <a href="#hasNormalizedCoordinateValue"
-         title="https://w3id.org/spot/am#hasNormalizedCoordinateValue">has normalized coordinate value</a>
-   </li>
-   <li>
-      <a href="#hasSourceToTargetAngle" title="https://w3id.org/spot/am#hasSourceToTargetAngle">has source to target angle</a>
-   </li>
 </ul><h4>Named Individuals</h4><ul class="hlist">
+   <li>
+      <a href="#Antiparallel" title="https://w3id.org/spot/am#Antiparallel">Antiparallel</a>
+   </li>
    <li>
       <a href="#Approximate" title="https://w3id.org/spot/am#Approximate">Approximate</a>
    </li>
@@ -200,26 +197,14 @@ This ontology has the following classes and properties.</span>
       <a href="#Broad" title="https://w3id.org/spot/am#Broad">Broad</a>
    </li>
    <li>
-      <a href="#Exact" title="https://w3id.org/spot/am#Exact">Exact</a>
-   </li>
-    <li>
       <a href="#Codirectional" title="https://w3id.org/spot/am#Codirectional">Codirectional</a>
    </li>
    <li>
-      <a href="#Antiparallel" title="https://w3id.org/spot/am#Antiparallel">Antiparallel</a>
+      <a href="#Exact" title="https://w3id.org/spot/am#Exact">Exact</a>
    </li>
-
-</ul><iframe align="center" width="100%" height ="500px" src="webvowl/index.html"></iframe> 
+</ul><iframe align="center" width="100%" height ="500px" src="webvowl/index.html"></iframe>
 </div>
-  
-<!--To fill when content is ready-->
-<!--DESCRIPTION SECTION
-    <div id="description"><h2 id="desc" class="list">SPOT-AM Ontology: Description <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
-<span class="markdown">
-This is a placeholder text for the description of your ontology. The description should include an explanation and a diagram explaining how the classes are related, examples of usage, etc.</span>
 
-</div>
--->
 
 <!--CROSSREF SECTION-->
    <div id="crossref"><h2 id="crossreference" class="list">Cross reference for SPOT-AM Ontology classes, properties and dataproperties <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
@@ -233,8 +218,8 @@ This section provides details for each class and property defined by SPOT-AM Ont
       <li>
          <a href="#AxisMapping" title="https://w3id.org/spot/am#AxisMapping">Axis Mapping</a>
       </li>
-       <li>
-      <a href="#AxisRelationType" title="https://w3id.org/spot/am#AxisRelationType">Axis Relation Type</a>
+      <li>
+         <a href="#AxisRelationType" title="https://w3id.org/spot/am#AxisRelationType">Axis Relation Type</a>
       </li>
       <li>
          <a href="#BoundaryPoint" title="https://w3id.org/spot/am#BoundaryPoint">Boundary Point</a>
@@ -249,7 +234,6 @@ This section provides details for each class and property defined by SPOT-AM Ont
          <a href="#MinBoundaryPoint" title="https://w3id.org/spot/am#MinBoundaryPoint">Minimum Boundary Point</a>
       </li>
    </ul>
-
    <div class="entity" id="Accuracy">
       <h3>Accuracy<sup class="type-c" title="class">c</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
@@ -258,7 +242,7 @@ This section provides details for each class and property defined by SPOT-AM Ont
       <p>
          <strong>IRI:</strong> https://w3id.org/spot/am#Accuracy</p>
       <div class="comment">
-         <span class="markdown">The level of accuracy for an axis mapping. Can be derived from angles if provided.</span>
+         <span class="markdown">The level of accuracy for an axis mapping, indicating if they are exact, approximate, or broadly parallel.</span>
       </div>
       <dl class="description">
          <dt>is in range of</dt>
@@ -285,8 +269,8 @@ This section provides details for each class and property defined by SPOT-AM Ont
       <div class="comment">
          <span class="markdown">The Axis Mapping is related to an Appearance of an Entity Space
     and defines which Axis of the Entity Space (Source Axis) can be mapped to which Axis of the Reference Space
-     (another Entity, Document or Asset Space). This relation can be further specified with an angle and accuracy.
-     An AxisMapping object can only relate on Source Axis to one Reference Axis.
+     (another Entity, Document or Asset Space). This relation can be further specified with an accuracy.
+     An AxisMapping object can only relate one Source Axis to one Reference Axis.
      Thus, typically, each Entity Space Appearance links to three Axis Mapping objects.</span>
       </div>
       <dl class="description">
@@ -295,8 +279,7 @@ This section provides details for each class and property defined by SPOT-AM Ont
             <a href="#hasAccuracy" title="https://w3id.org/spot/am#hasAccuracy">has accuracy</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#hasAxisRelationType" title="https://w3id.org/spot/am#hasAxisRelationType">has axis relation type</a>
             <sup class="type-op" title="object property">op</sup>, <a href="#hasSourceAxis" title="https://w3id.org/spot/am#hasSourceAxis">has source axis</a>
-            <sup class="type-op" title="object property">op</sup>, <a href="#hasSourceToTargetAngle" title="https://w3id.org/spot/am#hasSourceToTargetAngle">has source to target angle</a>
-            <sup class="type-dp" title="data property">dp</sup>, <a href="#hasTargetAxis" title="https://w3id.org/spot/am#hasTargetAxis">has target axis</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#hasTargetAxis" title="https://w3id.org/spot/am#hasTargetAxis">has target axis</a>
             <sup class="type-op" title="object property">op</sup>
          </dd>
          <dt>is in range of</dt>
@@ -347,12 +330,6 @@ This section provides details for each class and property defined by SPOT-AM Ont
             <sup class="type-c" title="class">c</sup>, <a href="#MinBoundaryPoint" title="https://w3id.org/spot/am#MinBoundaryPoint">Minimum Boundary Point</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
-         <dt>is in domain of</dt>
-         <dd>
-            <a href="#hasNormalizedCoordinateValue"
-               title="https://w3id.org/spot/am#hasNormalizedCoordinateValue">has normalized coordinate value</a>
-            <sup class="type-dp" title="data property">dp</sup>
-         </dd>
          <dt>is in range of</dt>
          <dd>
             <a href="#hasBoundaryPoint" title="https://w3id.org/spot/am#hasBoundaryPoint">has boundary point</a>
@@ -371,10 +348,8 @@ This section provides details for each class and property defined by SPOT-AM Ont
       <div class="comment">
          <span class="markdown">The Boundary Point Mapping describes the relation of an Entity Axis Boundary Point (Source Point)
         to the reference space. The relation can be expressed by Directional Properties of the RELOC Ontology
-        (e.g., containedInFront/Right/Bottom etc.) and/or as a Normalized Coordinate in relation to the reference space.
-        If both properties are given the the normalized coordinate is to be interpreted in the context of the area
-        defined by the RELOC Property (e.g., Point &lt;reloc:containedInRight&gt; RefSpace.
-        --&gt; '0.5' describes the center of the Right Area of the Reference Space)</span>
+        (e.g., containedInFront/Right/Bottom etc.) in relation to the reference space.
+        </span>
       </div>
       <dl class="description">
          <dt>is in domain of</dt>
@@ -470,17 +445,16 @@ This section provides details for each class and property defined by SPOT-AM Ont
             <dt>has sub-property chains</dt>
             <dd>
                <a href="#hasAxisMapping" title="https://w3id.org/spot/am#hasAxisMapping">has axis mapping</a>
-               <sup class="type-op" title="object property">op</sup> 
-               <span class="logic">o</span> 
+               <sup class="type-op" title="object property">op</sup>
+               <span class="logic">o</span>
                <a href="#hasTargetAxis" title="https://w3id.org/spot/am#hasTargetAxis">has target axis</a>
                <sup class="type-op" title="object property">op</sup>
             </dd>
             <dd>
                <a href="#hasBoundaryPointMapping" title="https://w3id.org/spot/am#hasBoundaryPointMapping">has boundary point mapping</a>
-               <sup class="type-op" title="object property">op</sup> 
+               <sup class="type-op" title="object property">op</sup>
                <span class="logic">o</span>
-
-               <span class="dotted"><a target="_blank" href="https://w3id.org/reloc#directionalRelation"  title="https://w3id.org/reloc#directionalRelation">directional relation</a></span>
+               <span class="dotted" title="https://w3id.org/reloc#directionalRelation">directional relation</span>
                <sup class="type-op" title="object property">op</sup>
             </dd>
          </dl>
@@ -525,8 +499,7 @@ This section provides details for each class and property defined by SPOT-AM Ont
          <dl>
             <dt>has domain</dt>
             <dd>
-               <span class="dotted"><a href="https://w3id.org/spot#Appearance" target="_blank">Appearance</a></span>
-               <sup class="type-c" title="class">c</sup>
+               <span class="dotted" title="https://w3id.org/spot#Appearance">appearance</span>
             </dd>
             <dt>has range</dt>
             <dd>
@@ -576,8 +549,7 @@ This section provides details for each class and property defined by SPOT-AM Ont
          <dl>
             <dt>has domain</dt>
             <dd>
-               <span class="dotted"><a href="https://w3id.org/spot#Axis" target="_blank">Axis</a></span>
-               <sup class="type-c" title="class">c</sup>
+               <span class="dotted" title="https://w3id.org/spot#Axis">axis</span>
             </dd>
             <dt>has range</dt>
             <dd>
@@ -602,8 +574,7 @@ This section provides details for each class and property defined by SPOT-AM Ont
          <dl>
             <dt>has domain</dt>
             <dd>
-               <span class="dotted"><a href="https://w3id.org/spot#Appearance" target="_blank">Appearance</a></span>
-               <sup class="type-c" title="class">c</sup>
+               <span class="dotted" title="https://w3id.org/spot#Appearance">appearance</span>
             </dd>
             <dt>has range</dt>
             <dd>
@@ -632,14 +603,11 @@ This section provides details for each class and property defined by SPOT-AM Ont
             </dd>
             <dt>has range</dt>
             <dd>
-               <span class="dotted"><a href="https://w3id.org/spot#Axis" target="_blank">Axis</a></span>
-               <sup class="type-c" title="class">c</sup> 
+               <span class="dotted" title="https://w3id.org/spot#Axis">axis</span>
                <span class="logic">and</span> (<span class="logic">inverse</span>
-               <span class="dotted"><a href="https://w3id.org/spot#hasAxis" target="_blank">has axis</a></span>
-               <sup class="type-op" title="object property">op</sup> 
+               <span class="dotted" title="https://w3id.org/spot#hasAxis">has axis</span>
                <span class="logic">some</span>
-               <span class="dotted"><a href="https://w3id.org/spot#EntitySpace" target="_blank">Entity Space</a></span>
-               <sup class="type-c" title="class">c</sup>)</dd>
+               <span class="dotted" title="https://w3id.org/spot#EntitySpace">entity space</span>)</dd>
          </dl>
       </div>
    </div>
@@ -688,68 +656,7 @@ This section provides details for each class and property defined by SPOT-AM Ont
             </dd>
             <dt>has range</dt>
             <dd>
-               <span class="dotted"><a href="https://w3id.org/spot#Axis" target="_blank">Axis</a></span>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-         </dl>
-      </div>
-   </div>
-</div><div id="dataproperties">
-   <h3 id="dataproperties-headline" class="list">Data Properties</h3>
-   <ul class="hlist">
-      <li>
-         <a href="#hasNormalizedCoordinateValue"
-            title="https://w3id.org/spot/am#hasNormalizedCoordinateValue">has normalized coordinate value</a>
-      </li>
-      <li>
-         <a href="#hasSourceToTargetAngle" title="https://w3id.org/spot/am#hasSourceToTargetAngle">has source to target angle</a>
-      </li>
-   </ul>
-   <div class="entity" id="hasNormalizedCoordinateValue">
-      <h3>has normalized coordinate value<sup class="type-dp" title="data property">dp</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/spot/am#hasNormalizedCoordinateValue</p>
-      <div class="comment">
-         <span class="markdown">Specifies the position of a boundary point in relation to the reference space as a
-        normalized coordinate value (typically between 0 and 1).</span>
-      </div>
-      <div class="description">
-         <dl>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#BoundaryPoint" title="https://w3id.org/spot/am#BoundaryPoint">Boundary Point</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <span class="dotted" title="http://www.w3.org/2000/01/rdf-schema#Literal">literal</span>
-            </dd>
-         </dl>
-      </div>
-   </div>
-   <div class="entity" id="hasSourceToTargetAngle">
-      <h3>has source to target angle<sup class="type-dp" title="data property">dp</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/spot/am#hasSourceToTargetAngle</p>
-      <div class="comment">
-         <span class="markdown">Specifies the angle (in degrees) between the source and target axis</span>
-      </div>
-      <div class="description">
-         <dl>
-            <dt>has domain</dt>
-            <dd>
-               <a href="#AxisMapping" title="https://w3id.org/spot/am#AxisMapping">Axis Mapping</a>
-               <sup class="type-c" title="class">c</sup>
-            </dd>
-            <dt>has range</dt>
-            <dd>
-               <span class="dotted" title="http://www.w3.org/2000/01/rdf-schema#Literal">literal</span>
+               <span class="dotted" title="https://w3id.org/spot#Axis">axis</span>
             </dd>
          </dl>
       </div>
@@ -758,21 +665,39 @@ This section provides details for each class and property defined by SPOT-AM Ont
    <h3 id="namedindividuals" class="list">Named Individuals</h3>
    <ul class="hlist">
       <li>
+         <a href="#Antiparallel" title="https://w3id.org/spot/am#Antiparallel">Antiparallel</a>
+      </li>
+      <li>
          <a href="#Approximate" title="https://w3id.org/spot/am#Approximate">Approximate</a>
       </li>
       <li>
          <a href="#Broad" title="https://w3id.org/spot/am#Broad">Broad</a>
       </li>
       <li>
-         <a href="#Exact" title="https://w3id.org/spot/am#Exact">Exact</a>
-      </li>
-      <li>
          <a href="#Codirectional" title="https://w3id.org/spot/am#Codirectional">Codirectional</a>
       </li>
       <li>
-         <a href="#Antiparallel" title="https://w3id.org/spot/am#Antiparallel">Antiparallel</a>
+         <a href="#Exact" title="https://w3id.org/spot/am#Exact">Exact</a>
       </li>
    </ul>
+   <div class="entity" id="Antiparallel">
+      <h3>Antiparallel<sup class="type-ni" title="named individual">ni</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> https://w3id.org/spot/am#Antiparallel</p>
+      <div class="comment">
+         <span class="markdown">The source axis is antiparallel (parallel but directed in opposite direction) to the target axis.</span>
+      </div>
+      <dl class="description">
+         <dt>belongs to</dt>
+         <dd>
+            <a href="#AxisRelationType" title="https://w3id.org/spot/am#AxisRelationType">Axis Relation Type</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
    <div class="entity" id="Approximate">
       <h3>Approximate<sup class="type-ni" title="named individual">ni</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
@@ -781,7 +706,7 @@ This section provides details for each class and property defined by SPOT-AM Ont
       <p>
          <strong>IRI:</strong> https://w3id.org/spot/am#Approximate</p>
       <div class="comment">
-         <span class="markdown">Approximate accuracy level for axis mapping. The axes are almost parallel to each other.</span>
+         <span class="markdown">The relationship between the axes defined in the axis mapping corresponds closely to reality, with minor deviations (e.g., nearly parallel axes).</span>
       </div>
       <dl class="description">
          <dt>belongs to</dt>
@@ -799,26 +724,7 @@ This section provides details for each class and property defined by SPOT-AM Ont
       <p>
          <strong>IRI:</strong> https://w3id.org/spot/am#Broad</p>
       <div class="comment">
-         <span class="markdown">"Broad accuracy level for axis mapping. The reference axis is the closest match possible,
-        but not really parallel.</span>
-      </div>
-      <dl class="description">
-         <dt>belongs to</dt>
-         <dd>
-            <a href="#Accuracy" title="https://w3id.org/spot/am#Accuracy">Accuracy</a>
-            <sup class="type-c" title="class">c</sup>
-         </dd>
-      </dl>
-   </div>
-   <div class="entity" id="Exact">
-      <h3>Exact<sup class="type-ni" title="named individual">ni</sup>
-         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
-         </span>
-      </h3>
-      <p>
-         <strong>IRI:</strong> https://w3id.org/spot/am#Exact</p>
-      <div class="comment">
-         <span class="markdown">Exact accuracy level for axis mapping. The axes are parallel to each other. </span>
+         <span class="markdown">The source axis is assigned to the closest matching target axis in the context of the defined relationship, despite significant discrepancies.</span>
       </div>
       <dl class="description">
          <dt>belongs to</dt>
@@ -846,20 +752,20 @@ This section provides details for each class and property defined by SPOT-AM Ont
          </dd>
       </dl>
    </div>
-   <div class="entity" id="Antiparallel">
-      <h3>Antiparallel<sup class="type-ni" title="named individual">ni</sup>
+   <div class="entity" id="Exact">
+      <h3>Exact<sup class="type-ni" title="named individual">ni</sup>
          <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a>
          </span>
       </h3>
       <p>
-         <strong>IRI:</strong> https://w3id.org/spot/am#Antiparallel</p>
+         <strong>IRI:</strong> https://w3id.org/spot/am#Exact</p>
       <div class="comment">
-         <span class="markdown">The source axis is antiparallel (parallel but directed in opposite direction) to the target axis.</span>
+         <span class="markdown">The relationship between the axes defined in the axis mapping corresponds exactly to reality.</span>
       </div>
       <dl class="description">
          <dt>belongs to</dt>
          <dd>
-            <a href="#AxisRelationType" title="https://w3id.org/spot/am#AxisRelationType">Axis Relation Type</a>
+            <a href="#Accuracy" title="https://w3id.org/spot/am#Accuracy">Accuracy</a>
             <sup class="type-c" title="class">c</sup>
          </dd>
       </dl>
@@ -874,7 +780,7 @@ This section provides details for each class and property defined by SPOT-AM Ont
 </div>
 </div>
 </div>
-    
+
 
 <!--REFERENCES SECTION-->
   <div id="references">

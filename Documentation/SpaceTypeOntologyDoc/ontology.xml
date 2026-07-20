@@ -6,6 +6,7 @@
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:spot="https://w3id.org/spot#"
      xmlns:vann="http://purl.org/vocab/vann/"
      xmlns:terms="http://purl.org/dc/terms/"
      xmlns:schema="http://schema.org/">
@@ -284,6 +285,17 @@
     
 
 
+    <!-- https://w3id.org/spot#isInverseDirectionOf -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/spot#isInverseDirectionOf">
+        <rdfs:domain rdf:resource="https://w3id.org/spot#Direction"/>
+        <rdfs:range rdf:resource="https://w3id.org/spot#Direction"/>
+        <rdfs:comment>Links to inverse directions to each other, eg. Front - Rear.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -437,6 +449,17 @@
     
 
 
+    <!-- https://w3id.org/spot#LineSpace -->
+
+
+    <owl:Class rdf:about="https://w3id.org/spot#LineSpace">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/spot#EntitySpace"/>
+        <rdfs:comment xml:lang="en">A one-dimensional space that can be used to represent e.g., vertical height references such as water levels </rdfs:comment>
+        <rdfs:label xml:lang="en">Line Space</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- https://w3id.org/spot#PhysicalSpace -->
 
 
@@ -525,6 +548,7 @@
 
     <owl:NamedIndividual rdf:about="https://w3id.org/spot#Bottom">
         <rdf:type rdf:resource="https://w3id.org/spot#Direction"/>
+        <spot:isInverseDirectionOf rdf:resource="https://w3id.org/spot#Top"/>
         <rdfs:comment xml:lang="en">The bottom of an asset or document space</rdfs:comment>
         <rdfs:label xml:lang="en">Bottom</rdfs:label>
     </owl:NamedIndividual>
@@ -536,6 +560,7 @@
 
     <owl:NamedIndividual rdf:about="https://w3id.org/spot#Front">
         <rdf:type rdf:resource="https://w3id.org/spot#Direction"/>
+        <spot:isInverseDirectionOf rdf:resource="https://w3id.org/spot#Rear"/>
         <rdfs:comment xml:lang="en">The front of an asset or document space.</rdfs:comment>
         <rdfs:label xml:lang="en">Front</rdfs:label>
     </owl:NamedIndividual>
@@ -547,6 +572,7 @@
 
     <owl:NamedIndividual rdf:about="https://w3id.org/spot#Left">
         <rdf:type rdf:resource="https://w3id.org/spot#Direction"/>
+        <spot:isInverseDirectionOf rdf:resource="https://w3id.org/spot#Right"/>
         <rdfs:comment xml:lang="en">The left of an asset or document space</rdfs:comment>
         <rdfs:label xml:lang="en">Left</rdfs:label>
     </owl:NamedIndividual>
@@ -558,6 +584,7 @@
 
     <owl:NamedIndividual rdf:about="https://w3id.org/spot#Rear">
         <rdf:type rdf:resource="https://w3id.org/spot#Direction"/>
+        <spot:isInverseDirectionOf rdf:resource="https://w3id.org/spot#Front"/>
         <rdfs:comment xml:lang="en">The rear of an asset or document space</rdfs:comment>
         <rdfs:label xml:lang="en">Rear</rdfs:label>
     </owl:NamedIndividual>
@@ -569,6 +596,7 @@
 
     <owl:NamedIndividual rdf:about="https://w3id.org/spot#Right">
         <rdf:type rdf:resource="https://w3id.org/spot#Direction"/>
+        <spot:isInverseDirectionOf rdf:resource="https://w3id.org/spot#Left"/>
         <rdfs:comment xml:lang="en">The right of an asset or document space</rdfs:comment>
         <rdfs:label xml:lang="en">Right</rdfs:label>
     </owl:NamedIndividual>
@@ -580,6 +608,7 @@
 
     <owl:NamedIndividual rdf:about="https://w3id.org/spot#Top">
         <rdf:type rdf:resource="https://w3id.org/spot#Direction"/>
+        <spot:isInverseDirectionOf rdf:resource="https://w3id.org/spot#Bottom"/>
         <rdfs:comment xml:lang="en">The top of an asset or document space</rdfs:comment>
         <rdfs:label xml:lang="en">Top</rdfs:label>
     </owl:NamedIndividual>

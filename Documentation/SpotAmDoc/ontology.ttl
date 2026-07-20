@@ -90,6 +90,14 @@ _:genid6 rdf:type <http://schema.org/Organization> ;
                 rdfs:label "has axis mapping"@en .
 
 
+###  https://w3id.org/spot/am#hasAxisRelationType
+:hasAxisRelationType rdf:type owl:ObjectProperty ;
+                     rdfs:domain :AxisMapping ;
+                     rdfs:range :AxisRelationType ;
+                     rdfs:comment "Specifies which kind of geometrical relation the two mapped axes have to each other."@en ;
+                     rdfs:label "has axis relation type"@en .
+
+
 ###  https://w3id.org/spot/am#hasBoundaryPoint
 :hasBoundaryPoint rdf:type owl:ObjectProperty ;
                   rdfs:domain <https://w3id.org/spot#Axis> ;
@@ -106,15 +114,6 @@ _:genid6 rdf:type <http://schema.org/Organization> ;
                          rdfs:comment """Relates an appearance to a boundary point mapping. Each appearance can have multiple boundary point mappings.
      For mappings of volume spaces, up to 6 boundary points mappings are usually needed (min and max point of each axis)."""@en ;
                          rdfs:label "has boundary point mapping"@en .
-
-
-###  https://w3id.org/spot/am#hasInverseTargetAxis
-:hasInverseTargetAxis rdf:type owl:ObjectProperty ;
-                      rdfs:domain :AxisMapping ;
-                      rdfs:range <https://w3id.org/spot#Axis> ;
-                      rdfs:comment """Specifies that the source axis is mapped to the inverse of the target axis, i.e.
-    the source axis points in the opposite/inverse direction of the target axis."""@en ;
-                      rdfs:label "has inverse target axis"@en .
 
 
 ###  https://w3id.org/spot/am#hasSourceAxis
@@ -145,34 +144,9 @@ _:genid6 rdf:type <http://schema.org/Organization> ;
 :hasTargetAxis rdf:type owl:ObjectProperty ;
                rdfs:domain :AxisMapping ;
                rdfs:range <https://w3id.org/spot#Axis> ;
-               rdfs:comment """Specifies to which target axis the source axis is mapped. The target axis must be from another space instance as the source axis."""@en ;
+               rdfs:comment """Specifies to which target axis the source axis is mapped. The target axis must be from another space instance
+    as the source axis."""@en ;
                rdfs:label "has target axis"@en .
-
-
-#################################################################
-#    Data properties
-#################################################################
-
-###  https://w3id.org/spot/am#hasNormalizedCoordinateValue
-:hasNormalizedCoordinateValue rdf:type owl:DatatypeProperty ;
-                              rdfs:domain :BoundaryPoint ;
-                              rdfs:range rdfs:Literal ;
-                              rdfs:comment """Specifies the position of a boundary point in relation to the reference space as a
-        normalized coordinate value (typically between 0 and 1). If the boundary point mapping is additionally
-        related by a RELOC property, the normalized value is interpreted in reference to the area described by
-        the RELOC property.
-        E.g.: Point(Mapping) <reloc:containedInRight> RefSpace. +
-        Point(Mapping) <spot-am:hasNormalizedCoordinateValue> '0.5'.
-         --> Point '0.5' describes the center of the right area of the Reference Space"""@en ;
-                              rdfs:label "has normalized coordinate value"@en .
-
-
-###  https://w3id.org/spot/am#hasSourceToTargetAngle
-:hasSourceToTargetAngle rdf:type owl:DatatypeProperty ;
-                        rdfs:domain :AxisMapping ;
-                        rdfs:range rdfs:Literal ;
-                        rdfs:comment "Specifies the angle (in degrees) between the source and target axis"@en ;
-                        rdfs:label "has source to target angle"@en .
 
 
 #################################################################
@@ -181,7 +155,7 @@ _:genid6 rdf:type <http://schema.org/Organization> ;
 
 ###  https://w3id.org/spot/am#Accuracy
 :Accuracy rdf:type owl:Class ;
-          rdfs:comment "The level of accuracy for an axis mapping. Can be derived from angles if provided."@en ;
+          rdfs:comment "The level of accuracy for an axis mapping."@en ;
           rdfs:label "Accuracy"@en .
 
 
@@ -189,10 +163,16 @@ _:genid6 rdf:type <http://schema.org/Organization> ;
 :AxisMapping rdf:type owl:Class ;
              rdfs:comment """The Axis Mapping is related to an Appearance of an Entity Space
     and defines which Axis of the Entity Space (Source Axis) can be mapped to which Axis of the Reference Space
-     (another Entity, Document or Asset Space). This relation can be further specified with an angle and accuracy.
+     (another Entity, Document or Asset Space). This relation can be further specified with an accuracy.
      An AxisMapping object can only relate on Source Axis to one Reference Axis.
      Thus, typically, each Entity Space Appearance links to three Axis Mapping objects."""@en ;
              rdfs:label "Axis Mapping"@en .
+
+
+###  https://w3id.org/spot/am#AxisRelationType
+:AxisRelationType rdf:type owl:Class ;
+                  rdfs:comment "Defines the geometrical relation between two mapped axes."@en ;
+                  rdfs:label "Axis Relation Type"@en .
 
 
 ###  https://w3id.org/spot/am#BoundaryPoint
@@ -205,10 +185,8 @@ _:genid6 rdf:type <http://schema.org/Organization> ;
 :BoundaryPointMapping rdf:type owl:Class ;
                       rdfs:comment """The Boundary Point Mapping describes the relation of an Entity Axis Boundary Point (Source Point)
         to the reference space. The relation can be expressed by Directional Properties of the RELOC Ontology
-        (e.g., containedInFront/Right/Bottom etc.) and/or as a Normalized Coordinate in relation to the reference space.
-        If both properties are given the the normalized coordinate is to be interpreted in the context of the area
-        defined by the RELOC Property (e.g., Point <reloc:containedInRight> RefSpace.
-        --> '0.5' describes the center of the Right Area of the Reference Space)"""@en ;
+        (e.g., containedInFront/Right/Bottom etc.) in relation to the reference space.
+        """@en ;
                       rdfs:label "Boundary Point Mapping"@en .
 
 
@@ -230,25 +208,40 @@ _:genid6 rdf:type <http://schema.org/Organization> ;
 #    Individuals
 #################################################################
 
+###  https://w3id.org/spot/am#Antiparallel
+:Antiparallel rdf:type owl:NamedIndividual ,
+                       :AxisRelationType ;
+              rdfs:comment "The source axis is antiparallel (parallel but directed in opposite direction) to the target axis."@en ;
+              rdfs:label "Antiparallel"@en ;
+              rdfs:seeAlso <https://www.oed.com/dictionary/antiparallel_adj> .
+
+
 ###  https://w3id.org/spot/am#Approximate
 :Approximate rdf:type owl:NamedIndividual ,
                       :Accuracy ;
-             rdfs:comment "Approximate accuracy level for axis mapping. The axes are almost parallel to each other."@en ;
+             rdfs:comment "The relationship between the axes defined in the axis mapping corresponds closely to reality, with minor deviations (e.g., nearly parallel axes)."@en ;
              rdfs:label "Approximate"@en .
 
 
 ###  https://w3id.org/spot/am#Broad
 :Broad rdf:type owl:NamedIndividual ,
                 :Accuracy ;
-       rdfs:comment """\"Broad accuracy level for axis mapping. The reference axis is the closest match possible,
-        but not really parallel."""@en ;
+       rdfs:comment "The source axis is assigned to the closest matching target axis in the context of the defined relationship, despite significant discrepancies."@en ;
        rdfs:label "Broad"@en .
+
+
+###  https://w3id.org/spot/am#Codirectional
+:Codirectional rdf:type owl:NamedIndividual ,
+                        :AxisRelationType ;
+               rdfs:comment "The source axis is parallel to the target axis and having the same direction."@en ;
+               rdfs:label "Codirectional"@en ;
+               rdfs:seeAlso <https://www.oed.com/dictionary/codirectional_adj> .
 
 
 ###  https://w3id.org/spot/am#Exact
 :Exact rdf:type owl:NamedIndividual ,
                 :Accuracy ;
-       rdfs:comment "Exact accuracy level for axis mapping. The axes are parallel to each other. "@en ;
+       rdfs:comment "The relationship between the axes defined in the axis mapping corresponds exactly to reality."@en ;
        rdfs:label "Exact"@en .
 
 
